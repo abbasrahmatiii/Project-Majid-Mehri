@@ -24,7 +24,7 @@
                 <li class="social-icons-facebook">
                   <a href="{{ $contact->facebook_url ?? 'http://www.facebook.com/' }}" target="_blank" title="Facebook">
                     @if(isset($contact->facebook_icon))
-                    <img src="{{ asset('storage/' . $contact->facebook_icon) }}" alt="Facebook" width="20">
+                    <img src="{{ asset('/storage/icons/'. $contact->facebook_icon) }}" alt="Facebook" width="20">
                     @else
                     <i class="fab fa-facebook-f"></i>
                     @endif
@@ -33,7 +33,7 @@
                 <li class="social-icons-twitter">
                   <a href="{{ $contact->twitter_url ?? 'http://www.twitter.com/' }}" target="_blank" title="Twitter">
                     @if(isset($contact->twitter_icon))
-                    <img src="{{ asset('storage/' . $contact->twitter_icon) }}" alt="Twitter" width="20">
+                    <img src="{{ asset('/storage/icons/'. $contact->twitter_icon) }}" alt="Twitter" width="20">
                     @else
                     <i class="fab fa-twitter"></i>
                     @endif
@@ -42,7 +42,7 @@
                 <li class="social-icons-linkedin">
                   <a href="{{ $contact->linkedin_url ?? 'http://www.linkedin.com/' }}" target="_blank" title="Linkedin">
                     @if(isset($contact->linkedin_icon))
-                    <img src="{{ asset('storage/' . $contact->linkedin_icon) }}" alt="Linkedin" width="20">
+                    <img src="{{ asset('/storage/icons/'. $contact->linkedin_icon) }}" alt="Linkedin" width="20">
                     @else
                     <i class="fab fa-linkedin-in"></i>
                     @endif
@@ -87,8 +87,8 @@
             <div class="header-logo header-logo-sticky-change">
               <a href="/">
                 @if(isset($contact->logo))
-                <img class="header-logo-sticky opacity-0" alt="Logo" width="100" height="48" data-sticky-width="89" data-sticky-height="43" data-sticky-top="88" src="{{ asset('storage/' . $contact->logo) }}">
-                <img class="header-logo-non-sticky opacity-0" alt="Logo" width="100" height="48" src="{{ asset('storage/' . $contact->logo) }}">
+                <img class="header-logo-sticky opacity-0" alt="Logo" width="100" height="48" data-sticky-width="89" data-sticky-height="43" data-sticky-top="88" src="{{ asset('/storage/logos/'.$contact->logo) }}">
+                <img class="header-logo-non-sticky opacity-0" alt="Logo" width="100" height="48" src="{{ asset('/storage/logos/'. $contact->logo) }}">
                 @else
                 <img class="header-logo-sticky opacity-0" alt="Logo" width="100" height="48" data-sticky-width="89" data-sticky-height="43" data-sticky-top="88" src="img/logo-dark.png">
                 <img class="header-logo-non-sticky opacity-0" alt="Logo" width="100" height="48" src="img/logo-default.png">

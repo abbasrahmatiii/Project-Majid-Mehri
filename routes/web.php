@@ -15,7 +15,9 @@ use App\Http\Controllers\Auth\VerificationController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\PermissionController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CommentController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -37,6 +39,12 @@ Route::post('register', [RegisterController::class, 'register'])->middleware('gu
 Route::get('login', [LoginController::class, 'showLoginForm'])->middleware('guest')->name('login');
 Route::post('login', [LoginController::class, 'login'])->middleware('guest')->name('user.login');
 Route::post('logout', [LoginController::class, 'logout'])->name('user.logout');
+
+
+// Front-Posts
+Route::get('/posts/{slug}', [PostController::class, 'show'])->middleware('count.views')->name('posts.show');
+
+
 
 // Management UI - Only accessible by admin users
 Route::middleware(['auth', 'check.role'])->group(function () {
@@ -101,6 +109,24 @@ Route::middleware(['auth', 'check.role'])->group(function () {
     Route::get('admin/permissions/edit/{permission}', [PermissionController::class, 'edit'])->name('admin.permissions.edit');
     Route::patch('admin/permissions/update/{permission}', [PermissionController::class, 'update'])->name('admin.permissions.update');
     Route::delete('admin/permissions/delete/{permission}', [PermissionController::class, 'destroy'])->name('admin.permissions.delete');
+
+
+
+    // Categories
+    Route::get('admin/categories/index', [CategoryController::class, 'index'])->name('categories.index');
+    Route::get('admin/categories/create', [CategoryController::class, 'create'])->name('categories.create');
+    Route::post('admin/categories/store', [CategoryController::class, 'store'])->name('categories.store');
+    Route::get('admin/categories/{category}/edit', [CategoryController::class, 'edit'])->name('categories.edit');
+    Route::patch('admin/categories/{category}', [CategoryController::class, 'update'])->name('categories.update');
+    Route::delete('admin/categories/{category}', [CategoryController::class, 'destroy'])->name('categories.destroy');
+
+    // Posts
+    Route::get('admin/posts/index', [PostController::class, 'index'])->name('posts.index');
+    Route::get('admin/posts/create', [PostController::class, 'create'])->name('posts.create');
+    Route::post('admin/posts/store', [PostController::class, 'store'])->name('posts.store');
+    Route::get('admin/posts/{post}/edit', [PostController::class, 'edit'])->name('posts.edit');
+    Route::patch('admin/posts/{post}', [PostController::class, 'update'])->name('posts.update');
+    Route::delete('admin/posts/{post}', [PostController::class, 'destroy'])->name('posts.destroy');
 });
 
 // Authentication Routes...

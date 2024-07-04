@@ -6,8 +6,11 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-  <title>{{ $settings->site_title ?? 'عنوان سایت' }}</title>
-
+  {!! SEOMeta::generate() !!}
+  {!! OpenGraph::generate() !!}
+  {!! Twitter::generate() !!}
+  {!! JsonLd::generate() !!}
+  <title>{{ SEOMeta::getTitle() }}</title>
   <meta name="keywords" content="{{ $settings->meta_keywords ?? 'کلیدواژه‌ها' }}">
   <meta name="description" content="{{ $settings->meta_description ?? 'توضیحات سایت' }}">
   <meta name="author" content="author">
@@ -63,7 +66,9 @@
   <div class="body">
     @include('layouts.header')
     <div role="main" class="main">
+
       @yield('content')
+
     </div>
     @include('layouts.footer')
   </div>

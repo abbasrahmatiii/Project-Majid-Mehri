@@ -79,7 +79,7 @@
           <input type="file" class="form-control" name="logo" accept="image/png">
           <small class="form-text text-muted">لوگو باید به صورت png باشد تا از کیفیت بالاتری برخوردار باشد و به سرعت بارگذاری صفحات کمک کند.</small>
           @if(isset($contact->logo))
-          <img src="{{ asset('storage/' . $contact->logo) }}" alt="لوگو" class="img-thumbnail mt-2" width="100">
+          <img src="{{ asset('/storage/logos/'. $contact->logo) }}" alt="لوگو" class="img-thumbnail mt-2" width="100">
           @endif
           @error('logo')
           <span class="form-text text-danger">{{ $message }}</span>
@@ -99,7 +99,7 @@
           <label>آیکون فیس بوک (PNG):</label>
           <input type="file" class="form-control" name="facebook_icon" accept="image/png">
           @if(isset($contact->facebook_icon))
-          <img src="{{ asset('storage/' . $contact->facebook_icon) }}" alt="آیکون فیس بوک" class="img-thumbnail mt-2" width="50">
+          <img src="{{ asset('/storage/icons/'. $contact->facebook_icon) }}" alt="آیکون فیس بوک" class="img-thumbnail mt-2" width="50">
           @endif
           @error('facebook_icon')
           <span class="form-text text-danger">{{ $message }}</span>
@@ -119,7 +119,7 @@
           <label>آیکون تلگرام (PNG):</label>
           <input type="file" class="form-control" name="telegram_icon" accept="image/png">
           @if(isset($contact->telegram_icon))
-          <img src="{{ asset('storage/' . $contact->telegram_icon) }}" alt="آیکون تلگرام" class="img-thumbnail mt-2" width="50">
+          <img src="{{ asset('/storage/icons/'. $contact->telegram_icon) }}" alt="آیکون تلگرام" class="img-thumbnail mt-2" width="50">
           @endif
           @error('telegram_icon')
           <span class="form-text text-danger">{{ $message }}</span>
@@ -139,7 +139,7 @@
           <label>آیکون واتس اپ (PNG):</label>
           <input type="file" class="form-control" name="whatsapp_icon" accept="image/png">
           @if(isset($contact->whatsapp_icon))
-          <img src="{{ asset('storage/' . $contact->whatsapp_icon) }}" alt="آیکون واتس اپ" class="img-thumbnail mt-2" width="50">
+          <img src="{{ asset('/storage/icons/'. $contact->whatsapp_icon) }}" alt="آیکون واتس اپ" class="img-thumbnail mt-2" width="50">
           @endif
           @error('whatsapp_icon')
           <span class="form-text text-danger">{{ $message }}</span>
@@ -159,7 +159,7 @@
           <label>آیکون لینکداین (PNG):</label>
           <input type="file" class="form-control" name="linkedin_icon" accept="image/png">
           @if(isset($contact->linkedin_icon))
-          <img src="{{ asset('storage/' . $contact->linkedin_icon) }}" alt="آیکون لینکداین" class="img-thumbnail mt-2" width="50">
+          <img src="{{ asset('/storage/icons/'. $contact->linkedin_icon) }}" alt="آیکون لینکداین" class="img-thumbnail mt-2" width="50">
           @endif
           @error('linkedin_icon')
           <span class="form-text text-danger">{{ $message }}</span>

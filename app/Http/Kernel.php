@@ -2,6 +2,8 @@
 
 namespace App\Http;
 
+use App\Jobs\StorePostViews;
+use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
@@ -69,6 +71,7 @@ class Kernel extends HttpKernel
         // 'prevent.get.method.for.delete.routes' => \App\Http\Middleware\PreventGetMethodForDeleteRoutes::class,
         'permission' => \App\Http\Middleware\CheckPermission::class,
         'check.role' => \App\Http\Middleware\CheckRole::class,
+        'count.views' => \App\Http\Middleware\CountPostViews::class,
 
 
     ];

@@ -15,7 +15,7 @@
       </div>
       <div class="col-sm-6 col-lg-3 mb-5 mb-lg-0">
         <h5 class="text-6 font-weight-light text-color-light mb-3">اکنون تماس بگیرید</h5>
-        <p class="text-7 text-color-light font-weight-light mb-2"><span class="ltr-text">{{ $contact->phone_number ?? '1111111' }}</span></p>
+        <p class="text-7 text-color-light font-weight-light mb-2"><span class="ltr-text">{{ $contact->phone_number ?? '' }}</span></p>
       </div>
     </div>
     <div class="row">
@@ -26,7 +26,7 @@
           <li class="social-icons-facebook">
             <a href="{{ $contact->facebook_url }}" target="_blank" title="Facebook">
               @if(isset($contact->facebook_icon))
-              <img src="{{ asset('storage/' . $contact->facebook_icon) }}" alt="Facebook" width="20">
+              <img src="{{ asset('/storage/icons/'. $contact->facebook_icon) }}" alt="Facebook" width="20">
               @else
               <i class="fab fa-facebook-f"></i>
               @endif
@@ -37,7 +37,7 @@
           <li class="social-icons-twitter">
             <a href="{{ $contact->twitter_url }}" target="_blank" title="Twitter">
               @if(isset($contact->twitter_icon))
-              <img src="{{ asset('storage/' . $contact->twitter_icon) }}" alt="Twitter" width="20">
+              <img src="{{ asset('/storage/icons/'. $contact->twitter_icon) }}" alt="Twitter" width="20">
               @else
               <i class="fab fa-twitter"></i>
               @endif
@@ -48,7 +48,7 @@
           <li class="social-icons-linkedin">
             <a href="{{ $contact->linkedin_url }}" target="_blank" title="Linkedin">
               @if(isset($contact->linkedin_icon))
-              <img src="{{ asset('storage/' . $contact->linkedin_icon) }}" alt="Linkedin" width="20">
+              <img src="{{ asset('/storage/icons/'. $contact->linkedin_icon) }}" alt="Linkedin" width="20">
               @else
               <i class="fab fa-linkedin-in"></i>
               @endif
@@ -59,7 +59,7 @@
           <li class="social-icons-instagram">
             <a href="{{ $contact->instagram_url }}" target="_blank" title="Instagram">
               @if(isset($contact->instagram_icon))
-              <img src="{{ asset('storage/' . $contact->instagram_icon) }}" alt="Instagram" width="20">
+              <img src="{{ asset('/storage/icons/'. $contact->instagram_icon) }}" alt="Instagram" width="20">
               @else
               <i class="fab fa-instagram"></i>
               @endif
@@ -70,7 +70,7 @@
           <li class="social-icons-telegram">
             <a href="{{ $contact->telegram_url }}" target="_blank" title="Telegram">
               @if(isset($contact->telegram_icon))
-              <img src="{{ asset('storage/' . $contact->telegram_icon) }}" alt="Telegram" width="20">
+              <img src="{{ asset('/storage/icons/'. $contact->telegram_icon) }}" alt="Telegram" width="20">
               @else
               <i class="fab fa-telegram"></i>
               @endif
@@ -81,7 +81,7 @@
           <li class="social-icons-whatsapp">
             <a href="{{ $contact->whatsapp_url }}" target="_blank" title="WhatsApp">
               @if(isset($contact->whatsapp_icon))
-              <img src="{{ asset('storage/' . $contact->whatsapp_icon) }}" alt="WhatsApp" width="20">
+              <img src="{{ asset('/storage/icons/'. $contact->whatsapp_icon) }}" alt="WhatsApp" width="20">
               @else
               <i class="fab fa-whatsapp"></i>
               @endif
