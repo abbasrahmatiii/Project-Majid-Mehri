@@ -28,8 +28,13 @@ class PermissionsTableSeeder extends Seeder
             ['name' => 'manage slideshows list', 'display_name' => 'نمایش لیست اسلایدشوها'],
             ['name' => 'manage slideshows edit', 'display_name' => 'ویرایش اسلایدشوها'],
             ['name' => 'manage slideshows delete', 'display_name' => 'حذف اسلایدشوها'],
+            ['name' => 'manage Posts', 'display_name' => 'مدیریت پستها'],
+            ['name' => 'manage Posts list', 'display_name' => 'لیست پستها'],
+            ['name' => 'manage Posts add', 'display_name' => 'افزودن پستها'],
+            ['name' => 'manage Posts edit', 'display_name' => 'ویرایش پستها'],
+            ['name' => 'manage Posts delete', 'display_name' => 'حذف پستها'],
 
-     
+
             // مجوزهای ثابت دیگر
         ];
 

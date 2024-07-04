@@ -21,7 +21,7 @@
               <div class="form-check">
                 <input class="form-check-input" type="checkbox" name="permissions[]" value="{{ $permission->name }}" id="perm_{{ $permission->id }}">
                 <label class="form-check-label" for="perm_{{ $permission->id }}">
-                  {{ $permission->name }}
+                  {{ $permission->display_name }}
                 </label>
               </div>
             </div>
