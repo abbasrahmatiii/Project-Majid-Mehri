@@ -72,7 +72,7 @@ class PostController extends Controller
 
         $post->save();
 
-        return redirect()->route('posts.index')->with('success', 'پست با موفقیت ایجاد شد.');
+        return redirect('admin/posts/index')->with('success', 'پست با موفقیت ایجاد شد.');
     }
 
     public function edit(Post $post)

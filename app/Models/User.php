@@ -3,13 +3,14 @@
 namespace App\Models;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Spatie\Permission\Traits\HasRoles; // اضافه کردن این خط
 
 class User extends Authenticatable
 {
-    use Notifiable, HasRoles; // اضافه کردن HasRoles
+    use Notifiable, HasRoles, HasFactory; // اضافه کردن HasRoles
     /**
      * The attributes that are mass assignable.
      *

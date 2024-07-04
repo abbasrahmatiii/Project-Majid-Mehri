@@ -18,7 +18,7 @@
       @endif
       <form action="{{ route('posts.update', $post->id) }}" method="POST" enctype="multipart/form-data">
         @csrf
-        @method('PATCH')
+        @method('PUT')
         <div class="form-group">
           <label for="title">عنوان</label>
           <input type="text" name="title" class="form-control" value="{{ old('title', $post->title) }}" required>

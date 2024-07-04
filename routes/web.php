@@ -125,7 +125,7 @@ Route::middleware(['auth', 'check.role'])->group(function () {
     Route::get('admin/posts/create', [PostController::class, 'create'])->name('posts.create');
     Route::post('admin/posts/store', [PostController::class, 'store'])->name('posts.store');
     Route::get('admin/posts/{post}/edit', [PostController::class, 'edit'])->name('posts.edit');
-    Route::patch('admin/posts/{post}', [PostController::class, 'update'])->name('posts.update');
+    Route::put('admin/posts/{post}', [PostController::class, 'update'])->name('posts.update');
     Route::delete('admin/posts/{post}', [PostController::class, 'destroy'])->name('posts.destroy');
 });
 

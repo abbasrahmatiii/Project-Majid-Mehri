@@ -1,1 +1,24 @@
 /* Add here all your CSS customizations */
+/* فایل CSS سفارشی: custom.css */
+
+/* کاهش ارتفاع هدر */
+#header .header-row {
+    padding-top: 1px !important;
+    padding-bottom: 1px !important;
+}
+
+#header .header-top {
+    padding-top: 1px !important;
+    padding-bottom: 1px !important;
+}
+
+#header .header-container {
+    padding-top: 1px !important;
+    padding-bottom: 1px !important;
+}
+
+/* کاهش ارتفاع آیتم‌های ناوبری */
+#header .nav-link {
+    padding-top: 1px !important;
+    padding-bottom: 1px !important;
+}
