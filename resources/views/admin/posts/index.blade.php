@@ -70,6 +70,9 @@
                     <i class="fas fa-trash-alt"></i>
                   </button>
                 </form>
+                <a href="{{ route('posts.show', $post->slug) }}" class="btn btn-sm btn-clean btn-icon" title="مشاهده">
+                  <i class="fas fa-eye"></i>
+                </a>
               </td>
             </tr>
             @endforeach

@@ -44,8 +44,16 @@ Route::post('logout', [LoginController::class, 'logout'])->name('user.logout');
 // Front-Posts
 Route::get('/posts/{slug}', [PostController::class, 'show'])->middleware('count.views')->name('posts.show');
 
+Route::middleware('auth')->prefix('admin/posts')->name('admin.')->group(function () {
+    Route::post('/{post}/comments', [CommentController::class, 'store'])->name('comments.store');
 
-
+    Route::get('/comments', [CommentController::class, 'index'])->name('comments.index');
+    Route::get('/comments/pending', [CommentController::class, 'pending'])->name('comments.pending');
+    Route::patch('/comments/{comment}/approve', [CommentController::class, 'approve'])->name('comments.approve');
+    Route::patch('/comments/{comment}/disapprove', [CommentController::class, 'disapprove'])->name('comments.disapprove');
+    Route::delete('comments/{comment}', [CommentController::class, 'destroy'])->name('comments.delete');
+});
+Route::post('admin/posts/{post}/store', [CommentController::class, 'store'])->middleware('auth')->name('comments.store');
 // Management UI - Only accessible by admin users
 Route::middleware(['auth', 'check.role'])->group(function () {
 

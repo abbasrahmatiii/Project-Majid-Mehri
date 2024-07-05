@@ -12,16 +12,16 @@ class Comment extends Model
     use HasFactory;
 
     protected $fillable = [
-        'body', 'post_id', 'user_id', 'approved'
+        'content', 'post_id', 'user_id', 'parent_id', 'approved'
     ];
-    public function post()
-    {
-        return $this->belongsTo(Post::class);
-    }
-
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function post()
+    {
+        return $this->belongsTo(Post::class);
     }
 
     public function replies()
@@ -32,5 +32,10 @@ class Comment extends Model
     public function parent()
     {
         return $this->belongsTo(Comment::class, 'parent_id');
+    }
+
+    public function approver()
+    {
+        return $this->belongsTo(User::class, 'approved_by');
     }
 }

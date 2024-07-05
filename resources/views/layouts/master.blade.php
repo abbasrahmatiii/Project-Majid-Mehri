@@ -99,7 +99,7 @@
   <script src="/vendor/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
 
   <!-- Current Page Vendor and Views -->
-  <script src="/js/views/view.contact.js"></script>
+  <!-- <script src="/js/views/view.contact.js"></script> -->
 
   <!-- Theme Custom -->
   <script src="/js/custom.js"></script>

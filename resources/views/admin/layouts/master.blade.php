@@ -10,7 +10,7 @@
   <meta name="description" content="Updates and statistics" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
+  <link href="{{ asset('css/app.css') }}" rel="stylesheet">
   <!--begin::Fonts-->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" /> <!--end::Fonts-->
 
@@ -18,7 +18,9 @@
   <link href="/admin/assets/plugins/custom/fullcalendar/fullcalendar.bundle.rtl.css?v=7.0.6" rel="stylesheet" type="text/css" />
   <!--end::Page Vendors Styles-->
 
-
+  <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+  <link href="{{ asset('css/custom.css') }}" rel="stylesheet"> <!-- اضافه کردن فایل CSS -->
+  <script src="{{ asset('js/app.js') }}" defer></script>
   <!--begin::Global تم Styles(used by all pages)-->
   <link href="/admin/assets/plugins/global/plugins.bundle.rtl.css?v=7.0.6" rel="stylesheet" type="text/css" />
   <link href="/admin/assets/plugins/custom/prismjs/prismjs.bundle.rtl.css?v=7.0.6" rel="stylesheet" type="text/css" />
@@ -176,12 +178,7 @@
                         <span class="menu-text">اختصاص نقش به کاربر</span>
                       </a>
                     </li>
-                    <li class="menu-item" aria-haspopup="true">
-                      <a href="/admin/permissions/create" class="menu-link">
-                        <i class="menu-bullet menu-bullet-dot"><span></span></i>
-                        <span class="menu-text">ایجاد مجوز جدید(ثابت هستند بعدا حذف شود)</span>
-                      </a>
-                    </li>
+
                   </ul>
                 </div>
               </li>
@@ -292,7 +289,7 @@
                 </div>
               </li>
 
-              <li class="menu-item  menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
+              <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
                 <a href="javascript:;" class="menu-link menu-toggle">
                   <span class="svg-icon menu-icon">
                     <!--begin::Svg Icon | path:/admin/assets/media/svg/icons/Communication/Group-chat.svg-->
@@ -307,6 +304,9 @@
                     <!--end::Svg Icon-->
                   </span>
                   <span class="menu-text">مدیریت بلاگ</span>
+                  @if($pendingCommentsCount != 0)
+                  <span class="badge badge-danger">{{ $pendingCommentsCount }}</span>
+                  @endif
                   <i class="menu-arrow"></i>
                 </a>
                 <div class="menu-submenu ">
@@ -319,9 +319,18 @@
                       </a>
                     </li>
                     <li class="menu-item " aria-haspopup="true">
-                      <a href="/admin/posts/index" class="menu-link ">
+                      <a href="admin/posts/index" class="menu-link ">
                         <i class="menu-bullet menu-bullet-dot"><span></span></i>
                         <span class="menu-text">لیست پست ها</span>
+                      </a>
+                    </li>
+                    <li class="menu-item " aria-haspopup="true">
+                      <a href="/admin/posts/comments" class="menu-link ">
+                        <i class="menu-bullet menu-bullet-dot"><span></span></i>
+                        <span class="menu-text">نظرات</span>
+                        @if($pendingCommentsCount != 0)
+                        <span class="badge-danger1">{{ $pendingCommentsCount }}</span>
+                        @endif
                       </a>
                     </li>
                     <li class="menu-item " aria-haspopup="true">
@@ -2210,6 +2219,17 @@
   <!--begin::Page Scripts(used by this page)-->
   <script src="/admin/assets/js/pages/crud/ktdatatable/base/data-local.js?v=7.0.6"></script>
   <!--end::Page Scripts-->
+
+  <script>
+    @if(session('success'))
+    toastr.success("{{ session('success') }}");
+    @endif
+
+    @if(session('error'))
+    toastr.error("{{ session('error') }}");
+    @endif
+  </script>
+
 </body>
 <!--end::Body-->
 

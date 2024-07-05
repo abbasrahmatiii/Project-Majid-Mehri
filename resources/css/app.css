@@ -1,0 +1,12 @@
+/* public/css/custom.css */
+.btn i {
+    font-size: 16px;
+}
+
+.table .btn {
+    padding: 0.2rem 0.4rem;
+}
+
+.table .btn .fas {
+    background: none;
+}
