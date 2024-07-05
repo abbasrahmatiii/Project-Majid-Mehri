@@ -1,7 +1,7 @@
 <?php
 
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\DB;
 
 // راه‌اندازی لاراول
 require __DIR__ . '/vendor/autoload.php';
@@ -12,14 +12,13 @@ $kernel = $app->make(Illuminate\Contracts\Console\Kernel::class);
 
 $kernel->bootstrap();
 
-// گرفتن لیست جداول از دیتابیس
-$tables = DB::select('SHOW TABLES');
+// گرفتن اتصال به دیتابیس
+$pdo = DB::connection()->getPdo();
 
-// نام ستون که شامل نام جداول است بسته به نوع دیتابیس ممکن است متفاوت باشد
-$columnName = 'Tables_in_your_database_name'; // نام صحیح ستون را جایگزین کنید
+// گرفتن لیست جداول
+$tables = $pdo->query("SHOW TABLES")->fetchAll(PDO::FETCH_COLUMN);
 
-foreach ($tables as $table) {
-  $tableName = $table->$columnName;
+foreach ($tables as $tableName) {
   echo "Generating seed for table: $tableName\n";
   Artisan::call('iseed', ['tables' => $tableName, '--force' => true]);
 }

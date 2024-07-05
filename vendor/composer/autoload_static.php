@@ -577,6 +577,16 @@ class ComposerStaticInit0d52140ec7c90ee744c21819ec58c6f3
         ),
     );
 
+    public static $prefixesPsr0 = array (
+        'O' => 
+        array (
+            'Orangehill\\Iseed' => 
+            array (
+                0 => __DIR__ . '/..' . '/orangehill/iseed/src',
+            ),
+        ),
+    );
+
     public static $classMap = array (
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
@@ -611,6 +621,7 @@ class ComposerStaticInit0d52140ec7c90ee744c21819ec58c6f3
         'App\\Http\\Middleware\\PreventRequestsDuringMaintenance' => __DIR__ . '/../..' . '/app/Http/Middleware/PreventRequestsDuringMaintenance.php',
         'App\\Http\\Middleware\\RedirectIfAuthenticated' => __DIR__ . '/../..' . '/app/Http/Middleware/RedirectIfAuthenticated.php',
         'App\\Http\\Middleware\\RoleMiddleware' => __DIR__ . '/../..' . '/app/Http/Middleware/RoleMiddleware.php',
+        'App\\Http\\Middleware\\ShareDashboardData' => __DIR__ . '/../..' . '/app/Http/Middleware/ShareDashboardData.php',
         'App\\Http\\Middleware\\TrimStrings' => __DIR__ . '/../..' . '/app/Http/Middleware/TrimStrings.php',
         'App\\Http\\Middleware\\TrustHosts' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustHosts.php',
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
@@ -772,9 +783,25 @@ class ComposerStaticInit0d52140ec7c90ee744c21819ec58c6f3
         'Database\\Factories\\CategoryFactory' => __DIR__ . '/../..' . '/database/factories/CategoryFactory.php',
         'Database\\Factories\\PostFactory' => __DIR__ . '/../..' . '/database/factories/PostFactory.php',
         'Database\\Factories\\UserFactory' => __DIR__ . '/../..' . '/database/factories/UserFactory.php',
+        'Database\\Seeders\\CategoriesTableSeeder' => __DIR__ . '/../..' . '/database/seeders/CategoriesTableSeeder.php',
+        'Database\\Seeders\\CenterAdsTableSeeder' => __DIR__ . '/../..' . '/database/seeders/CenterAdsTableSeeder.php',
+        'Database\\Seeders\\CommentsTableSeeder' => __DIR__ . '/../..' . '/database/seeders/CommentsTableSeeder.php',
+        'Database\\Seeders\\ContactsTableSeeder' => __DIR__ . '/../..' . '/database/seeders/ContactsTableSeeder.php',
         'Database\\Seeders\\DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeders/DatabaseSeeder.php',
+        'Database\\Seeders\\FailedJobsTableSeeder' => __DIR__ . '/../..' . '/database/seeders/FailedJobsTableSeeder.php',
+        'Database\\Seeders\\MigrationsTableSeeder' => __DIR__ . '/../..' . '/database/seeders/MigrationsTableSeeder.php',
+        'Database\\Seeders\\ModelHasPermissionsTableSeeder' => __DIR__ . '/../..' . '/database/seeders/ModelHasPermissionsTableSeeder.php',
+        'Database\\Seeders\\ModelHasRolesTableSeeder' => __DIR__ . '/../..' . '/database/seeders/ModelHasRolesTableSeeder.php',
+        'Database\\Seeders\\PasswordResetsTableSeeder' => __DIR__ . '/../..' . '/database/seeders/PasswordResetsTableSeeder.php',
         'Database\\Seeders\\PermissionsTableSeeder' => __DIR__ . '/../..' . '/database/seeders/PermissionsTableSeeder.php',
+        'Database\\Seeders\\PersonalAccessTokensTableSeeder' => __DIR__ . '/../..' . '/database/seeders/PersonalAccessTokensTableSeeder.php',
+        'Database\\Seeders\\PostsTableSeeder' => __DIR__ . '/../..' . '/database/seeders/PostsTableSeeder.php',
+        'Database\\Seeders\\RoleHasPermissionsTableSeeder' => __DIR__ . '/../..' . '/database/seeders/RoleHasPermissionsTableSeeder.php',
         'Database\\Seeders\\RoleSeeder' => __DIR__ . '/../..' . '/database/seeders/RoleSeeder.php',
+        'Database\\Seeders\\RolesTableSeeder' => __DIR__ . '/../..' . '/database/seeders/RolesTableSeeder.php',
+        'Database\\Seeders\\SettingsTableSeeder' => __DIR__ . '/../..' . '/database/seeders/SettingsTableSeeder.php',
+        'Database\\Seeders\\SlidesTableSeeder' => __DIR__ . '/../..' . '/database/seeders/SlidesTableSeeder.php',
+        'Database\\Seeders\\UsersTableSeeder' => __DIR__ . '/../..' . '/database/seeders/UsersTableSeeder.php',
         'DateError' => __DIR__ . '/..' . '/symfony/polyfill-php83/Resources/stubs/DateError.php',
         'DateException' => __DIR__ . '/..' . '/symfony/polyfill-php83/Resources/stubs/DateException.php',
         'DateInvalidOperationException' => __DIR__ . '/..' . '/symfony/polyfill-php83/Resources/stubs/DateInvalidOperationException.php',
@@ -3696,6 +3723,11 @@ class ComposerStaticInit0d52140ec7c90ee744c21819ec58c6f3
         'NunoMaduro\\Collision\\Provider' => __DIR__ . '/..' . '/nunomaduro/collision/src/Provider.php',
         'NunoMaduro\\Collision\\SolutionsRepositories\\NullSolutionsRepository' => __DIR__ . '/..' . '/nunomaduro/collision/src/SolutionsRepositories/NullSolutionsRepository.php',
         'NunoMaduro\\Collision\\Writer' => __DIR__ . '/..' . '/nunomaduro/collision/src/Writer.php',
+        'Orangehill\\Iseed\\Facades\\Iseed' => __DIR__ . '/..' . '/orangehill/iseed/src/Orangehill/Iseed/Facades/Iseed.php',
+        'Orangehill\\Iseed\\Iseed' => __DIR__ . '/..' . '/orangehill/iseed/src/Orangehill/Iseed/Iseed.php',
+        'Orangehill\\Iseed\\IseedCommand' => __DIR__ . '/..' . '/orangehill/iseed/src/Orangehill/Iseed/IseedCommand.php',
+        'Orangehill\\Iseed\\IseedServiceProvider' => __DIR__ . '/..' . '/orangehill/iseed/src/Orangehill/Iseed/IseedServiceProvider.php',
+        'Orangehill\\Iseed\\TableNotFoundException' => __DIR__ . '/..' . '/orangehill/iseed/src/Orangehill/Iseed/Exceptions.php',
         'Override' => __DIR__ . '/..' . '/symfony/polyfill-php83/Resources/stubs/Override.php',
         'PHPUnit\\Exception' => __DIR__ . '/..' . '/phpunit/phpunit/src/Exception.php',
         'PHPUnit\\Framework\\ActualValueIsNotAnObjectException' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Exception/ActualValueIsNotAnObjectException.php',
@@ -6735,6 +6767,7 @@ class ComposerStaticInit0d52140ec7c90ee744c21819ec58c6f3
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInit0d52140ec7c90ee744c21819ec58c6f3::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit0d52140ec7c90ee744c21819ec58c6f3::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit0d52140ec7c90ee744c21819ec58c6f3::$prefixesPsr0;
             $loader->classMap = ComposerStaticInit0d52140ec7c90ee744c21819ec58c6f3::$classMap;
 
         }, null, ClassLoader::class);
