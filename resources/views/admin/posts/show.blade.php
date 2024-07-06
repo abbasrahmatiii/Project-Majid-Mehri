@@ -35,7 +35,7 @@
               <span class="day">{{ \Verta::instance($post->created_at)->format('d') }}</span>
               <span class="month">{{ \Verta::instance($post->created_at)->format('F') }}</span>
             </div>
-            <div class="post-content ml-0">
+            <div class="post-content ml-0 p-4 rounded bg-white shadow-sm">
               <h2 class="font-weight-bold mt-n3 mb-2 pb-1 pt-1 line-height-7 text-7"><a href="{{ route('posts.show', $post->slug) }}">{{ $post->title }}</a></h2>
               <div class="post-meta">
                 <span><i class="far fa-user"></i> توسط <a href="#"> {{$post->author->first_name}} {{ $post->author->last_name}}</a> </span>
@@ -78,9 +78,9 @@
 
               <div class="post-block mt-4 pt-2 post-author">
                 <h4 class="mb-3 secondary-font pb-1">نویسنده</h4>
-                <div class="img-thumbnail img-thumbnail-no-borders d-block pb-3">
+                <div class="img-thumbnail img-thumbnail-no-borders d-block pb-3 mx-auto" style="width: 80px; height: 80px; border-radius: 50%;">
                   <a href="#">
-                    <img src="{{ asset('img/avatars/avatar.jpg') }}" alt="{{ $post->author->name }}">
+                    <img src="{{ asset('img/avatars/avatar.jpg') }}" alt="{{ $post->author->name }}" class="img-fluid rounded-circle">
                   </a>
                 </div>
                 <p><strong class="name"><a href="#" class="text-4 pb-1 d-block">{{ $post->author->name }}</a></strong></p>
@@ -92,7 +92,7 @@
                   @foreach($post->comments->where('approved', true)->where('parent_id', null) as $comment)
                   <li>
                     <div class="comment">
-                      <div class="img-thumbnail img-thumbnail-no-borders d-none d-sm-block">
+                      <div class="img-thumbnail img-thumbnail-no-borders d-none d-sm-block" style="width: 50px; height: 50px; border-radius: 50%;">
                         <img class="avatar" alt="{{ $comment->user->first_name }}" src="{{ asset('img/avatars/avatar-2.jpg') }}">
                       </div>
                       <div class="comment-block">
@@ -100,11 +100,13 @@
                         <span class="comment-by">
                           <strong>{{ $comment->user->first_name }}</strong>
                           <span class="float-right">
-                            <span> <a href="javascript:void(0);" onclick="showReplyForm({{ $comment->id }});"><i class="fas fa-reply"></i> پاسخ</a></span>
+                            <span> <a href="javascript:void(0);" onclick="showReplyForm('{{ $comment->id }}');"><i class="fas fa-reply"></i> پاسخ</a></span>
                           </span>
                         </span>
-                        <p>{{ $comment->content }}</p>
-                        <span class="date float-right">{{ \Verta::instance($comment->created_at)->format('d F Y - H:i') }}</span>
+                        <div class="comment-content-box">
+                          <p>{{ $comment->content }}</p>
+                          <span class="date float-right">{{ \Verta::instance($comment->created_at)->format('d F Y - H:i') }}</span>
+                        </div>
                       </div>
                     </div>
                     @include('admin.posts.comments.partials.comments', ['comments' => $comment->replies])
@@ -124,8 +126,6 @@
                   @endforeach
                 </ul>
               </div>
-
-
               @auth
               <div class="post-block mt-5 post-leave-comment">
                 <h4 class="mb-3 secondary-font pb-1">دیدگاه خود را بیان کنید</h4>
@@ -158,8 +158,6 @@
                 <a href="{{ route('register') }}" class="btn btn-secondary btn-sm">ثبت نام</a>
               </div>
               @endauth
-
-
             </div>
           </article>
         </div>
@@ -176,5 +174,82 @@
     document.getElementById('reply-form-' + commentId).style.display = 'block';
   }
 </script>
+<style>
+  .comment {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 10px;
+    /* کاهش فاصله بین کامنت‌ها */
+  }
 
+  .img-thumbnail {
+    flex-shrink: 0;
+    width: 40px;
+    /* کاهش اندازه آواتار */
+    height: 40px;
+    /* کاهش اندازه آواتار */
+    border-radius: 50%;
+  }
+
+  .comment-block {
+    flex-grow: 1;
+    margin-left: 1px;
+    background-color: red;
+    /* کاهش فاصله بین آواتار و متن کامنت */
+  }
+
+  .comment-content-box {
+    border: 1px solid #ccc;
+
+    border-radius: 8px;
+    padding: 10px;
+    /* کاهش padding داخل باکس کامنت */
+    background-color: #f9f9f9;
+    margin-bottom: 5px;
+    /* کاهش فاصله بین باکس کامنت و سایر عناصر */
+  }
+
+  .comment-by {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  .date {
+    font-size: 0.85em;
+    color: #888;
+  }
+
+  .reply-form {
+    margin-top: 10px;
+  }
+
+  .comment-arrow {
+    /* Adjust the arrow style or remove it */
+  }
+
+  .comment-content-box p {
+    margin: 0;
+  }
+
+  .comment-content-box .date {
+    margin-top: 10px;
+    display: block;
+  }
+
+  .post-content {
+    background-color: #fff;
+    padding: 5px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .post-meta span {
+    display: inline-block;
+    margin-right: 2px;
+  }
+
+  .post-meta span i {
+    margin-right: 5px;
+  }
+</style>
 @endsection

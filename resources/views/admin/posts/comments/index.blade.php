@@ -89,15 +89,19 @@
                       <p class="small text-muted">{{ \Verta::instance($comment->parent->created_at)->format('d F Y - H:i') }}</p>
                     </div>
                     @endif
-                    <p><strong>نام کاربر:</strong> {{ $comment->user ? $comment->user->first_name.' '.$comment->user->last_name : 'کاربر حذف شده' }}</p>
-                    <p><strong>نظر:</strong> {{ $comment->content }}</p>
-                    <p><strong>پست مرتبط:</strong> <a href="{{ route('posts.show', $comment->post->slug) }}" target="_blank">{{ $comment->post->title }}</a></p>
-                    <p><strong>تاریخ ارسال:</strong> {{ \Verta::instance($comment->created_at)->format('d F Y - H:i') }}</p>
-                    <p><strong>تاریخ تایید:</strong> {{ $comment->approved_at ? \Verta::instance($comment->approved_at)->format('d F Y - H:i') : '-' }}</p>
-                    <p><strong>تایید کننده:</strong> {{ $comment->approver ? $comment->approver->first_name.' '.$comment->approver->last_name : '-' }}</p>
+                    <div class="comment-content-box">
+                      <p><strong>نام کاربر:</strong> {{ $comment->user ? $comment->user->first_name.' '.$comment->user->last_name : 'کاربر حذف شده' }}</p>
+                      <p><strong>نظر:</strong> {{ $comment->content }}</p>
+                      <p><strong>پست مرتبط:</strong> <a href="{{ route('posts.show', $comment->post->slug) }}" target="_blank">{{ $comment->post->title }}</a></p>
+                      <p><strong>تاریخ ارسال:</strong> {{ \Verta::instance($comment->created_at)->format('d F Y - H:i') }}</p>
+                      <p><strong>تاریخ تایید:</strong> {{ $comment->approved_at ? \Verta::instance($comment->approved_at)->format('d F Y - H:i') : '-' }}</p>
+                      <p><strong>تایید کننده:</strong> {{ $comment->approver ? $comment->approver->first_name.' '.$comment->approver->last_name : '-' }}</p>
+                    </div>
                     <hr>
                     <h5>پاسخ‌ها:</h5>
-                    @include('admin.posts.comments.partials.comments', ['comments' => $comment->replies])
+                    <ul class="comments">
+                      @include('admin.posts.comments.partials.comments', ['comments' => $comment->replies, 'post' => $comment->post])
+                    </ul>
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">بستن</button>
@@ -105,6 +109,8 @@
                 </div>
               </div>
             </div>
+
+
             @endforeach
           </tbody>
         </table>
@@ -116,61 +122,71 @@
     </div>
   </div>
 </div>
-<!-- 
-<script>
-  document.querySelectorAll('.ajax-action-form').forEach(form => {
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      const formData = new FormData(this);
-      fetch(this.action, {
-          method: this.method,
-          headers: {
-            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content
-          },
-          body: formData
-        })
-        .then(response => response.json())
-        .then(data => {
-          if (data.success) {
-            // نمایش پیام موفقیت
-            showToast(data.message);
-          } else {
-            // نمایش پیام خطا
-            showToast(data.message, 'error');
-          }
-        })
-        .catch(error => {
-          console.error('Error:', error);
-        });
-    });
-  });
-
-  function showToast(message, type = 'success') {
-    const toast = document.createElement('div');
-    toast.className = `toast ${type}`;
-    toast.textContent = message;
-    document.body.appendChild(toast);
-    setTimeout(() => {
-      toast.remove();
-    }, 3000);
-  }
-</script>
 
 <style>
-  .toast {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    padding: 10px 20px;
-    background-color: #28a745;
-    color: #fff;
-    border-radius: 5px;
-    z-index: 9999;
-    opacity: 0.9;
+  .comment-avatar,
+  .author-avatar {
+    width: 40px;
+    /* تغییر اندازه به 40 پیکسل */
+    height: 40px;
+    /* تغییر اندازه به 40 پیکسل */
+    border-radius: 50%;
+    /* تبدیل تصویر به شکل دایره */
+    object-fit: cover;
+    /* متناسب کردن تصویر داخل کادر */
   }
 
-  .toast.error {
-    background-color: #dc3545;
+  .comment {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
   }
-</style> -->
+
+  .img-thumbnail {
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+
+  .comment-block {
+    flex-grow: 1;
+    margin-left: 15px;
+  }
+
+  .comment-content-box {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    margin-bottom: 10px;
+  }
+
+  .comment-by {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  .date {
+    font-size: 0.85em;
+    color: #888;
+  }
+
+  .reply-form {
+    margin-top: 10px;
+  }
+
+  .comment-arrow {
+    /* Adjust the arrow style or remove it */
+  }
+
+  .comment-content-box p {
+    margin: 0;
+  }
+
+  .comment-content-box .date {
+    margin-top: 10px;
+    display: block;
+  }
+</style>
 @endsection

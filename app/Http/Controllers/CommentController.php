@@ -53,7 +53,9 @@ class CommentController extends Controller
 
     public function index()
     {
+
         $comments = Comment::with(['user', 'approver', 'replies'])->paginate(10);
+
         return view('admin.posts.comments.index', compact('comments'));
     }
 
