@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\TimeSlotController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\BackendController;
 use App\Http\Controllers\CenterAdController;
@@ -18,6 +19,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\ConsultationController;
+use App\Http\Controllers\DayController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -156,3 +160,34 @@ Route::post('password/reset', [ResetPasswordController::class, 'reset'])->middle
 Route::get('email/verify', [VerificationController::class, 'show'])->middleware('auth')->name('verification.notice');
 Route::get('email/verify/{id}/{hash}', [VerificationController::class, 'verify'])->middleware(['auth', 'signed'])->name('verification.verify');
 Route::post('email/resend', [VerificationController::class, 'resend'])->middleware('auth')->name('verification.resend');
+
+Route::prefix('admin')->middleware('auth')->group(function () {
+    // روت‌های مدیریت روزها
+    Route::get('days/index', [DayController::class, 'index'])->name('admin.days.index');
+    Route::get('days/create', [DayController::class, 'create'])->name('admin.days.create');
+    Route::post('days', [DayController::class, 'store'])->name('admin.days.store');
+    Route::get('days/{day}', [DayController::class, 'show'])->name('admin.days.show');
+    Route::get('days/{day}/edit', [DayController::class, 'edit'])->name('admin.days.edit');
+    Route::patch('days/{day}', [DayController::class, 'update'])->name('admin.days.update');
+    Route::delete('days/{day}', [DayController::class, 'destroy'])->name('admin.days.destroy');
+
+    // روت‌های مدیریت بازه‌های زمانی
+    Route::get('time_slots/index', [TimeSlotController::class, 'index'])->name('admin.time_slots.index');
+    Route::get('time_slots/create', [TimeSlotController::class, 'create'])->name('admin.time_slots.create');
+    Route::post('time_slots', [TimeSlotController::class, 'store'])->name('admin.time_slots.store');
+    Route::get('time_slots/{time_slot}', [TimeSlotController::class, 'show'])->name('admin.time_slots.show');
+    Route::get('time_slots/{time_slot}/edit', [TimeSlotController::class, 'edit'])->name('admin.time_slots.edit');
+    Route::patch('time_slots/{time_slot}', [TimeSlotController::class, 'update'])->name('admin.time_slots.update');
+    Route::delete('time_slots/{time_slot}', [TimeSlotController::class, 'destroy'])->name('admin.time_slots.destroy');
+});
+
+Route::middleware('auth')->prefix('admin')->group(function () {
+    // روت‌های مدیریت مشاوره‌ها
+    Route::get('consultations/index', [ConsultationController::class, 'index'])->name('consultations.index');
+    Route::get('consultations/create', [ConsultationController::class, 'create'])->name('consultations.create');
+    Route::post('consultations', [ConsultationController::class, 'store'])->name('consultations.store');
+    Route::get('consultations/{consultation}', [ConsultationController::class, 'show'])->name('consultations.show');
+    Route::get('consultations/{consultation}/edit', [ConsultationController::class, 'edit'])->name('consultations.edit');
+    Route::patch('consultations/{consultation}', [ConsultationController::class, 'update'])->name('consultations.update');
+    Route::delete('consultations/{consultation}', [ConsultationController::class, 'destroy'])->name('consultations.destroy');
+});

@@ -348,6 +348,57 @@
                   </ul>
                 </div>
               </li>
+
+
+
+
+
+              <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
+                <a href="javascript:;" class="menu-link menu-toggle">
+                  <span class="svg-icon menu-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                      <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <polygon points="0 0 24 0 24 24 0 24" />
+                        <path d="M17,14 C19.7614237,14 22,16.2385763 22,19 L22,20 C22,20.5522847 21.5522847,21 21,21 C20.4477153,21 20,20.5522847 20,20 L20,19 C20,17.3431458 18.6568542,16 17,16 C15.3431458,16 14,17.3431458 14,19 L14,20 C14,20.5522847 13.5522847,21 13,21 C12.4477153,21 12,20.5522847 12,20 L12,19 C12,16.2385763 14.2385763,14 17,14 Z M6,14 L6,14 L6,14 Z" fill="#000000" fill-rule="nonzero" />
+                        <path d="M11,9.5 C11,11.9852814 8.98528137,14 6.5,14 C4.01471863,14 2,11.9852814 2,9.5 C2,7.01471863 4.01471863,5 6.5,5 C8.98528137,5 11,7.01471863 11,9.5 Z M9,9.5 C9,8.11928813 7.88071187,7 6.5,7 C5.11928813,7 4,8.11928813 4,9.5 C4,10.8807119 5.11928813,12 6.5,12 C7.88071187,12 9,10.8807119 9,9.5 Z" fill="#000000" fill-rule="nonzero" opacity="0.3" />
+                        <path d="M17,7 C19.7614237,7 22,9.23857625 22,12 C22,12.5128358 21.6128358,12.9 21.1,12.9 C20.5871642,12.9 20.2,12.5128358 20.2,12 C20.2,10.2326881 18.7673119,8.8 17,8.8 C15.2326881,8.8 13.8,10.2326881 13.8,12 C13.8,12.5128358 13.4128358,12.9 12.9,12.9 C12.3871642,12.9 12,12.5128358 12,12 C12,9.23857625 14.2385763,7 17,7 Z" fill="#000000" fill-rule="nonzero" />
+                      </g>
+                    </svg>
+                  </span>
+                  <span class="menu-text">مدیریت مشاوره</span>
+                  <i class="menu-arrow"></i>
+                </a>
+                <div class="menu-submenu">
+                  <i class="menu-arrow"></i>
+                  <ul class="menu-subnav">
+                    <li class="menu-item" aria-haspopup="true">
+                      <a href="/admin/days/index" class="menu-link">
+                        <i class="menu-bullet menu-bullet-dot"><span></span></i>
+                        <span class="menu-text">مدیریت روزها</span>
+                      </a>
+                    </li>
+                    <li class="menu-item" aria-haspopup="true">
+                      <a href="/admin/time_slots/index" class="menu-link">
+                        <i class="menu-bullet menu-bullet-dot"><span></span></i>
+                        <span class="menu-text">مدیریت بازه‌های زمانی</span>
+                      </a>
+                    </li>
+                    <li class="menu-item" aria-haspopup="true">
+                      <a href="/admin/consultations/index" class="menu-link">
+                        <i class="menu-bullet menu-bullet-dot"><span></span></i>
+                        <span class="menu-text">زمان‌های مشاوره</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+
+
+
+
+
+
+
             </ul>
             <!--end::Menu Nav-->
 
