@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class SettingsTableSeeder extends Seeder
 {
@@ -14,11 +15,8 @@ class SettingsTableSeeder extends Seeder
      */
     public function run()
     {
-        
 
-        \DB::table('settings')->delete();
-        
-        
-        
+
+        DB::table('settings')->delete();
     }
 }

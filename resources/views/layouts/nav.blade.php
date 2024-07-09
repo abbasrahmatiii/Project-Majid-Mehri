@@ -48,33 +48,7 @@
                     </a>
                     <!-- ادامه منوهای فروشگاه -->
                   </li>
-                  <!-- @guest
-                  <li class="dropdown dropdown-full-color dropdown-light">
-                    <a class="dropdown-item dropdown-toggle" href="/user/create">
-                      ورود / ثبت نام
-                    </a>
-                  </li>
-                  @endguest
 
-                  @auth
-                  <li class="dropdown dropdown-full-color dropdown-light">
-                    <a class="dropdown-item dropdown-toggle" href="#">
-                      ناحیه کاربری
-                    </a>
-                    <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="">نمایش پروفایل</a></li>
-                      <li><a class="dropdown-item" href="">درخواست مشاوره</a></li>
-                      <li>
-                        <a class="dropdown-item" href="user/logout" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                          خروج
-                        </a>
-                        <form id="logout-form" action="user/logout" method="POST" style="display: none;">
-                          @csrf
-                        </form>
-                      </li>
-                    </ul>
-                  </li>
-                  @endauth -->
                 </ul>
               </nav>
             </div>

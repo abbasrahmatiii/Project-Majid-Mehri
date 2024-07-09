@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class CommentsTableSeeder extends Seeder
 {
@@ -14,13 +15,13 @@ class CommentsTableSeeder extends Seeder
      */
     public function run()
     {
-        
 
-        \DB::table('comments')->delete();
-        
-        \DB::table('comments')->insert(array (
-            0 => 
-            array (
+
+        DB::table('comments')->delete();
+
+        DB::table('comments')->insert(array(
+            0 =>
+            array(
                 'approved' => 1,
                 'approved_at' => '2024-07-05 19:29:01',
                 'approved_by' => 6,
@@ -32,8 +33,8 @@ class CommentsTableSeeder extends Seeder
                 'updated_at' => '2024-07-05 19:29:01',
                 'user_id' => 7,
             ),
-            1 => 
-            array (
+            1 =>
+            array(
                 'approved' => 1,
                 'approved_at' => '2024-07-05 19:29:07',
                 'approved_by' => 6,
@@ -45,8 +46,8 @@ class CommentsTableSeeder extends Seeder
                 'updated_at' => '2024-07-05 19:29:07',
                 'user_id' => 6,
             ),
-            2 => 
-            array (
+            2 =>
+            array(
                 'approved' => 1,
                 'approved_at' => '2024-07-05 19:29:08',
                 'approved_by' => 6,
@@ -58,8 +59,8 @@ class CommentsTableSeeder extends Seeder
                 'updated_at' => '2024-07-05 19:29:08',
                 'user_id' => 7,
             ),
-            3 => 
-            array (
+            3 =>
+            array(
                 'approved' => 1,
                 'approved_at' => '2024-07-05 19:29:09',
                 'approved_by' => 6,
@@ -71,8 +72,8 @@ class CommentsTableSeeder extends Seeder
                 'updated_at' => '2024-07-05 19:29:09',
                 'user_id' => 6,
             ),
-            4 => 
-            array (
+            4 =>
+            array(
                 'approved' => 1,
                 'approved_at' => '2024-07-05 19:29:09',
                 'approved_by' => 6,
@@ -84,8 +85,8 @@ class CommentsTableSeeder extends Seeder
                 'updated_at' => '2024-07-05 19:29:09',
                 'user_id' => 8,
             ),
-            5 => 
-            array (
+            5 =>
+            array(
                 'approved' => 1,
                 'approved_at' => '2024-07-05 19:29:10',
                 'approved_by' => 6,
@@ -97,8 +98,8 @@ class CommentsTableSeeder extends Seeder
                 'updated_at' => '2024-07-05 19:29:10',
                 'user_id' => 6,
             ),
-            6 => 
-            array (
+            6 =>
+            array(
                 'approved' => 1,
                 'approved_at' => '2024-07-05 19:29:10',
                 'approved_by' => 6,
@@ -110,8 +111,8 @@ class CommentsTableSeeder extends Seeder
                 'updated_at' => '2024-07-05 19:29:10',
                 'user_id' => 8,
             ),
-            7 => 
-            array (
+            7 =>
+            array(
                 'approved' => 1,
                 'approved_at' => '2024-07-05 19:29:15',
                 'approved_by' => 6,
@@ -123,8 +124,8 @@ class CommentsTableSeeder extends Seeder
                 'updated_at' => '2024-07-05 19:29:15',
                 'user_id' => 6,
             ),
-            8 => 
-            array (
+            8 =>
+            array(
                 'approved' => 1,
                 'approved_at' => '2024-07-05 19:29:16',
                 'approved_by' => 6,
@@ -137,7 +138,5 @@ class CommentsTableSeeder extends Seeder
                 'user_id' => 8,
             ),
         ));
-        
-        
     }
 }

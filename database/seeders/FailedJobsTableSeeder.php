@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class FailedJobsTableSeeder extends Seeder
 {
@@ -14,11 +15,8 @@ class FailedJobsTableSeeder extends Seeder
      */
     public function run()
     {
-        
 
-        \DB::table('failed_jobs')->delete();
-        
-        
-        
+
+        DB::table('failed_jobs')->delete();
     }
 }

@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class SlidesTableSeeder extends Seeder
 {
@@ -14,13 +15,13 @@ class SlidesTableSeeder extends Seeder
      */
     public function run()
     {
-        
 
-        \DB::table('slides')->delete();
-        
-        \DB::table('slides')->insert(array (
-            0 => 
-            array (
+
+        DB::table('slides')->delete();
+
+        DB::table('slides')->insert(array(
+            0 =>
+            array(
                 'button_text' => 'بیشتر بخوانید',
                 'button_url' => 'https://coinmarketcap.c',
                 'created_at' => '2024-07-04 21:36:35',
@@ -32,7 +33,5 @@ class SlidesTableSeeder extends Seeder
                 'updated_at' => '2024-07-04 21:36:35',
             ),
         ));
-        
-        
     }
 }

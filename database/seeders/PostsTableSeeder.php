@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class PostsTableSeeder extends Seeder
 {
@@ -14,13 +15,13 @@ class PostsTableSeeder extends Seeder
      */
     public function run()
     {
-        
 
-        \DB::table('posts')->delete();
-        
-        \DB::table('posts')->insert(array (
-            0 => 
-            array (
+
+        DB::table('posts')->delete();
+
+        DB::table('posts')->insert(array(
+            0 =>
+            array(
                 'body' => 'به گزارش خبرآنلاین،‌ آزمون گروه‌های آزمایشی علوم ریاضی و فنی و علوم انسانی صبح روز پنجشنبه ۲۱ تیر و آزمون گروه‌های آزمایشی هنر و زبان‌های خارجی بعدازظهر روز پنجشنبه ۲۱ تیر ماه و آزمون گروه آزمایشی علوم تجربی صبح روز جمعه ۲۲ تیر ماه برگزار می‌شود.
 
 ایسنا نوشت: کارت شرکت در آزمون همه داوطلبان به‌همراه راهنمای شرکت در آزمون از روز یکشنبه ۱۷ تیر ماه تا روز چهارشنبه به تاریخ ۲۰ تیر ماه در سامانه جامع آزمون سراسری برای مشاهده و پرینت فعال خواهد شد.
@@ -43,7 +44,5 @@ class PostsTableSeeder extends Seeder
                 'views' => 0,
             ),
         ));
-        
-        
     }
 }

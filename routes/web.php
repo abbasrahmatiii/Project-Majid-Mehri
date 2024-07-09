@@ -65,7 +65,7 @@ Route::middleware(['auth', 'check.role'])->group(function () {
 
     // Settings
     Route::get('admin/settings/edit', [SettingController::class, 'edit'])->name('admin.settings.edit');
-    Route::patch('admin/settings.update', [SettingController::class, 'update'])->name('admin.settings.update');
+    Route::patch('admin/settings/update', [SettingController::class, 'update'])->name('admin.settings.update');
 
     // Contact settings
     Route::get('admin/contact/index', [ContactController::class, 'edit'])->name('admin.contact.index');
@@ -183,11 +183,11 @@ Route::prefix('admin')->middleware('auth')->group(function () {
 
 Route::middleware('auth')->prefix('admin')->group(function () {
     // روت‌های مدیریت مشاوره‌ها
-    Route::get('consultations/index', [ConsultationController::class, 'index'])->name('consultations.index');
-    Route::get('consultations/create', [ConsultationController::class, 'create'])->name('consultations.create');
-    Route::post('consultations', [ConsultationController::class, 'store'])->name('consultations.store');
+    Route::get('consultations/index', [ConsultationController::class, 'index'])->name('admin.consultations.index');
+    Route::get('consultations/create', [ConsultationController::class, 'create'])->name('admin.consultations.create');
+    Route::post('consultations/store', [ConsultationController::class, 'store'])->name('admin.consultations.store');
     Route::get('consultations/{consultation}', [ConsultationController::class, 'show'])->name('consultations.show');
-    Route::get('consultations/{consultation}/edit', [ConsultationController::class, 'edit'])->name('consultations.edit');
-    Route::patch('consultations/{consultation}', [ConsultationController::class, 'update'])->name('consultations.update');
-    Route::delete('consultations/{consultation}', [ConsultationController::class, 'destroy'])->name('consultations.destroy');
+    Route::get('consultations/{consultation}/edit', [ConsultationController::class, 'edit'])->name('admin.consultations.edit');
+    Route::patch('consultations/{consultation}', [ConsultationController::class, 'update'])->name('admin.consultations.update');
+    Route::delete('consultations/{consultation}', [ConsultationController::class, 'destroy'])->name('admin.consultations.destroy');
 });

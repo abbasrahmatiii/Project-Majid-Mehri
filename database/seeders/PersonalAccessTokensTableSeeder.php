@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class PersonalAccessTokensTableSeeder extends Seeder
 {
@@ -14,11 +15,8 @@ class PersonalAccessTokensTableSeeder extends Seeder
      */
     public function run()
     {
-        
 
-        \DB::table('personal_access_tokens')->delete();
-        
-        
-        
+
+        DB::table('personal_access_tokens')->delete();
     }
 }

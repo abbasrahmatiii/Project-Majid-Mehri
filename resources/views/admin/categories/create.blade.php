@@ -1,5 +1,3 @@
-<!-- resources/views/admin/categories/create.blade.php -->
-
 @extends('admin.layouts.master')
 
 @section('content')
@@ -24,4 +22,5 @@
     </div>
   </div>
 </div>
+
 @endsection

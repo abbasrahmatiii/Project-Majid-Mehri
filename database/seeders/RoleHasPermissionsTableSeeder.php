@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class RoleHasPermissionsTableSeeder extends Seeder
 {
@@ -14,23 +15,21 @@ class RoleHasPermissionsTableSeeder extends Seeder
      */
     public function run()
     {
-        
 
-        \DB::table('role_has_permissions')->delete();
-        
-        \DB::table('role_has_permissions')->insert(array (
-            0 => 
-            array (
+
+        DB::table('role_has_permissions')->delete();
+
+        DB::table('role_has_permissions')->insert(array(
+            0 =>
+            array(
                 'permission_id' => 1,
                 'role_id' => 3,
             ),
-            1 => 
-            array (
+            1 =>
+            array(
                 'permission_id' => 18,
                 'role_id' => 3,
             ),
         ));
-        
-        
     }
 }

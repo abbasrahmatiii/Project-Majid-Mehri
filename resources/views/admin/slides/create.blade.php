@@ -1,7 +1,7 @@
 @extends('admin.layouts.master')
 
 @section('content')
-<div class="mx-4 mt-4">
+<!-- <div class="mx-4 mt-4">
   @if(session('success'))
   <div class="alert alert-success alert-dismissible fade show" role="alert">
     {{ session('success') }}
@@ -10,7 +10,7 @@
     </button>
   </div>
   @endif
-</div>
+</div> -->
 <div class="card gutter-b mt-0 mx-4">
   <div class="card-header">
     <h3 class="card-title">ایجاد اسلاید جدید</h3>

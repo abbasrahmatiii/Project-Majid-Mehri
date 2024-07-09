@@ -1,7 +1,7 @@
 @extends('admin.layouts.master')
 
 @section('content')
-<div class="container mt-4">
+<!-- <div class="container mt-4">
   @if(session('success'))
   <div class="alert alert-success alert-dismissible fade show" role="alert">
     {{ session('success') }}
@@ -9,7 +9,7 @@
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
-  @endif
+  @endif -->
 
   <div class="card">
     <div class="card-header">

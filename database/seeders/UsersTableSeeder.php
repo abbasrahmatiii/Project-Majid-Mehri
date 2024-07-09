@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class UsersTableSeeder extends Seeder
 {
@@ -14,13 +15,13 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        
 
-        \DB::table('users')->delete();
-        
-        \DB::table('users')->insert(array (
-            0 => 
-            array (
+
+        DB::table('users')->delete();
+
+        DB::table('users')->insert(array(
+            0 =>
+            array(
                 'created_at' => '2024-07-04 21:13:18',
                 'email' => 'a.rahmati.dev@gmail.com',
                 'email_verified_at' => NULL,
@@ -32,8 +33,8 @@ class UsersTableSeeder extends Seeder
                 'remember_token' => NULL,
                 'updated_at' => '2024-07-05 19:02:08',
             ),
-            1 => 
-            array (
+            1 =>
+            array(
                 'created_at' => '2024-07-05 17:52:04',
                 'email' => 's@gmail.com',
                 'email_verified_at' => NULL,
@@ -45,8 +46,8 @@ class UsersTableSeeder extends Seeder
                 'remember_token' => NULL,
                 'updated_at' => '2024-07-05 17:52:04',
             ),
-            2 => 
-            array (
+            2 =>
+            array(
                 'created_at' => '2024-07-05 18:24:24',
                 'email' => 'f@gmail.com',
                 'email_verified_at' => NULL,
@@ -59,7 +60,5 @@ class UsersTableSeeder extends Seeder
                 'updated_at' => '2024-07-05 18:24:24',
             ),
         ));
-        
-        
     }
 }

@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class CenterAdsTableSeeder extends Seeder
 {
@@ -14,11 +15,8 @@ class CenterAdsTableSeeder extends Seeder
      */
     public function run()
     {
-        
 
-        \DB::table('center_ads')->delete();
-        
-        
-        
+
+        DB::table('center_ads')->delete();
     }
 }

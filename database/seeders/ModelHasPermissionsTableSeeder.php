@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class ModelHasPermissionsTableSeeder extends Seeder
 {
@@ -14,11 +15,8 @@ class ModelHasPermissionsTableSeeder extends Seeder
      */
     public function run()
     {
-        
 
-        \DB::table('model_has_permissions')->delete();
-        
-        
-        
+
+        DB::table('model_has_permissions')->delete();
     }
 }

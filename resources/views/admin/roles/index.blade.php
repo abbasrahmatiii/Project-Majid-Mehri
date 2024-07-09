@@ -1,7 +1,7 @@
 @extends('admin.layouts.master')
 
 @section('content')
-<div class="mx-4 mt-4">
+<!-- <div class="mx-4 mt-4">
   @if(session('success'))
   <div class="alert alert-success alert-dismissible fade show" role="alert">
     {{ session('success') }}
@@ -12,7 +12,7 @@
   @endif
 
 
-</div>
+</div> -->
 <div class="card card-custom gutter-b mt-0 mx-4">
   <div class="card-header flex-wrap border-0 pt-6 pb-0">
     <div class="card-title">

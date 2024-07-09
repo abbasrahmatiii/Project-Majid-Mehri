@@ -9,10 +9,10 @@
   <title>داشبرد مدیریت سایت</title>
   <meta name="description" content="Updates and statistics" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="\css\all.min.css">
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
   <!--begin::Fonts-->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" /> <!--end::Fonts-->
+  <!-- <link rel="stylesheet" href="dddds://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" /> end::Fonts -->
 
   <!--begin::Page Vendors Styles(used by this page)-->
   <link href="/admin/assets/plugins/custom/fullcalendar/fullcalendar.bundle.rtl.css?v=7.0.6" rel="stylesheet" type="text/css" />
@@ -68,7 +68,7 @@
 
       <!--begin::Topbar Mobile Toggle-->
       <button class="btn btn-hover-text-primary p-0 ml-2" id="kt_header_mobile_topbar_toggle">
-        <span class="svg-icon svg-icon-xl"><!--begin::Svg Icon | path:/admin/assets/media/svg/icons/عمومی/User.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+        <span class="svg-icon svg-icon-xl"><!--begin::Svg Icon | path:/admin/assets/media/svg/icons/عمومی/User.svg--><svg xmlns="dddd://dddd.w3.org/2000/svg" xmlns:xlink="dddd://dddd.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
             <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
               <polygon points="0 0 24 0 24 24 0 24" />
               <path d="M12,11 C9.790861,11 8,9.209139 8,7 C8,4.790861 9.790861,3 12,3 C14.209139,3 16,4.790861 16,7 C16,9.209139 14.209139,11 12,11 Z" fill="#000000" fill-rule="nonzero" opacity="0.3" />
@@ -96,7 +96,7 @@
 
           <!--begin::Toggle-->
           <button class="brand-toggle btn btn-sm px-0" id="kt_aside_toggle">
-            <span class="svg-icon svg-icon svg-icon-xl"><!--begin::Svg Icon | path:/admin/assets/media/svg/icons/Navigation/Angle-double-left.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+            <span class="svg-icon svg-icon svg-icon-xl"><!--begin::Svg Icon | path:/admin/assets/media/svg/icons/Navigation/Angle-double-left.svg--><svg xmlns="dddd://dddd.w3.org/2000/svg" xmlns:xlink="dddd://dddd.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                   <polygon points="0 0 24 0 24 24 0 24" />
                   <path d="M5.29288961,6.70710318 C4.90236532,6.31657888 4.90236532,5.68341391 5.29288961,5.29288961 C5.68341391,4.90236532 6.31657888,4.90236532 6.70710318,5.29288961 L12.7071032,11.2928896 C13.0856821,11.6714686 13.0989277,12.281055 12.7371505,12.675721 L7.23715054,18.675721 C6.86395813,19.08284 6.23139076,19.1103429 5.82427177,18.7371505 C5.41715278,18.3639581 5.38964985,17.7313908 5.76284226,17.3242718 L10.6158586,12.0300721 L5.29288961,6.70710318 Z" fill="#000000" fill-rule="nonzero" transform="translate(8.999997, 11.999999) scale(-1, 1) translate(-8.999997, -11.999999) " />
@@ -119,7 +119,7 @@
                 <a href="/admin/dashboard" class="menu-link ">
                   <span class="svg-icon menu-icon">
                     <!--begin::Svg Icon | path:/admin/assets/media/svg/icons/desgin/Layers.svg-->
-                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                    <svg xmlns="dddd://dddd.w3.org/2000/svg" xmlns:xlink="dddd://dddd.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                       <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                         <polygon points="0 0 24 0 24 24 0 24" />
                         <path d="M12.9336061,16.072447 L19.36,10.9564761 L19.5181585,10.8312381 C20.1676248,10.3169571 20.2772143,9.3735535 19.7629333,8.72408713 C19.6917232,8.63415859 19.6104327,8.55269514 19.5206557,8.48129411 L12.9336854,3.24257445 C12.3871201,2.80788259 11.6128799,2.80788259 11.0663146,3.24257445 L4.47482784,8.48488609 C3.82645598,9.00054628 3.71887192,9.94418071 4.23453211,10.5925526 C4.30500305,10.6811601 4.38527899,10.7615046 4.47382636,10.8320511 L4.63,10.9564761 L11.0659024,16.0730648 C11.6126744,16.5077525 12.3871218,16.5074963 12.9336061,16.072447 Z" fill="#000000" fill-rule="nonzero" />
@@ -139,7 +139,7 @@
                 <a href="javascript:;" class="menu-link menu-toggle">
                   <span class="svg-icon menu-icon">
                     <!--begin::Svg Icon | path:/admin/assets/media/svg/icons/layout/layout-4-blocks.svg-->
-                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                    <svg xmlns="dddd://dddd.w3.org/2000/svg" xmlns:xlink="dddd://dddd.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                       <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                         <rect x="0" y="0" width="24" height="24" />
                         <rect fill="#000000" x="4" y="4" width="7" height="7" rx="1.5" />
@@ -187,7 +187,7 @@
                 <a href="javascript:;" class="menu-link menu-toggle">
                   <span class="svg-icon menu-icon">
                     <!--begin::Svg Icon | path:/admin/assets/media/svg/icons/Communication/Add-user.svg-->
-                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                    <svg xmlns="dddd://dddd.w3.org/2000/svg" xmlns:xlink="dddd://dddd.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                       <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                         <polygon points="0 0 24 0 24 24 0 24" />
                         <path d="M17,14 C19.7614237,14 22,16.2385763 22,19 L22,20 C22,20.5522847 21.5522847,21 21,21 C20.4477153,21 20,20.5522847 20,20 L20,19 C20,17.3431458 18.6568542,16 17,16 C15.3431458,16 14,17.3431458 14,19 L14,20 C14,20.5522847 13.5522847,21 13,21 C12.4477153,21 12,20.5522847 12,20 L12,19 C12,16.2385763 14.2385763,14 17,14 Z M6,14 L6,14 L6,14 Z" fill="#000000" fill-rule="nonzero" />
@@ -223,7 +223,7 @@
                 <a href="javascript:;" class="menu-link menu-toggle">
                   <span class="svg-icon menu-icon">
                     <!--begin::Svg Icon | path:/admin/assets/media/svg/icons/Design/Image.svg-->
-                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                    <svg xmlns="dddd://dddd.w3.org/2000/svg" xmlns:xlink="dddd://dddd.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                       <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                         <rect x="0" y="0" width="24" height="24" />
                         <path d="M4,6 L5.5,6 C5.77614237,6 6,5.77614237 6,5.5 C6,5.22385763 5.77614237,5 5.5,5 L4,5 C3.44771525,5 3,5.44771525 3,6 L3,18 C3,18.5522847 3.44771525,19 4,19 L20,19 C20.5522847,19 21,18.5522847 21,18 L21,6 C21,5.44771525 20.5522847,5 20,5 L18.5,5 C18.2238576,5 18,5.22385763 18,5.5 C18,5.77614237 18.2238576,6 18.5,6 L20,6 L20,18 L4,18 L4,6 Z" fill="#000000" fill-rule="nonzero" />
@@ -259,7 +259,7 @@
                 <a href="javascript:;" class="menu-link menu-toggle">
                   <span class="svg-icon menu-icon">
                     <!--begin::Svg Icon | path:/admin/assets/media/svg/icons/Communication/Clipboard-list.svg-->
-                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                    <svg xmlns="dddd://dddd.w3.org/2000/svg" xmlns:xlink="dddd://dddd.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                       <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                         <rect x="0" y="0" width="24" height="24" />
                         <path d="M9,3 L15,3 C16.6568542,3 18,4.34314575 18,6 L18,7 L18,7 C19.1045695,7 20,7.8954305 20,9 L20,17 C20,18.1045695 19.1045695,19 18,19 L6,19 C4.8954305,19 4,18.1045695 4,17 L4,9 C4,7.8954305 4.8954305,7 6,7 L6,7 L6,6 C6,4.34314575 7.34314575,3 9,3 Z M9,5 C8.44771525,5 8,5.44771525 8,6 L8,7 L16,7 L16,6 C16,5.44771525 15.5522847,5 15,5 L9,5 Z M11,11 C10.4477153,11 10,11.4477153 10,12 C10,12.5522847 10.4477153,13 11,13 L13,13 C13.5522847,13 14,12.5522847 14,12 C14,11.4477153 13.5522847,11 13,11 L11,11 Z M7,15 C6.44771525,15 6,15.4477153 6,16 C6,16.5522847 6.44771525,17 7,17 L17,17 C17.5522847,17 18,16.5522847 18,16 C18,15.4477153 17.5522847,15 17,15 L7,15 Z" fill="#000000" fill-rule="nonzero" />
@@ -293,7 +293,7 @@
                 <a href="javascript:;" class="menu-link menu-toggle">
                   <span class="svg-icon menu-icon">
                     <!--begin::Svg Icon | path:/admin/assets/media/svg/icons/Communication/Group-chat.svg-->
-                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                    <svg xmlns="dddd://dddd.w3.org/2000/svg" xmlns:xlink="dddd://dddd.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                       <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                         <rect x="0" y="0" width="24" height="24" />
                         <path d="M16,11 C18.209139,11 20,12.790861 20,15 C20,17.209139 18.209139,19 16,19 L12,19 L12,19 L12,19 C9.790861,19 8,17.209139 8,15 C8,12.790861 9.790861,11 12,11 L16,11 Z M16,13 L12,13 C10.8954305,13 10,13.8954305 10,15 C10,16.1045695 10.8954305,17 12,17 L16,17 C17.1045695,17 18,16.1045695 18,15 C18,13.8954305 17.1045695,13 16,13 Z" fill="#000000" />
@@ -319,7 +319,7 @@
                       </a>
                     </li>
                     <li class="menu-item " aria-haspopup="true">
-                      <a href="admin/posts/index" class="menu-link ">
+                      <a href="/admin/posts/index" class="menu-link ">
                         <i class="menu-bullet menu-bullet-dot"><span></span></i>
                         <span class="menu-text">لیست پست ها</span>
                       </a>
@@ -356,7 +356,7 @@
               <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
                 <a href="javascript:;" class="menu-link menu-toggle">
                   <span class="svg-icon menu-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                    <svg xmlns="dddd://dddd.w3.org/2000/svg" xmlns:xlink="dddd://dddd.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                       <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                         <polygon points="0 0 24 0 24 24 0 24" />
                         <path d="M17,14 C19.7614237,14 22,16.2385763 22,19 L22,20 C22,20.5522847 21.5522847,21 21,21 C20.4477153,21 20,20.5522847 20,20 L20,19 C20,17.3431458 18.6568542,16 17,16 C15.3431458,16 14,17.3431458 14,19 L14,20 C14,20.5522847 13.5522847,21 13,21 C12.4477153,21 12,20.5522847 12,20 L12,19 C12,16.2385763 14.2385763,14 17,14 Z M6,14 L6,14 L6,14 Z" fill="#000000" fill-rule="nonzero" />
@@ -416,7 +416,7 @@
 
         <!--begin::Content-->
 
-        @if(session('error'))
+        <!-- @if(session('error'))
         <div class="content mr-3 ml-3">
 
           <div class="alert alert-danger alert-dismissible fade show mt-5" role="alert">
@@ -427,7 +427,7 @@
           </div>
         </div>
         @else
-        @endif
+        @endif -->
 
         <div class="content  d-flex flex-column flex-column-fluid " id="kt_content">
 
@@ -479,7 +479,7 @@
                 <!--begin::دراپ دان-->
                 <div class="dropdown dropdown-inline" data-toggle="tooltip" title="" data-placement="left" data-original-title="اقدامات سریع">
                   <a href="#" class="btn btn-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <span class="svg-icon svg-icon-success svg-icon-2x"><!--begin::Svg Icon | path:assets/media/svg/icons/پرونده ها/فایل-plus.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                    <span class="svg-icon svg-icon-success svg-icon-2x"><!--begin::Svg Icon | path:assets/media/svg/icons/پرونده ها/فایل-plus.svg--><svg xmlns="dddd://dddd.w3.org/2000/svg" xmlns:xlink="dddd://dddd.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                         <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                           <polygon points="0 0 24 0 24 24 0 24"></polygon>
                           <path d="M5.85714286,2 L13.7364114,2 C14.0910962,2 14.4343066,2.12568431 14.7051108,2.35473959 L19.4686994,6.3839416 C19.8056532,6.66894833 20,7.08787823 20,7.52920201 L20,20.0833333 C20,21.8738751 19.9795521,22 18.1428571,22 L5.85714286,22 C4.02044787,22 4,21.8738751 4,20.0833333 L4,3.91666667 C4,2.12612489 4.02044787,2 5.85714286,2 Z" fill="#000000" fill-rule="nonzero" opacity="0.3"></path>
@@ -556,15 +556,15 @@
             <!--begin::کپی رایت-->
             <div class="text-dark order-2 order-md-1">
               <span class="text-muted font-weight-bold mr-2">2020&copy;</span>
-              <a href="http://keenthemes.com/metronic" target="_blank" class="text-dark-75 text-hover-primary">Keenthemes</a>
+              <a href="dddd://keenthemes.com/metronic" target="_blank" class="text-dark-75 text-hover-primary">Keenthemes</a>
             </div>
             <!--end::کپی رایت-->
 
             <!--begin::Nav-->
             <div class="nav nav-dark">
-              <a href="http://keenthemes.com/metronic" target="_blank" class="nav-link pl-0 pr-5">درباره ما</a>
-              <a href="http://keenthemes.com/metronic" target="_blank" class="nav-link pl-0 pr-5">تیم</a>
-              <a href="http://keenthemes.com/metronic" target="_blank" class="nav-link pl-0 pr-0">مخاطب</a>
+              <a href="dddd://keenthemes.com/metronic" target="_blank" class="nav-link pl-0 pr-5">درباره ما</a>
+              <a href="dddd://keenthemes.com/metronic" target="_blank" class="nav-link pl-0 pr-5">تیم</a>
+              <a href="dddd://keenthemes.com/metronic" target="_blank" class="nav-link pl-0 pr-0">مخاطب</a>
             </div>
             <!--end::Nav-->
           </div>
@@ -615,7 +615,7 @@
             <a href="#" class="navi-item">
               <span class="navi-link p-0 pb-2">
                 <span class="navi-icon mr-1">
-                  <span class="svg-icon svg-icon-lg svg-icon-primary"><!--begin::Svg Icon | path:/admin/assets/media/svg/icons/ارتباطات/Mail-notification.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                  <span class="svg-icon svg-icon-lg svg-icon-primary"><!--begin::Svg Icon | path:/admin/assets/media/svg/icons/ارتباطات/Mail-notification.svg--><svg xmlns="dddd://dddd.w3.org/2000/svg" xmlns:xlink="dddd://dddd.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                       <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                         <rect x="0" y="0" width="24" height="24" />
                         <path d="M21,12.0829584 C20.6747915,12.0283988 20.3407122,12 20,12 C16.6862915,12 14,14.6862915 14,18 C14,18.3407122 14.0283988,18.6747915 14.0829584,19 L5,19 C3.8954305,19 3,18.1045695 3,17 L3,8 C3,6.8954305 3.8954305,6 5,6 L19,6 C20.1045695,6 21,6.8954305 21,8 L21,12.0829584 Z M18.1444251,7.83964668 L12,11.1481833 L5.85557487,7.83964668 C5.4908718,7.6432681 5.03602525,7.77972206 4.83964668,8.14442513 C4.6432681,8.5091282 4.77972206,8.96397475 5.14442513,9.16035332 L11.6444251,12.6603533 C11.8664074,12.7798822 12.1335926,12.7798822 12.3555749,12.6603533 L18.8555749,9.16035332 C19.2202779,8.96397475 19.3567319,8.5091282 19.1603533,8.14442513 C18.9639747,7.77972206 18.5091282,7.6432681 18.1444251,7.83964668 Z" fill="#000000" />
@@ -643,7 +643,7 @@
           <div class="navi-link">
             <div class="symbol symbol-40 bg-light mr-3">
               <div class="symbol-label">
-                <span class="svg-icon svg-icon-md svg-icon-success"><!--begin::Svg Icon | path:/admin/assets/media/svg/icons/general/اطلاع2.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                <span class="svg-icon svg-icon-md svg-icon-success"><!--begin::Svg Icon | path:/admin/assets/media/svg/icons/general/اطلاع2.svg--><svg xmlns="dddd://dddd.w3.org/2000/svg" xmlns:xlink="dddd://dddd.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                     <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                       <rect x="0" y="0" width="24" height="24" />
                       <path d="M13.2070325,4 C13.0721672,4.47683179 13,4.97998812 13,5.5 C13,8.53756612 15.4624339,11 18.5,11 C19.0200119,11 19.5231682,10.9278328 20,10.7929675 L20,17 C20,18.6568542 18.6568542,20 17,20 L7,20 C5.34314575,20 4,18.6568542 4,17 L4,7 C4,5.34314575 5.34314575,4 7,4 L13.2070325,4 Z" fill="#000000" />
@@ -670,7 +670,7 @@
           <div class="navi-link">
             <div class="symbol symbol-40 bg-light mr-3">
               <div class="symbol-label">
-                <span class="svg-icon svg-icon-md svg-icon-warning"><!--begin::Svg Icon | path:/admin/assets/media/svg/icons/Shopping/Chart-bar1.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                <span class="svg-icon svg-icon-md svg-icon-warning"><!--begin::Svg Icon | path:/admin/assets/media/svg/icons/Shopping/Chart-bar1.svg--><svg xmlns="dddd://dddd.w3.org/2000/svg" xmlns:xlink="dddd://dddd.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                     <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                       <rect x="0" y="0" width="24" height="24" />
                       <rect fill="#000000" opacity="0.3" x="12" y="4" width="3" height="13" rx="1.5" />
@@ -698,7 +698,7 @@
           <div class="navi-link">
             <div class="symbol symbol-40 bg-light mr-3">
               <div class="symbol-label">
-                <span class="svg-icon svg-icon-md svg-icon-danger"><!--begin::Svg Icon | path:/admin/assets/media/svg/icons/پرونده ها/ انتخاب شده -file.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                <span class="svg-icon svg-icon-md svg-icon-danger"><!--begin::Svg Icon | path:/admin/assets/media/svg/icons/پرونده ها/ انتخاب شده -file.svg--><svg xmlns="dddd://dddd.w3.org/2000/svg" xmlns:xlink="dddd://dddd.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                     <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                       <polygon points="0 0 24 0 24 24 0 24" />
                       <path d="M4.85714286,1 L11.7364114,1 C12.0910962,1 12.4343066,1.12568431 12.7051108,1.35473959 L17.4686994,5.3839416 C17.8056532,5.66894833 18,6.08787823 18,6.52920201 L18,19.0833333 C18,20.8738751 17.9795521,21 16.1428571,21 L4.85714286,21 C3.02044787,21 3,20.8738751 3,19.0833333 L3,2.91666667 C3,1.12612489 3.02044787,1 4.85714286,1 Z M8,12 C7.44771525,12 7,12.4477153 7,13 C7,13.5522847 7.44771525,14 8,14 L15,14 C15.5522847,14 16,13.5522847 16,13 C16,12.4477153 15.5522847,12 15,12 L8,12 Z M8,16 C7.44771525,16 7,16.4477153 7,17 C7,17.5522847 7.44771525,18 8,18 L11,18 C11.5522847,18 12,17.5522847 12,17 C12,16.4477153 11.5522847,16 11,16 L8,16 Z" fill="#000000" fill-rule="nonzero" opacity="0.3" />
@@ -724,7 +724,7 @@
           <div class="navi-link">
             <div class="symbol symbol-40 bg-light mr-3">
               <div class="symbol-label">
-                <span class="svg-icon svg-icon-md svg-icon-primary"><!--begin::Svg Icon | path:/admin/assets/media/svg/icons/ارتباطات/Mail-opened.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                <span class="svg-icon svg-icon-md svg-icon-primary"><!--begin::Svg Icon | path:/admin/assets/media/svg/icons/ارتباطات/Mail-opened.svg--><svg xmlns="dddd://dddd.w3.org/2000/svg" xmlns:xlink="dddd://dddd.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                     <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                       <rect x="0" y="0" width="24" height="24" />
                       <path d="M6,2 L18,2 C18.5522847,2 19,2.44771525 19,3 L19,12 C19,12.5522847 18.5522847,13 18,13 L6,13 C5.44771525,13 5,12.5522847 5,12 L5,3 C5,2.44771525 5.44771525,2 6,2 Z M7.5,5 C7.22385763,5 7,5.22385763 7,5.5 C7,5.77614237 7.22385763,6 7.5,6 L13.5,6 C13.7761424,6 14,5.77614237 14,5.5 C14,5.22385763 13.7761424,5 13.5,5 L7.5,5 Z M7.5,7 C7.22385763,7 7,7.22385763 7,7.5 C7,7.77614237 7.22385763,8 7.5,8 L10.5,8 C10.7761424,8 11,7.77614237 11,7.5 C11,7.22385763 10.7761424,7 10.5,7 L7.5,7 Z" fill="#000000" opacity="0.3" />
@@ -762,7 +762,7 @@
         <!--begin::Item-->
         <div class="d-flex align-items-center bg-light-warning rounded p-5 gutter-b">
           <span class="svg-icon svg-icon-warning mr-5">
-            <span class="svg-icon svg-icon-lg"><!--begin::Svg Icon | path:/admin/assets/media/svg/icons/home/کتابخانه.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+            <span class="svg-icon svg-icon-lg"><!--begin::Svg Icon | path:/admin/assets/media/svg/icons/home/کتابخانه.svg--><svg xmlns="dddd://dddd.w3.org/2000/svg" xmlns:xlink="dddd://dddd.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                   <rect x="0" y="0" width="24" height="24" />
                   <path d="M5,3 L6,3 C6.55228475,3 7,3.44771525 7,4 L7,20 C7,20.5522847 6.55228475,21 6,21 L5,21 C4.44771525,21 4,20.5522847 4,20 L4,4 C4,3.44771525 4.44771525,3 5,3 Z M10,3 L11,3 C11.5522847,3 12,3.44771525 12,4 L12,20 C12,20.5522847 11.5522847,21 11,21 L10,21 C9.44771525,21 9,20.5522847 9,20 L9,4 C9,3.44771525 9.44771525,3 10,3 Z" fill="#000000" />
@@ -782,7 +782,7 @@
         <!--begin::Item-->
         <div class="d-flex align-items-center bg-light-success rounded p-5 gutter-b">
           <span class="svg-icon svg-icon-success mr-5">
-            <span class="svg-icon svg-icon-lg"><!--begin::Svg Icon | path:/admin/assets/media/svg/icons/ارتباطات/Write.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+            <span class="svg-icon svg-icon-lg"><!--begin::Svg Icon | path:/admin/assets/media/svg/icons/ارتباطات/Write.svg--><svg xmlns="dddd://dddd.w3.org/2000/svg" xmlns:xlink="dddd://dddd.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                   <rect x="0" y="0" width="24" height="24" />
                   <path d="M12.2674799,18.2323597 L12.0084872,5.45852451 C12.0004303,5.06114792 12.1504154,4.6768183 12.4255037,4.38993949 L15.0030167,1.70195304 L17.5910752,4.40093695 C17.8599071,4.6812911 18.0095067,5.05499603 18.0083938,5.44341307 L17.9718262,18.2062508 C17.9694575,19.0329966 17.2985816,19.701953 16.4718324,19.701953 L13.7671717,19.701953 C12.9505952,19.701953 12.2840328,19.0487684 12.2674799,18.2323597 Z" fill="#000000" fill-rule="nonzero" transform="translate(14.701953, 10.701953) rotate(-135.000000) translate(-14.701953, -10.701953) " />
@@ -801,7 +801,7 @@
         <!--begin::Item-->
         <div class="d-flex align-items-center bg-light-danger rounded p-5 gutter-b">
           <span class="svg-icon svg-icon-danger mr-5">
-            <span class="svg-icon svg-icon-lg"><!--begin::Svg Icon | path:/admin/assets/media/svg/icons/ارتباطات/group-chat.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+            <span class="svg-icon svg-icon-lg"><!--begin::Svg Icon | path:/admin/assets/media/svg/icons/ارتباطات/group-chat.svg--><svg xmlns="dddd://dddd.w3.org/2000/svg" xmlns:xlink="dddd://dddd.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                   <rect x="0" y="0" width="24" height="24" />
                   <path d="M16,15.6315789 L16,12 C16,10.3431458 14.6568542,9 13,9 L6.16183229,9 L6.16183229,5.52631579 C6.16183229,4.13107011 7.29290239,3 8.68814808,3 L20.4776218,3 C21.8728674,3 23.0039375,4.13107011 23.0039375,5.52631579 L23.0039375,13.1052632 L23.0206157,17.786793 C23.0215995,18.0629336 22.7985408,18.2875874 22.5224001,18.2885711 C22.3891754,18.2890457 22.2612702,18.2363324 22.1670655,18.1421277 L19.6565168,15.6315789 L16,15.6315789 Z" fill="#000000" />
@@ -820,7 +820,7 @@
         <!--begin::Item-->
         <div class="d-flex align-items-center bg-light-info rounded p-5">
           <span class="svg-icon svg-icon-info mr-5">
-            <span class="svg-icon svg-icon-lg"><!--begin::Svg Icon | path:/admin/assets/media/svg/icons/عمومی/Attachment2.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+            <span class="svg-icon svg-icon-lg"><!--begin::Svg Icon | path:/admin/assets/media/svg/icons/عمومی/Attachment2.svg--><svg xmlns="dddd://dddd.w3.org/2000/svg" xmlns:xlink="dddd://dddd.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                   <rect x="0" y="0" width="24" height="24" />
                   <path d="M11.7573593,15.2426407 L8.75735931,15.2426407 C8.20507456,15.2426407 7.75735931,15.6903559 7.75735931,16.2426407 C7.75735931,16.7949254 8.20507456,17.2426407 8.75735931,17.2426407 L11.7573593,17.2426407 L11.7573593,18.2426407 C11.7573593,19.3472102 10.8619288,20.2426407 9.75735931,20.2426407 L5.75735931,20.2426407 C4.65278981,20.2426407 3.75735931,19.3472102 3.75735931,18.2426407 L3.75735931,14.2426407 C3.75735931,13.1380712 4.65278981,12.2426407 5.75735931,12.2426407 L9.75735931,12.2426407 C10.8619288,12.2426407 11.7573593,13.1380712 11.7573593,14.2426407 L11.7573593,15.2426407 Z" fill="#000000" opacity="0.3" transform="translate(7.757359, 16.242641) rotate(-45.000000) translate(-7.757359, -16.242641) " />
@@ -1133,7 +1133,7 @@
             <!--begin: Item-->
             <div class="d-flex align-items-center bg-light-warning rounded p-5 mb-5">
               <span class="svg-icon svg-icon-warning mr-5">
-                <span class="svg-icon svg-icon-lg"><!--begin::Svg Icon | path:/admin/assets/media/svg/icons/home/کتابخانه.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                <span class="svg-icon svg-icon-lg"><!--begin::Svg Icon | path:/admin/assets/media/svg/icons/home/کتابخانه.svg--><svg xmlns="dddd://dddd.w3.org/2000/svg" xmlns:xlink="dddd://dddd.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                     <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                       <rect x="0" y="0" width="24" height="24" />
                       <path d="M5,3 L6,3 C6.55228475,3 7,3.44771525 7,4 L7,20 C7,20.5522847 6.55228475,21 6,21 L5,21 C4.44771525,21 4,20.5522847 4,20 L4,4 C4,3.44771525 4.44771525,3 5,3 Z M10,3 L11,3 C11.5522847,3 12,3.44771525 12,4 L12,20 C12,20.5522847 11.5522847,21 11,21 L10,21 C9.44771525,21 9,20.5522847 9,20 L9,4 C9,3.44771525 9.44771525,3 10,3 Z" fill="#000000" />
@@ -1153,7 +1153,7 @@
             <!--begin: Item-->
             <div class="d-flex align-items-center bg-light-success rounded p-5 mb-5">
               <span class="svg-icon svg-icon-success mr-5">
-                <span class="svg-icon svg-icon-lg"><!--begin::Svg Icon | path:/admin/assets/media/svg/icons/ارتباطات/Write.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                <span class="svg-icon svg-icon-lg"><!--begin::Svg Icon | path:/admin/assets/media/svg/icons/ارتباطات/Write.svg--><svg xmlns="dddd://dddd.w3.org/2000/svg" xmlns:xlink="dddd://dddd.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                     <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                       <rect x="0" y="0" width="24" height="24" />
                       <path d="M12.2674799,18.2323597 L12.0084872,5.45852451 C12.0004303,5.06114792 12.1504154,4.6768183 12.4255037,4.38993949 L15.0030167,1.70195304 L17.5910752,4.40093695 C17.8599071,4.6812911 18.0095067,5.05499603 18.0083938,5.44341307 L17.9718262,18.2062508 C17.9694575,19.0329966 17.2985816,19.701953 16.4718324,19.701953 L13.7671717,19.701953 C12.9505952,19.701953 12.2840328,19.0487684 12.2674799,18.2323597 Z" fill="#000000" fill-rule="nonzero" transform="translate(14.701953, 10.701953) rotate(-135.000000) translate(-14.701953, -10.701953) " />
@@ -1172,7 +1172,7 @@
             <!--begin: Item-->
             <div class="d-flex align-items-center bg-light-danger rounded p-5 mb-5">
               <span class="svg-icon svg-icon-danger mr-5">
-                <span class="svg-icon svg-icon-lg"><!--begin::Svg Icon | path:/admin/assets/media/svg/icons/ارتباطات/group-chat.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                <span class="svg-icon svg-icon-lg"><!--begin::Svg Icon | path:/admin/assets/media/svg/icons/ارتباطات/group-chat.svg--><svg xmlns="dddd://dddd.w3.org/2000/svg" xmlns:xlink="dddd://dddd.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                     <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                       <rect x="0" y="0" width="24" height="24" />
                       <path d="M16,15.6315789 L16,12 C16,10.3431458 14.6568542,9 13,9 L6.16183229,9 L6.16183229,5.52631579 C6.16183229,4.13107011 7.29290239,3 8.68814808,3 L20.4776218,3 C21.8728674,3 23.0039375,4.13107011 23.0039375,5.52631579 L23.0039375,13.1052632 L23.0206157,17.786793 C23.0215995,18.0629336 22.7985408,18.2875874 22.5224001,18.2885711 C22.3891754,18.2890457 22.2612702,18.2363324 22.1670655,18.1421277 L19.6565168,15.6315789 L16,15.6315789 Z" fill="#000000" />
@@ -1191,7 +1191,7 @@
             <!--begin: Item-->
             <div class="d-flex align-items-center bg-light-info rounded p-5">
               <span class="svg-icon svg-icon-info mr-5">
-                <span class="svg-icon svg-icon-lg"><!--begin::Svg Icon | path:/admin/assets/media/svg/icons/عمومی/Attachment2.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                <span class="svg-icon svg-icon-lg"><!--begin::Svg Icon | path:/admin/assets/media/svg/icons/عمومی/Attachment2.svg--><svg xmlns="dddd://dddd.w3.org/2000/svg" xmlns:xlink="dddd://dddd.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                     <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                       <rect x="0" y="0" width="24" height="24" />
                       <path d="M11.7573593,15.2426407 L8.75735931,15.2426407 C8.20507456,15.2426407 7.75735931,15.6903559 7.75735931,16.2426407 C7.75735931,16.7949254 8.20507456,17.2426407 8.75735931,17.2426407 L11.7573593,17.2426407 L11.7573593,18.2426407 C11.7573593,19.3472102 10.8619288,20.2426407 9.75735931,20.2426407 L5.75735931,20.2426407 C4.65278981,20.2426407 3.75735931,19.3472102 3.75735931,18.2426407 L3.75735931,14.2426407 C3.75735931,13.1380712 4.65278981,12.2426407 5.75735931,12.2426407 L9.75735931,12.2426407 C10.8619288,12.2426407 11.7573593,13.1380712 11.7573593,14.2426407 L11.7573593,15.2426407 Z" fill="#000000" opacity="0.3" transform="translate(7.757359, 16.242641) rotate(-45.000000) translate(-7.757359, -16.242641) " />
@@ -1589,7 +1589,7 @@
               <!--begin::دراپ دان Menu-->
               <div class="dropdown dropdown-inline">
                 <button type="button" class="btn btn-clean btn-sm btn-icon btn-icon-md" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <span class="svg-icon svg-icon-lg"><!--begin::Svg Icon | path:/admin/assets/media/svg/icons/ارتباطات/Add-user.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                  <span class="svg-icon svg-icon-lg"><!--begin::Svg Icon | path:/admin/assets/media/svg/icons/ارتباطات/Add-user.svg--><svg xmlns="dddd://dddd.w3.org/2000/svg" xmlns:xlink="dddd://dddd.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                       <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                         <polygon points="0 0 24 0 24 24 0 24" />
                         <path d="M18,8 L16,8 C15.4477153,8 15,7.55228475 15,7 C15,6.44771525 15.4477153,6 16,6 L18,6 L18,4 C18,3.44771525 18.4477153,3 19,3 C19.5522847,3 20,3.44771525 20,4 L20,6 L22,6 C22.5522847,6 23,6.44771525 23,7 C23,7.55228475 22.5522847,8 22,8 L20,8 L20,10 C20,10.5522847 19.5522847,11 19,11 C18.4477153,11 18,10.5522847 18,10 L18,8 Z M9,11 C6.790861,11 5,9.209139 5,7 C5,4.790861 6.790861,3 9,3 C11.209139,3 13,4.790861 13,7 C13,9.209139 11.209139,11 9,11 Z" fill="#000000" fill-rule="nonzero" opacity="0.3" />
@@ -1759,7 +1759,7 @@
                     </div>
                   </div>
                   <div class="mt-2 rounded p-5 bg-light-success text-dark-50 font-weight-bold font-size-lg text-left max-w-400px">
-                    شما می توانید با کلیک بر روی این مخزن بلافاصله از حالت انتخاب خارج شوید:<a href="#">https://github.com</a>
+                    شما می توانید با کلیک بر روی این مخزن بلافاصله از حالت انتخاب خارج شوید:<a href="#">dddds://github.com</a>
                   </div>
                 </div>
                 <!--end::پیام In-->
@@ -1846,7 +1846,7 @@
 
   <!--begin::Scrolltop-->
   <div id="kt_scrolltop" class="scrolltop">
-    <span class="svg-icon"><!--begin::Svg Icon | path:/admin/assets/media/svg/icons/Navigation/Up-2.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+    <span class="svg-icon"><!--begin::Svg Icon | path:/admin/assets/media/svg/icons/Navigation/Up-2.svg--><svg xmlns="dddd://dddd.w3.org/2000/svg" xmlns:xlink="dddd://dddd.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
         <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
           <polygon points="0 0 24 0 24 24 0 24" />
           <rect fill="#000000" opacity="0.3" x="11" y="10" width="2" height="10" rx="1" />
@@ -1879,8 +1879,8 @@
             <img src="/admin/assets//../../../../../../doc//admin/assets/img/demos/demo1.png" alt="" class="w-100" />
           </div>
           <div class="overlay-layer">
-            <a href="https://metronic.job100.ir/ltr/html/demo1/dist/index.html" class="btn font-weight-bold btn-primary btn-shadow " target="_blank">پیش فرض</a>
-            <a href="https://metronic.job100.ir/rtl/html/demo1/dist/index.html" class="btn btn-light btn-shadow" target="_blank">نسخه راست چین</a>
+            <a href="dddds://metronic.job100.ir/ltr/html/demo1/dist/index.html" class="btn font-weight-bold btn-primary btn-shadow " target="_blank">پیش فرض</a>
+            <a href="dddds://metronic.job100.ir/rtl/html/demo1/dist/index.html" class="btn btn-light btn-shadow" target="_blank">نسخه راست چین</a>
           </div>
         </div>
         <h5 class="font-weight-bold mb-4 text-center">نسخه ی نمایشی 2</h5>
@@ -1889,8 +1889,8 @@
             <img src="/admin/assets//../../../../../../doc//admin/assets/img/demos/demo2.png" alt="" class="w-100" />
           </div>
           <div class="overlay-layer">
-            <a href="https://metronic.job100.ir/ltr/html/demo2/dist/index.html" class="btn font-weight-bold btn-primary btn-shadow " target="_blank">پیش فرض</a>
-            <a href="https://metronic.job100.ir/rtl/html/demo2/dist/index.html" class="btn btn-light btn-shadow" target="_blank">نسخه راست چین</a>
+            <a href="dddds://metronic.job100.ir/ltr/html/demo2/dist/index.html" class="btn font-weight-bold btn-primary btn-shadow " target="_blank">پیش فرض</a>
+            <a href="dddds://metronic.job100.ir/rtl/html/demo2/dist/index.html" class="btn btn-light btn-shadow" target="_blank">نسخه راست چین</a>
           </div>
         </div>
         <h5 class="font-weight-bold mb-4 text-center">نسخه ی نمایشی 3</h5>
@@ -1899,8 +1899,8 @@
             <img src="/admin/assets//../../../../../../doc//admin/assets/img/demos/demo3.png" alt="" class="w-100" />
           </div>
           <div class="overlay-layer">
-            <a href="https://metronic.job100.ir/ltr/html/demo3/dist/index.html" class="btn font-weight-bold btn-primary btn-shadow " target="_blank">پیش فرض</a>
-            <a href="https://metronic.job100.ir/rtl/html/demo3/dist/index.html" class="btn btn-light btn-shadow" target="_blank">نسخه راست چین</a>
+            <a href="dddds://metronic.job100.ir/ltr/html/demo3/dist/index.html" class="btn font-weight-bold btn-primary btn-shadow " target="_blank">پیش فرض</a>
+            <a href="dddds://metronic.job100.ir/rtl/html/demo3/dist/index.html" class="btn btn-light btn-shadow" target="_blank">نسخه راست چین</a>
           </div>
         </div>
         <h5 class="font-weight-bold mb-4 text-center">نسخه ی نمایشی 4</h5>
@@ -1909,8 +1909,8 @@
             <img src="/admin/assets//../../../../../../doc//admin/assets/img/demos/demo4.png" alt="" class="w-100" />
           </div>
           <div class="overlay-layer">
-            <a href="https://metronic.job100.ir/ltr/html/demo4/dist/index.html" class="btn font-weight-bold btn-primary btn-shadow " target="_blank">پیش فرض</a>
-            <a href="https://metronic.job100.ir/rtl/html/demo4/dist/index.html" class="btn btn-light btn-shadow" target="_blank">نسخه راست چین</a>
+            <a href="dddds://metronic.job100.ir/ltr/html/demo4/dist/index.html" class="btn font-weight-bold btn-primary btn-shadow " target="_blank">پیش فرض</a>
+            <a href="dddds://metronic.job100.ir/rtl/html/demo4/dist/index.html" class="btn btn-light btn-shadow" target="_blank">نسخه راست چین</a>
           </div>
         </div>
         <h5 class="font-weight-bold mb-4 text-center">نسخه ی نمایشی 5</h5>
@@ -1919,8 +1919,8 @@
             <img src="/admin/assets//../../../../../../doc//admin/assets/img/demos/demo5.png" alt="" class="w-100" />
           </div>
           <div class="overlay-layer">
-            <a href="https://metronic.job100.ir/ltr/html/demo5/dist/index.html" class="btn font-weight-bold btn-primary btn-shadow " target="_blank">پیش فرض</a>
-            <a href="https://metronic.job100.ir/rtl/html/demo5/dist/index.html" class="btn btn-light btn-shadow" target="_blank">نسخه راست چین</a>
+            <a href="dddds://metronic.job100.ir/ltr/html/demo5/dist/index.html" class="btn font-weight-bold btn-primary btn-shadow " target="_blank">پیش فرض</a>
+            <a href="dddds://metronic.job100.ir/rtl/html/demo5/dist/index.html" class="btn btn-light btn-shadow" target="_blank">نسخه راست چین</a>
           </div>
         </div>
         <h5 class="font-weight-bold mb-4 text-center">نسخه ی نمایشی 6</h5>
@@ -1929,8 +1929,8 @@
             <img src="/admin/assets//../../../../../../doc//admin/assets/img/demos/demo6.png" alt="" class="w-100" />
           </div>
           <div class="overlay-layer">
-            <a href="https://metronic.job100.ir/ltr/html/demo6/dist/index.html" class="btn font-weight-bold btn-primary btn-shadow " target="_blank">پیش فرض</a>
-            <a href="https://metronic.job100.ir/rtl/html/demo6/dist/index.html" class="btn btn-light btn-shadow" target="_blank">نسخه راست چین</a>
+            <a href="dddds://metronic.job100.ir/ltr/html/demo6/dist/index.html" class="btn font-weight-bold btn-primary btn-shadow " target="_blank">پیش فرض</a>
+            <a href="dddds://metronic.job100.ir/rtl/html/demo6/dist/index.html" class="btn btn-light btn-shadow" target="_blank">نسخه راست چین</a>
           </div>
         </div>
         <h5 class="font-weight-bold mb-4 text-center">نسخه ی نمایشی 7</h5>
@@ -1939,8 +1939,8 @@
             <img src="/admin/assets//../../../../../../doc//admin/assets/img/demos/demo7.png" alt="" class="w-100" />
           </div>
           <div class="overlay-layer">
-            <a href="https://metronic.job100.ir/ltr/html/demo7/dist/index.html" class="btn font-weight-bold btn-primary btn-shadow " target="_blank">پیش فرض</a>
-            <a href="https://metronic.job100.ir/rtl/html/demo7/dist/index.html" class="btn btn-light btn-shadow" target="_blank">نسخه راست چین</a>
+            <a href="dddds://metronic.job100.ir/ltr/html/demo7/dist/index.html" class="btn font-weight-bold btn-primary btn-shadow " target="_blank">پیش فرض</a>
+            <a href="dddds://metronic.job100.ir/rtl/html/demo7/dist/index.html" class="btn btn-light btn-shadow" target="_blank">نسخه راست چین</a>
           </div>
         </div>
         <h5 class="font-weight-bold mb-4 text-center">نسخه ی نمایشی 8</h5>
@@ -1949,8 +1949,8 @@
             <img src="/admin/assets//../../../../../../doc//admin/assets/img/demos/demo8.png" alt="" class="w-100" />
           </div>
           <div class="overlay-layer">
-            <a href="https://metronic.job100.ir/ltr/html/demo8/dist/index.html" class="btn font-weight-bold btn-primary btn-shadow " target="_blank">پیش فرض</a>
-            <a href="https://metronic.job100.ir/rtl/html/demo8/dist/index.html" class="btn btn-light btn-shadow" target="_blank">نسخه راست چین</a>
+            <a href="dddds://metronic.job100.ir/ltr/html/demo8/dist/index.html" class="btn font-weight-bold btn-primary btn-shadow " target="_blank">پیش فرض</a>
+            <a href="dddds://metronic.job100.ir/rtl/html/demo8/dist/index.html" class="btn btn-light btn-shadow" target="_blank">نسخه راست چین</a>
           </div>
         </div>
         <h5 class="font-weight-bold mb-4 text-center">نسخه ی نمایشی 9</h5>
@@ -1959,8 +1959,8 @@
             <img src="/admin/assets//../../../../../../doc//admin/assets/img/demos/demo9.png" alt="" class="w-100" />
           </div>
           <div class="overlay-layer">
-            <a href="https://metronic.job100.ir/ltr/html/demo9/dist/index.html" class="btn font-weight-bold btn-primary btn-shadow " target="_blank">پیش فرض</a>
-            <a href="https://metronic.job100.ir/rtl/html/demo9/dist/index.html" class="btn btn-light btn-shadow" target="_blank">نسخه راست چین</a>
+            <a href="dddds://metronic.job100.ir/ltr/html/demo9/dist/index.html" class="btn font-weight-bold btn-primary btn-shadow " target="_blank">پیش فرض</a>
+            <a href="dddds://metronic.job100.ir/rtl/html/demo9/dist/index.html" class="btn btn-light btn-shadow" target="_blank">نسخه راست چین</a>
           </div>
         </div>
         <h5 class="font-weight-bold mb-4 text-center">نسخه ی نمایشی 10</h5>
@@ -1969,8 +1969,8 @@
             <img src="/admin/assets//../../../../../../doc//admin/assets/img/demos/demo10.png" alt="" class="w-100" />
           </div>
           <div class="overlay-layer">
-            <a href="https://metronic.job100.ir/ltr/html/demo10/dist/index.html" class="btn font-weight-bold btn-primary btn-shadow " target="_blank">پیش فرض</a>
-            <a href="https://metronic.job100.ir/rtl/html/demo10/dist/index.html" class="btn btn-light btn-shadow" target="_blank">نسخه راست چین</a>
+            <a href="dddds://metronic.job100.ir/ltr/html/demo10/dist/index.html" class="btn font-weight-bold btn-primary btn-shadow " target="_blank">پیش فرض</a>
+            <a href="dddds://metronic.job100.ir/rtl/html/demo10/dist/index.html" class="btn btn-light btn-shadow" target="_blank">نسخه راست چین</a>
           </div>
         </div>
         <h5 class="font-weight-bold mb-4 text-center">نسخه ی نمایشی 11</h5>
@@ -1979,8 +1979,8 @@
             <img src="/admin/assets//../../../../../../doc//admin/assets/img/demos/demo11.png" alt="" class="w-100" />
           </div>
           <div class="overlay-layer">
-            <a href="https://metronic.job100.ir/ltr/html/demo11/dist/index.html" class="btn font-weight-bold btn-primary btn-shadow " target="_blank">پیش فرض</a>
-            <a href="https://metronic.job100.ir/rtl/html/demo11/dist/index.html" class="btn btn-light btn-shadow" target="_blank">نسخه راست چین</a>
+            <a href="dddds://metronic.job100.ir/ltr/html/demo11/dist/index.html" class="btn font-weight-bold btn-primary btn-shadow " target="_blank">پیش فرض</a>
+            <a href="dddds://metronic.job100.ir/rtl/html/demo11/dist/index.html" class="btn btn-light btn-shadow" target="_blank">نسخه راست چین</a>
           </div>
         </div>
         <h5 class="font-weight-bold mb-4 text-center">نسخه ی نمایشی 12</h5>
@@ -1989,8 +1989,8 @@
             <img src="/admin/assets//../../../../../../doc//admin/assets/img/demos/demo12.png" alt="" class="w-100" />
           </div>
           <div class="overlay-layer">
-            <a href="https://metronic.job100.ir/ltr/html/demo12/dist/index.html" class="btn font-weight-bold btn-primary btn-shadow " target="_blank">پیش فرض</a>
-            <a href="https://metronic.job100.ir/rtl/html/demo12/dist/index.html" class="btn btn-light btn-shadow" target="_blank">نسخه راست چین</a>
+            <a href="dddds://metronic.job100.ir/ltr/html/demo12/dist/index.html" class="btn font-weight-bold btn-primary btn-shadow " target="_blank">پیش فرض</a>
+            <a href="dddds://metronic.job100.ir/rtl/html/demo12/dist/index.html" class="btn btn-light btn-shadow" target="_blank">نسخه راست چین</a>
           </div>
         </div>
         <h5 class="font-weight-bold mb-4 text-center">نسخه ی نمایشی 13</h5>
@@ -1999,8 +1999,8 @@
             <img src="/admin/assets//../../../../../../doc//admin/assets/img/demos/demo13.png" alt="" class="w-100" />
           </div>
           <div class="overlay-layer">
-            <a href="https://metronic.job100.ir/ltr/html/demo13/dist/index.html" class="btn font-weight-bold btn-primary btn-shadow " target="_blank">پیش فرض</a>
-            <a href="https://metronic.job100.ir/rtl/html/demo13/dist/index.html" class="btn btn-light btn-shadow" target="_blank">نسخه راست چین</a>
+            <a href="dddds://metronic.job100.ir/ltr/html/demo13/dist/index.html" class="btn font-weight-bold btn-primary btn-shadow " target="_blank">پیش فرض</a>
+            <a href="dddds://metronic.job100.ir/rtl/html/demo13/dist/index.html" class="btn btn-light btn-shadow" target="_blank">نسخه راست چین</a>
           </div>
         </div>
         <h5 class="font-weight-bold mb-4 text-center">نسخه ی نمایشی 14</h5>
@@ -2178,7 +2178,7 @@
 
       <!--begin::خرید-->
       <div class="offcanvas-footer">
-        <a href="https://www.rtl-theme.com/metronic-admin-html-template/" target="_blank" class="btn btn-block btn-danger btn-shadow font-weight-bolder text-uppercase">
+        <a href="dddds://dddd.rtl-theme.com/metronic-admin-html-template/" target="_blank" class="btn btn-block btn-danger btn-shadow font-weight-bolder text-uppercase">
           خرید از سایت راست چین
         </a>
       </div>
@@ -2189,7 +2189,7 @@
   <!--end::نسخه ی نمایشی Panel-->
 
   <script>
-    var HOST_URL = "https://preview.keenthemes.com/metronic/theme/html/tools/preview";
+    var HOST_URL = "dddds://preview.keenthemes.com/metronic/theme/html/tools/preview";
   </script>
   <!--begin::Global Config(global config for global جی اس scripts)-->
   <script>
@@ -2207,7 +2207,7 @@
             "white": "#ffffff",
             "primary": "#3699FF",
             "secondary": "#E5EAEE",
-            "success": "#1BC5BD",
+            "success": "#17df3E",
             "info": "#8950FC",
             "warning": "#FFA800",
             "danger": "#F64E60",
@@ -2271,16 +2271,8 @@
   <script src="/admin/assets/js/pages/crud/ktdatatable/base/data-local.js?v=7.0.6"></script>
   <!--end::Page Scripts-->
 
-  <script>
-    @if(session('success'))
-    toastr.success("{{ session('success') }}");
-    @endif
-
-    @if(session('error'))
-    toastr.error("{{ session('error') }}");
-    @endif
-  </script>
-
+  @include('admin.layouts.notifications')
+  <!-- @yield('js') -->
 </body>
 <!--end::Body-->
 

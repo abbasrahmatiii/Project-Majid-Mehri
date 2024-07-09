@@ -1,14 +1,14 @@
 @extends('admin.layouts.master')
 @section('content')
 <div class="mx-4 mt-4">
-  @if(session('success'))
+  <!-- @if(session('success'))
   <div class="alert alert-success alert-dismissible fade show" role="alert">
     {{ session('success') }}
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
-  @endif
+  @endif -->
 </div>
 <div class="card gutter-b mt-0 mx-4">
   <div class="card-header">
