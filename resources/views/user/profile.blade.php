@@ -2,8 +2,6 @@
 @section('content')
 <div role="main" class="main">
 
-
-
   <div class="container py-2">
 
     <div class="row">
@@ -27,7 +25,8 @@
             <li class="nav-item"><a class="nav-link" href="#">تنظیمات کاربری</a></li>
             <li class="nav-item"><a class="nav-link" href="#">صورتحساب</a></li>
             <li class="nav-item"><a class="nav-link" href="#">فاکتور ها</a></li>
-            <li class="nav-item"><a class="nav-link" href="{{ route('reservations.index') }}">درخواست مشاوره</a></li> <!-- لینک درخواست مشاوره -->
+            <li class="nav-item"><a class="nav-link" href="{{ route('reservations.index') }}">درخواست مشاوره</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ route('user.reservations.reserved') }}">جلسات مشاور رزرو شده</a></li>
           </ul>
         </aside>
       </div>

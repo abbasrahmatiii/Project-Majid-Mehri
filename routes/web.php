@@ -194,13 +194,18 @@ Route::middleware('auth')->prefix('admin')->group(function () {
     Route::delete('consultations/{consultation}', [ConsultationController::class, 'destroy'])->name('admin.consultations.destroy');
 
     Route::get('reservations', [AdminReservationController::class, 'index'])->name('admin.reservations.index');
+    Route::delete('reservations/{id}', [AdminReservationController::class, 'destroy'])->name('admin.reservations.destroy');
 });
 
 Route::middleware('auth')->group(function () {
     Route::get('reservations', [ReservationController::class, 'index'])->name('reservations.index');
     Route::post('reservations', [ReservationController::class, 'store'])->name('reservations.store');
+    Route::delete('reservations/{reservation}', [ReservationController::class, 'cancel'])->name('reservations.cancel');
 });
 
 Route::middleware('auth')->group(function () {
     Route::get('profile', [HomeController::class, 'profile'])->name('profile');
+});
+Route::prefix('user/')->middleware('auth')->group(function () {
+    Route::get('reservations/reserved', [ReservationController::class, 'userReservations'])->name('user.reservations.reserved');
 });

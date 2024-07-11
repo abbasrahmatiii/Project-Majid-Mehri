@@ -15,4 +15,13 @@ class AdminReservationController extends Controller
 
         return view('admin.reservations.index', compact('reservations'));
     }
+
+
+    public function destroy($id)
+    {
+        $reservation = Reservation::findOrFail($id);
+        $reservation->delete();
+
+        return redirect()->route('admin.reservations.index')->with('success', 'رزرو با موفقیت حذف شد.');
+    }
 }
