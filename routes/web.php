@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminReservationController;
 use App\Http\Controllers\TimeSlotController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\BackendController;
@@ -21,6 +22,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\ConsultationController;
 use App\Http\Controllers\DayController;
+use App\Http\Controllers\ReservationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -190,4 +192,15 @@ Route::middleware('auth')->prefix('admin')->group(function () {
     Route::get('consultations/{consultation}/edit', [ConsultationController::class, 'edit'])->name('admin.consultations.edit');
     Route::patch('consultations/{consultation}', [ConsultationController::class, 'update'])->name('admin.consultations.update');
     Route::delete('consultations/{consultation}', [ConsultationController::class, 'destroy'])->name('admin.consultations.destroy');
+
+    Route::get('reservations', [AdminReservationController::class, 'index'])->name('admin.reservations.index');
+});
+
+Route::middleware('auth')->group(function () {
+    Route::get('reservations', [ReservationController::class, 'index'])->name('reservations.index');
+    Route::post('reservations', [ReservationController::class, 'store'])->name('reservations.store');
+});
+
+Route::middleware('auth')->group(function () {
+    Route::get('profile', [HomeController::class, 'profile'])->name('profile');
 });

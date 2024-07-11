@@ -25,8 +25,8 @@ class CommentController extends Controller
             'parent_id' => $request->parent_id,
             'approved' => false
         ]);
-
-        return redirect()->route('posts.show', $postSlug)->with('success', 'نظر شما با موفقیت ارسال شد و پس از تایید نمایش داده می‌شود.');
+        // Set the flash message
+        return back()->with('message', 'دیدگاه شما پس از بررسی منتشر خواهد شد.');
     }
 
     public function approve($commentId)

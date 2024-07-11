@@ -13,7 +13,7 @@
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
   <!--begin::Fonts-->
   <!-- <link rel="stylesheet" href="dddds://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" /> end::Fonts -->
-
+  <link rel="stylesheet" href="https://cdn.ckeditor.com/ckeditor5/42.0.0/ckeditor5.css" />
   <!--begin::Page Vendors Styles(used by this page)-->
   <link href="/admin/assets/plugins/custom/fullcalendar/fullcalendar.bundle.rtl.css?v=7.0.6" rel="stylesheet" type="text/css" />
   <!--end::Page Vendors Styles-->
@@ -24,7 +24,7 @@
   <!--begin::Global تم Styles(used by all pages)-->
   <link href="/admin/assets/plugins/global/plugins.bundle.rtl.css?v=7.0.6" rel="stylesheet" type="text/css" />
   <link href="/admin/assets/plugins/custom/prismjs/prismjs.bundle.rtl.css?v=7.0.6" rel="stylesheet" type="text/css" />
-  <link href="/admin/assets/css/style.bundle.rtl.css?v=7.0.6" rel="stylesheet" type="text/css" />
+  <link href="/admin/assets/css/style.bundle.rtl.css?v=7.0.6" rel="stylesheet" rel="preload" type="text/css" />
   <!--end::Global تم Styles-->
 
   <!--begin::چیدمان تم ها(used by all pages)-->
@@ -389,6 +389,18 @@
                         <span class="menu-text">زمان‌های مشاوره</span>
                       </a>
                     </li>
+
+
+
+                    <li class="menu-item" aria-haspopup="true">
+                      <a href="{{ route('admin.reservations.index') }}" class="menu-link">
+                        <i class="menu-bullet menu-bullet-dot"><span></span></i>
+                        <span class="menu-text">وقت‌های رزرو شده</span>
+                      </a>
+                    </li>
+
+
+
                   </ul>
                 </div>
               </li>
@@ -2271,9 +2283,64 @@
   <script src="/admin/assets/js/pages/crud/ktdatatable/base/data-local.js?v=7.0.6"></script>
   <!--end::Page Scripts-->
 
+  <script type="importmap">
+    {
+                "imports": {
+                    "ckeditor5": "https://cdn.ckeditor.com/ckeditor5/42.0.0/ckeditor5.js",
+                    "ckeditor5/": "https://cdn.ckeditor.com/ckeditor5/42.0.0/"
+                }
+            }
+        </script>
+  <script type="module">
+    import {
+      ClassicEditor,
+      Essentials,
+      Bold,
+      Italic,
+      Font,
+      Paragraph,
+      Image,
+
+    } from 'ckeditor5';
+
+    const editorConfig = {
+      plugins: [Essentials, Bold, Italic, Font, Paragraph],
+      toolbar: {
+        items: [
+          'undo', 'redo', '|', 'bold', 'italic', '|',
+          'fontSize', 'fontFamily', 'fontColor', 'fontBackgroundColor'
+        ]
+      },
+      language: 'fa',
+      image: {
+        toolbar: ['imageTextAlternative', 'imageStyle:full', 'imageStyle:side']
+      },
+    };
+
+    ClassicEditor
+      .create(document.querySelector('#editor1'), editorConfig)
+      .then(editor => {
+        console.log('Editor1 is ready', editor);
+      })
+      .catch(error => {
+        console.error(error);
+      });
+
+    ClassicEditor
+      .create(document.querySelector('#editor2'), editorConfig)
+      .then(editor => {
+        console.log('Editor2 is ready', editor);
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  </script>
+
+
   @include('admin.layouts.notifications')
   <!-- @yield('js') -->
 </body>
 <!--end::Body-->
+
 
 </html>

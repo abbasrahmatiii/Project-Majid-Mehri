@@ -12,47 +12,57 @@
                       خانه
                     </a>
                   </li>
-                  <li class="dropdown dropdown-full-color dropdown-light dropdown-mega">
-                    <a class="dropdown-item dropdown-toggle" href="elements.html">
-                      عناصر
+                  <li class="dropdown dropdown-full-color dropdown-light">
+                    <a class="dropdown-item dropdown-toggle" href="{{ route('posts.index') }}">
+                      اخبار
                     </a>
-                    <!-- ادامه منوهای عناصر -->
+                  </li>
+                  @if(auth()->check())
+                  @if(auth()->user()->hasRole('مدیر کل'))
+                  <li class="dropdown dropdown-full-color dropdown-light">
+                    <a class="dropdown-item dropdown-toggle" href="/admin/dashboard">
+                      داشبورد مدیریت
+                    </a>
                   </li>
                   <li class="dropdown dropdown-full-color dropdown-light">
-                    <a class="dropdown-item dropdown-toggle" href="#">
-                      ویژگی ها
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                      @csrf
+                    </form>
+                    <a class="dropdown-item dropdown-toggle" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                      خروج از کاربری
                     </a>
-                    <!-- ادامه منوهای ویژگی ها -->
-                  </li>
-                  <li class="dropdown dropdown-full-color dropdown-light">
-                    <a class="dropdown-item dropdown-toggle" href="#">
-                      صفحات
-                    </a>
-                    <!-- ادامه منوهای صفحات -->
-                  </li>
-                  <li class="dropdown dropdown-full-color dropdown-light">
-                    <a class="dropdown-item dropdown-toggle" href="#">
-                      نمونه‌کارها
-                    </a>
-                    <!-- ادامه منوهای نمونه‌کارها -->
-                  </li>
-                  <li class="dropdown dropdown-full-color dropdown-light">
-                    <a class="dropdown-item dropdown-toggle" href="#">
-                      بلاگ
-                    </a>
-                    <!-- ادامه منوهای بلاگ -->
-                  </li>
-                  <li class="dropdown dropdown-full-color dropdown-light">
-                    <a class="dropdown-item dropdown-toggle" href="#">
-                      فروشگاه
-                    </a>
-                    <!-- ادامه منوهای فروشگاه -->
                   </li>
 
+                  @else
+                  <li class="dropdown dropdown-full-color dropdown-light">
+                    <a class="dropdown-item dropdown-toggle" href="{{ route('profile') }}">
+                      پروفایل
+                    </a>
+                  </li>
+                  <li class="dropdown dropdown-full-color dropdown-light">
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                      @csrf
+                    </form>
+                    <a class="dropdown-item dropdown-toggle" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                      خروج از کاربری
+                    </a>
+                  </li>
+                  @endif
+                  @else
+                  <li class="dropdown dropdown-full-color dropdown-light">
+                    <a class="dropdown-item dropdown-toggle" href="{{ route('login') }}">
+                      ورود
+                    </a>
+                  </li>
+                  <li class="dropdown dropdown-full-color dropdown-light">
+                    <a class="dropdown-item dropdown-toggle" href="{{ route('register') }}">
+                      ثبت نام
+                    </a>
+                  </li>
+                  @endif
                 </ul>
               </nav>
             </div>
-
             <button class="btn header-btn-collapse-nav my-2" data-toggle="collapse" data-target=".header-nav-main nav">
               <i class="fas fa-bars"></i>
             </button>

@@ -26,4 +26,9 @@ class Consultation extends Model
     {
         return $this->belongsTo(User::class, 'consultant_id');
     }
+
+    public function reservation()
+    {
+        return $this->hasOne(Reservation::class);
+    }
 }

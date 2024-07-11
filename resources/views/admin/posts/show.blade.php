@@ -1,14 +1,13 @@
 @extends('layouts.master')
 
 @section('content')
-
 <div role="main" class="main">
   <section class="page-header page-header-modern bg-color-light-scale-1 page-header-md">
     <div class="container">
       <div class="row">
         <div class="col-md-12 align-self-center p-static order-2 text-center">
           <h1 class="text-dark font-weight-bold text-8">{{ $post->title }}</h1>
-          <span class="sub-title text-dark">{{ $post->summary }}</span>
+          <span class="sub-title text-dark">{!! $post->summary !!}</span>
         </div>
         <div class="col-md-12 align-self-center order-1">
           <ul class="breadcrumb d-block text-center">
@@ -24,25 +23,30 @@
   <div class="container py-4">
     <div class="row">
       <div class="col">
+        @if (session('message'))
+        <div class="alert alert-info text-center">
+          {{ session('message') }}
+        </div>
+        @endif
+
         <div class="blog-posts single-post">
           <article class="post post-large blog-single-post border-0 m-0 p-0">
-            <div class="post-image ml-0">
-              <a href="{{ route('posts.show', $post->slug) }}">
-                <img src="{{ asset('storage/' . $post->image) }}" class="img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="{{ $post->title }}">
-              </a>
+
+            <div class="post-content ml-0 p-0 rounded bg-white shadow-sm mt-0">
+              <img src="{{ asset('storage/' . $post->image) }}" class="img-fluid mx-auto d-block" alt="{{ $post->title }}">
             </div>
-            <div class="post-date ml-0">
-              <span class="day">{{ \Verta::instance($post->created_at)->format('d') }}</span>
-              <span class="month">{{ \Verta::instance($post->created_at)->format('F') }}</span>
-            </div>
-            <div class="post-content ml-0 p-4 rounded bg-white shadow-sm">
-              <h2 class="font-weight-bold mt-n3 mb-2 pb-1 pt-1 line-height-7 text-7"><a href="{{ route('posts.show', $post->slug) }}">{{ $post->title }}</a></h2>
+            <div class="post-content ml-0 p-4 rounded bg-white shadow-sm mt-4">
+              <div class="post-date ml-0">
+                <span class="day">{{ \Verta::instance($post->created_at)->format('d') }}</span>
+                <span class="month">{{ \Verta::instance($post->created_at)->format('F') }}</span>
+              </div>
+
               <div class="post-meta">
                 <span><i class="far fa-user"></i> توسط <a href="#"> {{$post->author->first_name}} {{ $post->author->last_name}}</a> </span>
                 <span><i class="far fa-folder"></i> <a href="#">{{ $post->category->name }}</a></span>
                 <span><i class="far fa-comments"></i> <a href="#comments">{{ $post->comments->where('approved', true)->count() }} دیدگاه</a></span>
               </div>
-              <p>{!! nl2br(e($post->body)) !!}</p>
+              <p>{!! $post->body !!}</p>
               <div class="post-block mt-5 post-share">
                 <h4 class="mb-3 secondary-font">به اشتراک گذاری این مطلب</h4>
                 <div class="d-flex justify-content-start">
@@ -78,27 +82,27 @@
 
               <div class="post-block mt-4 pt-2 post-author">
                 <h4 class="mb-3 secondary-font pb-1">نویسنده</h4>
-                <div class="img-thumbnail img-thumbnail-no-borders d-block pb-3 mx-auto" style="width: 80px; height: 80px; border-radius: 50%;">
-                  <a href="#">
-                    <img src="{{ asset('img/avatars/avatar.jpg') }}" alt="{{ $post->author->name }}" class="img-fluid rounded-circle">
+                <div class="img-thumbnail img-thumbnail-no-borders rounded-circle">
+                  <a href="1">
+                    <img src="{{ asset('img/avatars/avatar.jpg') }}" alt="{{ $post->author->name }}" class="img-fluid rounded-circle" style="border-radius: 100% !important;width: 100%; height: 100%; object-fit: cover;">
                   </a>
                 </div>
                 <p><strong class="name"><a href="#" class="text-4 pb-1 d-block">{{ $post->author->name }}</a></strong></p>
                 <p>{{ $post->author->bio }}</p>
               </div>
               <div id="comments" class="post-block mt-5 post-comments">
-                <h4 class="mb-3 secondary-font">دیدگاه ها ({{ $post->comments->where('approved', true)->count() }})</h4>
+                <h4 class="mb-3 secondary-font">دیدگاه ها ({{ $post->comments->where('approved', 1)->count() }})</h4>
                 <ul class="comments">
-                  @foreach($post->comments->where('approved', true)->where('parent_id', null) as $comment)
+                  @foreach($post->comments->where('approved', 1)->where('parent_id', null) as $comment)
                   <li>
                     <div class="comment">
                       <div class="img-thumbnail img-thumbnail-no-borders d-none d-sm-block" style="width: 50px; height: 50px; border-radius: 50%;">
-                        <img class="avatar" alt="{{ $comment->user->first_name }}" src="{{ asset('img/avatars/avatar-2.jpg') }}">
+                        <img class="avatar" style="border-radius: 100% !important;" alt="{{ $comment->user->first_name }}" src="{{ asset('img/avatars/avatar-2.jpg') }}">
                       </div>
                       <div class="comment-block">
                         <div class="comment-arrow"></div>
                         <span class="comment-by">
-                          <strong>{{ $comment->user->first_name }}</strong>
+                          <strong style="font-size: 12px;">{{ $comment->user->first_name }} در مورد این پست گفته :</strong>
                           <span class="float-right">
                             <span> <a href="javascript:void(0);" onclick="showReplyForm('{{ $comment->id }}');"><i class="fas fa-reply"></i> پاسخ</a></span>
                           </span>
@@ -109,7 +113,7 @@
                         </div>
                       </div>
                     </div>
-                    @include('admin.posts.comments.partials.comments', ['comments' => $comment->replies])
+                    @include('admin.posts.comments.partials.comments', ['comments' => $comment->replies->where('approved', 1)])
                     <div id="reply-form-{{ $comment->id }}" class="reply-form" style="display: none;">
                       <form action="{{ route('comments.store', $post->slug) }}" method="POST" class="p-3 bg-light rounded">
                         @csrf
@@ -194,18 +198,15 @@
   .comment-block {
     flex-grow: 1;
     margin-left: 1px;
-    background-color: red;
     /* کاهش فاصله بین آواتار و متن کامنت */
   }
 
   .comment-content-box {
-    border: 1px solid #ccc;
-
+    /* border: 1px solid #ccc; */
     border-radius: 8px;
-    padding: 10px;
+    padding: 0px;
     /* کاهش padding داخل باکس کامنت */
-    background-color: #f9f9f9;
-    margin-bottom: 5px;
+    margin-bottom: 1px;
     /* کاهش فاصله بین باکس کامنت و سایر عناصر */
   }
 
@@ -238,18 +239,30 @@
 
   .post-content {
     background-color: #fff;
-    padding: 5px;
+    padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
 
   .post-meta span {
     display: inline-block;
-    margin-right: 2px;
+    margin-right: 5px;
   }
 
   .post-meta span i {
     margin-right: 5px;
+  }
+
+  .post-image {
+    width: 100%;
+  }
+
+  .post-date {
+    display: none;
+  }
+
+  h2.font-weight-bold {
+    margin-top: 0;
   }
 </style>
 @endsection

@@ -25,18 +25,23 @@
         </div>
         <div class="form-group">
           <label for="summary">خلاصه</label>
-          <textarea name="summary" class="form-control">{{ old('summary') }}</textarea>
+
+          <textarea id="editor1" name="summary" class="form-control">{{ old('summary') }}</textarea>
+
           @if($errors->has('summary'))
           <div class="text-danger">{{ $errors->first('summary') }}</div>
           @endif
         </div>
+
         <div class="form-group">
           <label for="body">محتوا</label>
-          <textarea name="body" class="form-control">{{ old('body') }}</textarea>
+          <textarea id="editor2" name="body" class="form-control">{{ old('body') }}</textarea>
+
           @if($errors->has('body'))
           <div class="text-danger">{{ $errors->first('body') }}</div>
           @endif
         </div>
+
         <div class="form-group">
           <label for="category_id">دسته‌بندی</label>
           <select name="category_id" class="form-control">
@@ -72,4 +77,5 @@
     </div>
   </div>
 </div>
+
 @endsection

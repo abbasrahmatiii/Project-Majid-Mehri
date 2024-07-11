@@ -2,12 +2,17 @@
 <li>
   <div class="comment">
     <div class="img-thumbnail img-thumbnail-no-borders d-none d-sm-block">
-      <img class="avatar comment-avatar" alt="{{ $comment->user->first_name }}" src="{{ asset('img/avatars/avatar-2.jpg') }}">
+      <img style="border-radius: 100% !important;" class="avatar comment-avatar" alt="{{ $comment->user->first_name }}" src="{{ asset('img/avatars/avatar-2.jpg') }}">
     </div>
     <div class="comment-block">
       <div class="comment-arrow"></div>
-      <span class="comment-by">
+      <span class="comment-by" style="font-size: 12px;">
         <strong>{{ $comment->user->first_name }}</strong>
+        @if($comment->parent)
+        در جواب <strong>{{ $comment->parent->user->first_name }}</strong> گفته:
+        @else
+        در مورد پست گفته:
+        @endif
         @if(!request()->is('admin/*')) <!-- لینک پاسخ فقط در بخش غیر از ادمین نمایش داده می‌شود -->
         <span class="float-right">
           <span> <a href="javascript:void(0);" onclick="showReplyForm('{{ $comment->id }}');"><i class="fas fa-reply"></i> پاسخ</a></span>
@@ -20,7 +25,7 @@
   </div>
   @if($comment->replies->isNotEmpty())
   <ul class="comments">
-    @include('admin.posts.comments.partials.comments', ['comments' => $comment->replies->where('approved', true), 'post' => $post])
+    @include('admin.posts.comments.partials.comments', ['comments' => $comment->replies->where('approved', 1), 'post' => $post])
   </ul>
   @endif
   <div id="reply-form-{{ $comment->id }}" class="reply-form" style="display: none;">

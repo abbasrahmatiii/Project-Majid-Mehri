@@ -29,11 +29,11 @@
         </div>
         <div class="form-group">
           <label for="summary">خلاصه</label>
-          <textarea name="summary" class="form-control" required>{{ old('summary', $post->summary) }}</textarea>
+          <textarea name="summary" class="form-control" required id="editor2">{{ old('summary', $post->summary) }}</textarea>
         </div>
         <div class="form-group">
           <label for="body">محتوا</label>
-          <textarea name="body" class="form-control" required>{{ old('body', $post->body) }}</textarea>
+          <textarea name="body" class="form-control" required id="editor1">{{ old('body', $post->body) }}</textarea>
         </div>
         <div class="form-group">
           <label for="category_id">دسته‌بندی</label>
