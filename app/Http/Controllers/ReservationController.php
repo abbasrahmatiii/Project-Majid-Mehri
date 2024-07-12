@@ -11,7 +11,7 @@ class ReservationController extends Controller
 {
     public function index()
     {
-        $consultations = Consultation::with(['day', 'timeSlot', 'consultant'])
+        $consultations = Consultation::with(['timeSlot', 'consultant'])
             ->whereDoesntHave('reservation')
             ->get();
 
@@ -30,6 +30,17 @@ class ReservationController extends Controller
             return redirect()->back()->withErrors('این زمان مشاوره قبلاً رزرو شده است.');
         }
 
+        // چک کردن اینکه آیا رزرو مشابهی برای کاربر جاری وجود دارد یا خیر
+        $user = auth()->user();
+        $existingReservation = Reservation::whereHas('consultation', function ($query) use ($consultation) {
+            $query->where('date', $consultation->date)
+                ->where('time_slot_id', $consultation->time_slot_id);
+        })->where('user_id', $user->id)->exists();
+
+        if ($existingReservation) {
+            return redirect()->back()->withErrors('شما در این تاریخ و بازه زمانی مشاوره دیگری دارید.');
+        }
+
         $consultation->reservation()->create([
             'user_id' => auth()->id(),
         ]);
@@ -39,7 +50,7 @@ class ReservationController extends Controller
 
     public function userReservations()
     {
-        $reservations = auth()->user()->reservations()->with(['consultation.day', 'consultation.timeSlot', 'consultation.consultant'])->get();
+        $reservations = auth()->user()->reservations()->with(['consultation.timeSlot', 'consultation.consultant'])->get();
         return view('reservations/reserved', compact('reservations'));
     }
 

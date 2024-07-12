@@ -16,7 +16,8 @@
           <thead>
             <tr>
               <th>مشاور</th>
-              <th>روز</th>
+              <!-- <th>روز</th> -->
+              <th>تاریخ</th>
               <th>بازه زمانی</th>
               <th>عملیات</th>
             </tr>
@@ -25,8 +26,9 @@
             @foreach($consultations as $consultation)
             <tr>
               <td>{{ $consultation->consultant->first_name }} {{ $consultation->consultant->last_name }}</td>
-              <td>{{ $consultation->day->name }}</td>
-              <td>{{ $consultation->timeSlot->start_time }} - {{ $consultation->timeSlot->end_time }}</td>
+
+              <td>{{ \Hekmatinasser\Verta\Verta::instance($consultation->date)->format('Y/m/d') }}</td>
+              <td>{{ $consultation->timeSlot->start_time }} الی {{ $consultation->timeSlot->end_time }}</td>
               <td>
                 <a href="{{ route('admin.consultations.edit', $consultation->id) }}" class="btn btn-sm btn-warning">ویرایش</a>
                 <form action="{{ route('admin.consultations.destroy', $consultation->id) }}" method="POST" style="display:inline;">

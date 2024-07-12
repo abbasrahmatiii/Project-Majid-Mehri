@@ -590,6 +590,7 @@ class ComposerStaticInit0d52140ec7c90ee744c21819ec58c6f3
     public static $classMap = array (
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
+        'App\\Http\\Controllers\\AdminReservationController' => __DIR__ . '/../..' . '/app/Http/Controllers/AdminReservationController.php',
         'App\\Http\\Controllers\\Auth\\ConfirmPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ConfirmPasswordController.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
         'App\\Http\\Controllers\\Auth\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/LoginController.php',
@@ -607,6 +608,7 @@ class ComposerStaticInit0d52140ec7c90ee744c21819ec58c6f3
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Controllers\\PermissionController' => __DIR__ . '/../..' . '/app/Http/Controllers/PermissionController.php',
         'App\\Http\\Controllers\\PostController' => __DIR__ . '/../..' . '/app/Http/Controllers/PostController.php',
+        'App\\Http\\Controllers\\ReservationController' => __DIR__ . '/../..' . '/app/Http/Controllers/ReservationController.php',
         'App\\Http\\Controllers\\RoleController' => __DIR__ . '/../..' . '/app/Http/Controllers/RoleController.php',
         'App\\Http\\Controllers\\SettingController' => __DIR__ . '/../..' . '/app/Http/Controllers/SettingController.php',
         'App\\Http\\Controllers\\SlideController' => __DIR__ . '/../..' . '/app/Http/Controllers/SlideController.php',
@@ -646,6 +648,7 @@ class ComposerStaticInit0d52140ec7c90ee744c21819ec58c6f3
         'App\\Models\\Contacts' => __DIR__ . '/../..' . '/app/Models/Contacts.php',
         'App\\Models\\Day' => __DIR__ . '/../..' . '/app/Models/Day.php',
         'App\\Models\\Post' => __DIR__ . '/../..' . '/app/Models/Post.php',
+        'App\\Models\\Reservation' => __DIR__ . '/../..' . '/app/Models/Reservation.php',
         'App\\Models\\Setting' => __DIR__ . '/../..' . '/app/Models/Setting.php',
         'App\\Models\\Slide' => __DIR__ . '/../..' . '/app/Models/Slide.php',
         'App\\Models\\TimeSlot' => __DIR__ . '/../..' . '/app/Models/TimeSlot.php',

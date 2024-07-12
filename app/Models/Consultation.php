@@ -10,7 +10,7 @@ class Consultation extends Model
     use HasFactory;
 
     protected $fillable = [
-        'user_id', 'day_id', 'time_slot_id', 'consultant_id',
+        'user_id', 'day_id', 'time_slot_id', 'consultant_id', 'date',
     ];
 
     public function timeSlot()
@@ -18,10 +18,10 @@ class Consultation extends Model
         return $this->belongsTo(TimeSlot::class);
     }
 
-    public function day()
-    {
-        return $this->belongsTo(Day::class);
-    }
+    // public function day()
+    // {
+    //     return $this->belongsTo(Day::class);
+    // }
     public function consultant()
     {
         return $this->belongsTo(User::class, 'consultant_id');

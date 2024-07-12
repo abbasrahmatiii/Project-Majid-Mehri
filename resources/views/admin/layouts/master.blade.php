@@ -17,7 +17,8 @@
   <!--begin::Page Vendors Styles(used by this page)-->
   <link href="/admin/assets/plugins/custom/fullcalendar/fullcalendar.bundle.rtl.css?v=7.0.6" rel="stylesheet" type="text/css" />
   <!--end::Page Vendors Styles-->
-
+  <!-- persian-datepicker CSS -->
+  <link rel="stylesheet" href="\css\persian-datepicker.min.css">
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
   <link href="{{ asset('css/custom.css') }}" rel="stylesheet"> <!-- اضافه کردن فایل CSS -->
   <script src="{{ asset('js/app.js') }}" defer></script>
@@ -1884,308 +1885,7 @@
     <!--begin::Content-->
     <div class="offcanvas-content">
       <!--begin::Wrapper-->
-      <div class="offcanvas-wrapper mb-5 scroll-pull">
-        <h5 class="font-weight-bold mb-4 text-center">نسخه ی نمایشی 1</h5>
-        <div class="overlay rounded-lg mb-8 offcanvas-demo offcanvas-demo-active">
-          <div class="overlay-wrapper rounded-lg">
-            <img src="/admin/assets//../../../../../../doc//admin/assets/img/demos/demo1.png" alt="" class="w-100" />
-          </div>
-          <div class="overlay-layer">
-            <a href="dddds://metronic.job100.ir/ltr/html/demo1/dist/index.html" class="btn font-weight-bold btn-primary btn-shadow " target="_blank">پیش فرض</a>
-            <a href="dddds://metronic.job100.ir/rtl/html/demo1/dist/index.html" class="btn btn-light btn-shadow" target="_blank">نسخه راست چین</a>
-          </div>
-        </div>
-        <h5 class="font-weight-bold mb-4 text-center">نسخه ی نمایشی 2</h5>
-        <div class="overlay rounded-lg mb-8 offcanvas-demo ">
-          <div class="overlay-wrapper rounded-lg">
-            <img src="/admin/assets//../../../../../../doc//admin/assets/img/demos/demo2.png" alt="" class="w-100" />
-          </div>
-          <div class="overlay-layer">
-            <a href="dddds://metronic.job100.ir/ltr/html/demo2/dist/index.html" class="btn font-weight-bold btn-primary btn-shadow " target="_blank">پیش فرض</a>
-            <a href="dddds://metronic.job100.ir/rtl/html/demo2/dist/index.html" class="btn btn-light btn-shadow" target="_blank">نسخه راست چین</a>
-          </div>
-        </div>
-        <h5 class="font-weight-bold mb-4 text-center">نسخه ی نمایشی 3</h5>
-        <div class="overlay rounded-lg mb-8 offcanvas-demo ">
-          <div class="overlay-wrapper rounded-lg">
-            <img src="/admin/assets//../../../../../../doc//admin/assets/img/demos/demo3.png" alt="" class="w-100" />
-          </div>
-          <div class="overlay-layer">
-            <a href="dddds://metronic.job100.ir/ltr/html/demo3/dist/index.html" class="btn font-weight-bold btn-primary btn-shadow " target="_blank">پیش فرض</a>
-            <a href="dddds://metronic.job100.ir/rtl/html/demo3/dist/index.html" class="btn btn-light btn-shadow" target="_blank">نسخه راست چین</a>
-          </div>
-        </div>
-        <h5 class="font-weight-bold mb-4 text-center">نسخه ی نمایشی 4</h5>
-        <div class="overlay rounded-lg mb-8 offcanvas-demo ">
-          <div class="overlay-wrapper rounded-lg">
-            <img src="/admin/assets//../../../../../../doc//admin/assets/img/demos/demo4.png" alt="" class="w-100" />
-          </div>
-          <div class="overlay-layer">
-            <a href="dddds://metronic.job100.ir/ltr/html/demo4/dist/index.html" class="btn font-weight-bold btn-primary btn-shadow " target="_blank">پیش فرض</a>
-            <a href="dddds://metronic.job100.ir/rtl/html/demo4/dist/index.html" class="btn btn-light btn-shadow" target="_blank">نسخه راست چین</a>
-          </div>
-        </div>
-        <h5 class="font-weight-bold mb-4 text-center">نسخه ی نمایشی 5</h5>
-        <div class="overlay rounded-lg mb-8 offcanvas-demo ">
-          <div class="overlay-wrapper rounded-lg">
-            <img src="/admin/assets//../../../../../../doc//admin/assets/img/demos/demo5.png" alt="" class="w-100" />
-          </div>
-          <div class="overlay-layer">
-            <a href="dddds://metronic.job100.ir/ltr/html/demo5/dist/index.html" class="btn font-weight-bold btn-primary btn-shadow " target="_blank">پیش فرض</a>
-            <a href="dddds://metronic.job100.ir/rtl/html/demo5/dist/index.html" class="btn btn-light btn-shadow" target="_blank">نسخه راست چین</a>
-          </div>
-        </div>
-        <h5 class="font-weight-bold mb-4 text-center">نسخه ی نمایشی 6</h5>
-        <div class="overlay rounded-lg mb-8 offcanvas-demo ">
-          <div class="overlay-wrapper rounded-lg">
-            <img src="/admin/assets//../../../../../../doc//admin/assets/img/demos/demo6.png" alt="" class="w-100" />
-          </div>
-          <div class="overlay-layer">
-            <a href="dddds://metronic.job100.ir/ltr/html/demo6/dist/index.html" class="btn font-weight-bold btn-primary btn-shadow " target="_blank">پیش فرض</a>
-            <a href="dddds://metronic.job100.ir/rtl/html/demo6/dist/index.html" class="btn btn-light btn-shadow" target="_blank">نسخه راست چین</a>
-          </div>
-        </div>
-        <h5 class="font-weight-bold mb-4 text-center">نسخه ی نمایشی 7</h5>
-        <div class="overlay rounded-lg mb-8 offcanvas-demo ">
-          <div class="overlay-wrapper rounded-lg">
-            <img src="/admin/assets//../../../../../../doc//admin/assets/img/demos/demo7.png" alt="" class="w-100" />
-          </div>
-          <div class="overlay-layer">
-            <a href="dddds://metronic.job100.ir/ltr/html/demo7/dist/index.html" class="btn font-weight-bold btn-primary btn-shadow " target="_blank">پیش فرض</a>
-            <a href="dddds://metronic.job100.ir/rtl/html/demo7/dist/index.html" class="btn btn-light btn-shadow" target="_blank">نسخه راست چین</a>
-          </div>
-        </div>
-        <h5 class="font-weight-bold mb-4 text-center">نسخه ی نمایشی 8</h5>
-        <div class="overlay rounded-lg mb-8 offcanvas-demo ">
-          <div class="overlay-wrapper rounded-lg">
-            <img src="/admin/assets//../../../../../../doc//admin/assets/img/demos/demo8.png" alt="" class="w-100" />
-          </div>
-          <div class="overlay-layer">
-            <a href="dddds://metronic.job100.ir/ltr/html/demo8/dist/index.html" class="btn font-weight-bold btn-primary btn-shadow " target="_blank">پیش فرض</a>
-            <a href="dddds://metronic.job100.ir/rtl/html/demo8/dist/index.html" class="btn btn-light btn-shadow" target="_blank">نسخه راست چین</a>
-          </div>
-        </div>
-        <h5 class="font-weight-bold mb-4 text-center">نسخه ی نمایشی 9</h5>
-        <div class="overlay rounded-lg mb-8 offcanvas-demo ">
-          <div class="overlay-wrapper rounded-lg">
-            <img src="/admin/assets//../../../../../../doc//admin/assets/img/demos/demo9.png" alt="" class="w-100" />
-          </div>
-          <div class="overlay-layer">
-            <a href="dddds://metronic.job100.ir/ltr/html/demo9/dist/index.html" class="btn font-weight-bold btn-primary btn-shadow " target="_blank">پیش فرض</a>
-            <a href="dddds://metronic.job100.ir/rtl/html/demo9/dist/index.html" class="btn btn-light btn-shadow" target="_blank">نسخه راست چین</a>
-          </div>
-        </div>
-        <h5 class="font-weight-bold mb-4 text-center">نسخه ی نمایشی 10</h5>
-        <div class="overlay rounded-lg mb-8 offcanvas-demo ">
-          <div class="overlay-wrapper rounded-lg">
-            <img src="/admin/assets//../../../../../../doc//admin/assets/img/demos/demo10.png" alt="" class="w-100" />
-          </div>
-          <div class="overlay-layer">
-            <a href="dddds://metronic.job100.ir/ltr/html/demo10/dist/index.html" class="btn font-weight-bold btn-primary btn-shadow " target="_blank">پیش فرض</a>
-            <a href="dddds://metronic.job100.ir/rtl/html/demo10/dist/index.html" class="btn btn-light btn-shadow" target="_blank">نسخه راست چین</a>
-          </div>
-        </div>
-        <h5 class="font-weight-bold mb-4 text-center">نسخه ی نمایشی 11</h5>
-        <div class="overlay rounded-lg mb-8 offcanvas-demo ">
-          <div class="overlay-wrapper rounded-lg">
-            <img src="/admin/assets//../../../../../../doc//admin/assets/img/demos/demo11.png" alt="" class="w-100" />
-          </div>
-          <div class="overlay-layer">
-            <a href="dddds://metronic.job100.ir/ltr/html/demo11/dist/index.html" class="btn font-weight-bold btn-primary btn-shadow " target="_blank">پیش فرض</a>
-            <a href="dddds://metronic.job100.ir/rtl/html/demo11/dist/index.html" class="btn btn-light btn-shadow" target="_blank">نسخه راست چین</a>
-          </div>
-        </div>
-        <h5 class="font-weight-bold mb-4 text-center">نسخه ی نمایشی 12</h5>
-        <div class="overlay rounded-lg mb-8 offcanvas-demo ">
-          <div class="overlay-wrapper rounded-lg">
-            <img src="/admin/assets//../../../../../../doc//admin/assets/img/demos/demo12.png" alt="" class="w-100" />
-          </div>
-          <div class="overlay-layer">
-            <a href="dddds://metronic.job100.ir/ltr/html/demo12/dist/index.html" class="btn font-weight-bold btn-primary btn-shadow " target="_blank">پیش فرض</a>
-            <a href="dddds://metronic.job100.ir/rtl/html/demo12/dist/index.html" class="btn btn-light btn-shadow" target="_blank">نسخه راست چین</a>
-          </div>
-        </div>
-        <h5 class="font-weight-bold mb-4 text-center">نسخه ی نمایشی 13</h5>
-        <div class="overlay rounded-lg mb-8 offcanvas-demo ">
-          <div class="overlay-wrapper rounded-lg">
-            <img src="/admin/assets//../../../../../../doc//admin/assets/img/demos/demo13.png" alt="" class="w-100" />
-          </div>
-          <div class="overlay-layer">
-            <a href="dddds://metronic.job100.ir/ltr/html/demo13/dist/index.html" class="btn font-weight-bold btn-primary btn-shadow " target="_blank">پیش فرض</a>
-            <a href="dddds://metronic.job100.ir/rtl/html/demo13/dist/index.html" class="btn btn-light btn-shadow" target="_blank">نسخه راست چین</a>
-          </div>
-        </div>
-        <h5 class="font-weight-bold mb-4 text-center">نسخه ی نمایشی 14</h5>
-        <div class="overlay rounded-lg mb-8 offcanvas-demo ">
-          <div class="overlay-wrapper rounded-lg">
-            <img src="/admin/assets//../../../../../../doc//admin/assets/img/demos/demo14.png" alt="" class="w-100" />
-          </div>
-          <div class="overlay-layer">
-            <a href="#" class="btn font-weight-bold btn-primary btn-shadow disabled">به زودی</a>
 
-          </div>
-        </div>
-        <h5 class="font-weight-bold mb-4 text-center">نسخه ی نمایشی 15</h5>
-        <div class="overlay rounded-lg mb-8 offcanvas-demo ">
-          <div class="overlay-wrapper rounded-lg">
-            <img src="/admin/assets//../../../../../../doc//admin/assets/img/demos/demo15.png" alt="" class="w-100" />
-          </div>
-          <div class="overlay-layer">
-            <a href="#" class="btn font-weight-bold btn-primary btn-shadow disabled">به زودی</a>
-
-          </div>
-        </div>
-        <h5 class="font-weight-bold mb-4 text-center">نسخه ی نمایشی 16</h5>
-        <div class="overlay rounded-lg mb-8 offcanvas-demo ">
-          <div class="overlay-wrapper rounded-lg">
-            <img src="/admin/assets//../../../../../../doc//admin/assets/img/demos/demo16.png" alt="" class="w-100" />
-          </div>
-          <div class="overlay-layer">
-            <a href="#" class="btn font-weight-bold btn-primary btn-shadow disabled">به زودی</a>
-
-          </div>
-        </div>
-        <h5 class="font-weight-bold mb-4 text-center">نسخه ی نمایشی 17</h5>
-        <div class="overlay rounded-lg mb-8 offcanvas-demo ">
-          <div class="overlay-wrapper rounded-lg">
-            <img src="/admin/assets//../../../../../../doc//admin/assets/img/demos/demo17.png" alt="" class="w-100" />
-          </div>
-          <div class="overlay-layer">
-            <a href="#" class="btn font-weight-bold btn-primary btn-shadow disabled">به زودی</a>
-
-          </div>
-        </div>
-        <h5 class="font-weight-bold mb-4 text-center">نسخه ی نمایشی 18</h5>
-        <div class="overlay rounded-lg mb-8 offcanvas-demo ">
-          <div class="overlay-wrapper rounded-lg">
-            <img src="/admin/assets//../../../../../../doc//admin/assets/img/demos/demo18.png" alt="" class="w-100" />
-          </div>
-          <div class="overlay-layer">
-            <a href="#" class="btn font-weight-bold btn-primary btn-shadow disabled">به زودی</a>
-
-          </div>
-        </div>
-        <h5 class="font-weight-bold mb-4 text-center">نسخه ی نمایشی 19</h5>
-        <div class="overlay rounded-lg mb-8 offcanvas-demo ">
-          <div class="overlay-wrapper rounded-lg">
-            <img src="/admin/assets//../../../../../../doc//admin/assets/img/demos/demo19.png" alt="" class="w-100" />
-          </div>
-          <div class="overlay-layer">
-            <a href="#" class="btn font-weight-bold btn-primary btn-shadow disabled">به زودی</a>
-
-          </div>
-        </div>
-        <h5 class="font-weight-bold mb-4 text-center">نسخه ی نمایشی 20</h5>
-        <div class="overlay rounded-lg mb-8 offcanvas-demo ">
-          <div class="overlay-wrapper rounded-lg">
-            <img src="/admin/assets//../../../../../../doc//admin/assets/img/demos/demo20.png" alt="" class="w-100" />
-          </div>
-          <div class="overlay-layer">
-            <a href="#" class="btn font-weight-bold btn-primary btn-shadow disabled">به زودی</a>
-
-          </div>
-        </div>
-        <h5 class="font-weight-bold mb-4 text-center">نسخه ی نمایشی 21</h5>
-        <div class="overlay rounded-lg mb-8 offcanvas-demo ">
-          <div class="overlay-wrapper rounded-lg">
-            <img src="/admin/assets//../../../../../../doc//admin/assets/img/demos/demo21.png" alt="" class="w-100" />
-          </div>
-          <div class="overlay-layer">
-            <a href="#" class="btn font-weight-bold btn-primary btn-shadow disabled">به زودی</a>
-
-          </div>
-        </div>
-        <h5 class="font-weight-bold mb-4 text-center">نسخه ی نمایشی 22</h5>
-        <div class="overlay rounded-lg mb-8 offcanvas-demo ">
-          <div class="overlay-wrapper rounded-lg">
-            <img src="/admin/assets//../../../../../../doc//admin/assets/img/demos/demo22.png" alt="" class="w-100" />
-          </div>
-          <div class="overlay-layer">
-            <a href="#" class="btn font-weight-bold btn-primary btn-shadow disabled">به زودی</a>
-
-          </div>
-        </div>
-        <h5 class="font-weight-bold mb-4 text-center">نسخه ی نمایشی 23</h5>
-        <div class="overlay rounded-lg mb-8 offcanvas-demo ">
-          <div class="overlay-wrapper rounded-lg">
-            <img src="/admin/assets//../../../../../../doc//admin/assets/img/demos/demo23.png" alt="" class="w-100" />
-          </div>
-          <div class="overlay-layer">
-            <a href="#" class="btn font-weight-bold btn-primary btn-shadow disabled">به زودی</a>
-
-          </div>
-        </div>
-        <h5 class="font-weight-bold mb-4 text-center">نسخه ی نمایشی 24</h5>
-        <div class="overlay rounded-lg mb-8 offcanvas-demo ">
-          <div class="overlay-wrapper rounded-lg">
-            <img src="/admin/assets//../../../../../../doc//admin/assets/img/demos/demo24.png" alt="" class="w-100" />
-          </div>
-          <div class="overlay-layer">
-            <a href="#" class="btn font-weight-bold btn-primary btn-shadow disabled">به زودی</a>
-
-          </div>
-        </div>
-        <h5 class="font-weight-bold mb-4 text-center">نسخه ی نمایشی 25</h5>
-        <div class="overlay rounded-lg mb-8 offcanvas-demo ">
-          <div class="overlay-wrapper rounded-lg">
-            <img src="/admin/assets//../../../../../../doc//admin/assets/img/demos/demo25.png" alt="" class="w-100" />
-          </div>
-          <div class="overlay-layer">
-            <a href="#" class="btn font-weight-bold btn-primary btn-shadow disabled">به زودی</a>
-
-          </div>
-        </div>
-        <h5 class="font-weight-bold mb-4 text-center">نسخه ی نمایشی 26</h5>
-        <div class="overlay rounded-lg mb-8 offcanvas-demo ">
-          <div class="overlay-wrapper rounded-lg">
-            <img src="/admin/assets//../../../../../../doc//admin/assets/img/demos/demo26.png" alt="" class="w-100" />
-          </div>
-          <div class="overlay-layer">
-            <a href="#" class="btn font-weight-bold btn-primary btn-shadow disabled">به زودی</a>
-
-          </div>
-        </div>
-        <h5 class="font-weight-bold mb-4 text-center">نسخه ی نمایشی 27</h5>
-        <div class="overlay rounded-lg mb-8 offcanvas-demo ">
-          <div class="overlay-wrapper rounded-lg">
-            <img src="/admin/assets//../../../../../../doc//admin/assets/img/demos/demo27.png" alt="" class="w-100" />
-          </div>
-          <div class="overlay-layer">
-            <a href="#" class="btn font-weight-bold btn-primary btn-shadow disabled">به زودی</a>
-
-          </div>
-        </div>
-        <h5 class="font-weight-bold mb-4 text-center">نسخه ی نمایشی 28</h5>
-        <div class="overlay rounded-lg mb-8 offcanvas-demo ">
-          <div class="overlay-wrapper rounded-lg">
-            <img src="/admin/assets//../../../../../../doc//admin/assets/img/demos/demo28.png" alt="" class="w-100" />
-          </div>
-          <div class="overlay-layer">
-            <a href="#" class="btn font-weight-bold btn-primary btn-shadow disabled">به زودی</a>
-
-          </div>
-        </div>
-        <h5 class="font-weight-bold mb-4 text-center">نسخه ی نمایشی 29</h5>
-        <div class="overlay rounded-lg mb-8 offcanvas-demo ">
-          <div class="overlay-wrapper rounded-lg">
-            <img src="/admin/assets//../../../../../../doc//admin/assets/img/demos/demo29.png" alt="" class="w-100" />
-          </div>
-          <div class="overlay-layer">
-            <a href="#" class="btn font-weight-bold btn-primary btn-shadow disabled">به زودی</a>
-
-          </div>
-        </div>
-        <h5 class="font-weight-bold mb-4 text-center">نسخه ی نمایشی 30</h5>
-        <div class="overlay rounded-lg mb-8 offcanvas-demo ">
-          <div class="overlay-wrapper rounded-lg">
-            <img src="/admin/assets//../../../../../../doc//admin/assets/img/demos/demo30.png" alt="" class="w-100" />
-          </div>
-          <div class="overlay-layer">
-            <a href="#" class="btn font-weight-bold btn-primary btn-shadow disabled">به زودی</a>
-
-          </div>
-        </div>
-      </div>
       <!--end::Wrapper-->
 
       <!--begin::خرید-->
@@ -2335,6 +2035,29 @@
         console.error(error);
       });
   </script>
+
+
+  <!-- jQuery -->
+  <script src="\js\jquery.min.js"></script>
+
+  <!-- persian-date JS -->
+  <script src="\js\persian-date.min.js"></script>
+
+  <!-- persian-datepicker JS -->
+  <script src="\js\persian-datepicker.min.js"></script>
+
+
+  <script>
+    $(document).ready(function() {
+      $('#date').persianDatepicker({
+        format: 'YYYY/MM/DD',
+        autoClose: true,
+        initialValue: false,
+      });
+    });
+  </script>
+  </script>
+
 
 
   @include('admin.layouts.notifications')

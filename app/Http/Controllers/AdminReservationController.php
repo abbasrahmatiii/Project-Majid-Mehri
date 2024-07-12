@@ -11,7 +11,7 @@ class AdminReservationController extends Controller
 {
     public function index()
     {
-        $reservations = Reservation::with(['consultation.day', 'consultation.timeSlot', 'consultation.consultant', 'user'])->get();
+        $reservations = Reservation::with(['consultation.timeSlot', 'consultation.consultant', 'user'])->get();
 
         return view('admin.reservations.index', compact('reservations'));
     }
