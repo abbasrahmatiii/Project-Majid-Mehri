@@ -19,6 +19,7 @@
               <!-- <th>روز</th> -->
               <th>تاریخ</th>
               <th>بازه زمانی</th>
+              <th>قیمت</th>
               <th>عملیات</th>
             </tr>
           </thead>
@@ -29,6 +30,8 @@
 
               <td>{{ \Hekmatinasser\Verta\Verta::instance($consultation->date)->format('Y/m/d') }}</td>
               <td>{{ $consultation->timeSlot->start_time }} الی {{ $consultation->timeSlot->end_time }}</td>
+              <td>{{ number_format($consultation->price) }} ریال</td>
+
               <td>
                 <a href="{{ route('admin.consultations.edit', $consultation->id) }}" class="btn btn-sm btn-warning">ویرایش</a>
                 <form action="{{ route('admin.consultations.destroy', $consultation->id) }}" method="POST" style="display:inline;">

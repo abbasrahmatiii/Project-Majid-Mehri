@@ -45,7 +45,11 @@ class HomeController extends Controller
         return view('home', compact('settings', 'slides', 'contact', 'centerAds', 'latestPosts'));
     }
 
-
+    public function list_posts()
+    {
+        $posts = Post::latest()->paginate(9);
+        return view('layouts/posts', compact('posts'));
+    }
 
     public function profile()
     {

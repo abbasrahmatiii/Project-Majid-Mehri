@@ -142,6 +142,7 @@ Route::middleware(['auth', 'check.role'])->group(function () {
     Route::put('admin/posts/{post}', [PostController::class, 'update'])->name('posts.update');
     Route::delete('admin/posts/{post}', [PostController::class, 'destroy'])->name('posts.destroy');
 });
+Route::get('/posts', [HomeController::class, 'list_posts'])->name('posts.index');
 
 // Authentication Routes...
 Route::get('login', [LoginController::class, 'showLoginForm'])->middleware('guest')->name('login');
@@ -208,4 +209,6 @@ Route::middleware('auth')->group(function () {
 });
 Route::prefix('user/')->middleware('auth')->group(function () {
     Route::get('reservations/reserved', [ReservationController::class, 'userReservations'])->name('user.reservations.reserved');
+    Route::get('/reservations/{id}/pay', [ReservationController::class, 'pay'])->name('reservations.pay');
+    Route::get('/reservations/callback/{id}', [ReservationController::class, 'callback'])->name('reservations.callback');
 });

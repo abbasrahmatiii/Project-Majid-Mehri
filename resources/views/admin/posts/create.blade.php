@@ -25,23 +25,18 @@
         </div>
         <div class="form-group">
           <label for="summary">خلاصه</label>
-
           <textarea id="editor1" name="summary" class="form-control">{{ old('summary') }}</textarea>
-
           @if($errors->has('summary'))
           <div class="text-danger">{{ $errors->first('summary') }}</div>
           @endif
         </div>
-
         <div class="form-group">
           <label for="body">محتوا</label>
           <textarea id="editor2" name="body" class="form-control">{{ old('body') }}</textarea>
-
           @if($errors->has('body'))
           <div class="text-danger">{{ $errors->first('body') }}</div>
           @endif
         </div>
-
         <div class="form-group">
           <label for="category_id">دسته‌بندی</label>
           <select name="category_id" class="form-control">
@@ -77,5 +72,20 @@
     </div>
   </div>
 </div>
+
+<script src="https://cdn.ckeditor.com/ckeditor5/36.0.1/classic/ckeditor.js"></script>
+<script>
+  ClassicEditor
+    .create(document.querySelector('#editor1'))
+    .catch(error => {
+      console.error(error);
+    });
+
+  ClassicEditor
+    .create(document.querySelector('#editor2'))
+    .catch(error => {
+      console.error(error);
+    });
+</script>
 
 @endsection

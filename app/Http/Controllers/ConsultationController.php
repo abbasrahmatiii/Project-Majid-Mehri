@@ -47,24 +47,36 @@ class ConsultationController extends Controller
     {
         $request->validate([
             'consultant_id' => 'required|exists:users,id',
-            'day_id' => 'required|exists:days,id',
+            'date' => 'required',
+            'price' => 'required|integer',
             'time_slot_id' => 'required|exists:time_slots,id',
         ]);
 
-        // بررسی همپوشانی روز و بازه زمانی
-        $existingConsultation = Consultation::where('day_id', $request->day_id)
-            ->where('time_slot_id', $request->time_slot_id)
-            ->where('id', '!=', $id) // برای جلوگیری از بررسی خود مشاوره
-            ->first();
+        $dateShamsi = $request->input('date');
+        $dateMiladi = Verta::parse($dateShamsi)->datetime()->format('Y-m-d');
+        $consultant_id = $request->input('consultant_id');
+        $time_slot_id = $request->input('time_slot_id');
+        $timeSlot = TimeSlot::find($time_slot_id);
+        $existingConsultation = Consultation::where('consultant_id', $consultant_id)
+            ->where('date',  $dateMiladi)
+            ->where('id', '!=', $id)
+            ->whereHas('timeSlot', function ($query) use ($timeSlot) {
+                $query->where(function ($q) use ($timeSlot) {
+                    $q->where('start_time', '<', $timeSlot->end_time)
+                        ->where('end_time', '>', $timeSlot->start_time);
+                });
+            })->count();
 
-        if ($existingConsultation) {
-            return redirect()->back()->with('error', 'این بازه زمانی در این روز قبلاً برای مشاوره دیگری انتخاب شده است.');
+        if ($existingConsultation > 0) {
+            return redirect()->back()->withErrors('زمان انتخابی با بازه زمانی دیگری همپوشانی دارد.');
         }
-
+        $dateShamsi = $request->input('date');
+        $dateMiladi = Verta::parse($dateShamsi)->datetime()->format('Y-m-d');
         $consultation = Consultation::findOrFail($id);
         $consultation->consultant_id = $request->consultant_id;
-        $consultation->day_id = $request->day_id;
         $consultation->time_slot_id = $request->time_slot_id;
+        $consultation->price = $request->price;
+        $date =   $dateMiladi;
         $consultation->save();
 
         return redirect()->route('admin.consultations.index')->with('success', 'مشاوره با موفقیت به‌روزرسانی شد');
@@ -75,14 +87,15 @@ class ConsultationController extends Controller
             // 'day_id' => 'required|exists:days,id',
             'time_slot_id' => 'required|exists:time_slots,id',
             'date' => 'required',
+            'price' => 'required|integer',
             'consultant_id' => 'required|exists:users,id',
         ]);
         $dateShamsi = $request->input('date');
         $dateMiladi = Verta::parse($dateShamsi)->datetime()->format('Y-m-d');
-        // $day_id = $request->input('day_id');
         $time_slot_id = $request->input('time_slot_id');
         $consultant_id = $request->input('consultant_id');
         $date =   $dateMiladi;
+        $price =  $request->input('price');
         $timeSlot = TimeSlot::find($time_slot_id);
 
         $existingConsultations = Consultation::where('consultant_id', $consultant_id)
@@ -103,6 +116,7 @@ class ConsultationController extends Controller
             'time_slot_id' => $time_slot_id,
             'date' => $date,
             'consultant_id' => $consultant_id,
+            'price' => $price,
         ]);
 
         return redirect()->route('admin.consultations.index')->with('success', 'زمان مشاوره با موفقیت ثبت شد.');

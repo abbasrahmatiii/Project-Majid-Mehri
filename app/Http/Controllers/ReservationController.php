@@ -3,9 +3,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Controller;
+use Evryn\LaravelToman\CallbackRequest;
 use Illuminate\Http\Request;
 use App\Models\Consultation;
 use App\Models\Reservation;
+use Evryn\LaravelToman\Facades\Toman;
 
 class ReservationController extends Controller
 {
@@ -45,7 +48,7 @@ class ReservationController extends Controller
             'user_id' => auth()->id(),
         ]);
 
-        return redirect()->route('reservations.index')->with('success', 'زمان مشاوره با موفقیت رزرو شد.');
+        return redirect()->route('user.reservations.reserved')->with('success', 'زمان مشاوره با موفقیت رزرو شد. لطفا برای نهایی شدن بر روی دکمه پرداخت کلیک کنید.');
     }
 
     public function userReservations()
@@ -61,5 +64,62 @@ class ReservationController extends Controller
         }
         $reservation->delete();
         return redirect()->route('reservations.index')->with('success', 'رزرو با موفقیت لغو شد.');
+    }
+
+
+    function pay(Request $request, $id)
+    {
+        // ...
+        $reservation = Reservation::findOrFail($id);
+
+        $request = Toman::amount($reservation->consultation->price)
+            ->description('جلسه مشاوره با : ' . $reservation->consultation->consultant->first_name . ' ' . $reservation->consultation->consultant->last_name . ' در تاریخ : ' . \Hekmatinasser\Verta\Verta::instance($reservation->consultation->date)->format('Y/m/d'))
+            ->callback(route('reservations.callback', $id))
+            ->mobile('09350000000')
+            ->email('amirreza@example.com')
+            ->request();
+
+        if ($request->successful()) {
+
+            $transactionId = $request->transactionId();
+            // Store created transaction details for verification
+
+            return $request->pay(); // Redirect to payment URL
+        }
+
+        if ($request->failed()) {
+
+            // Handle transaction request failure; Probably showing proper error to user.
+        }
+    }
+
+
+
+
+
+    public function callback(CallbackRequest $request, $id)
+    {
+        // Use $request->transactionId() to match the payment record stored
+        // in your persistence database and get expected amount, which is required
+        // for verification. Take care of Double Spending.
+        $reservation = Reservation::findOrFail($id);
+        $payment = $request->amount($reservation->consultation->price)->verify();
+
+        if ($payment->successful()) {
+            // Store the successful transaction details
+            $transactionId = $payment->referenceId();
+            $reservation->payment_id = $transactionId;
+            $reservation->is_paid = 1;
+            $reservation->save();
+            return redirect(route('user.reservations.reserved'))->with('success', 'پرداخت با موفقیت انجام گردید.');
+        }
+
+        if ($payment->alreadyVerified()) {
+            return redirect()->back()->with('error', 'این رزرو قبلاً پرداخت شده است.');
+        }
+
+        if ($payment->failed()) {
+            return redirect(route('user.reservations.reserved'))->with('error', 'پرداخت ناموفق بود');
+        }
     }
 }

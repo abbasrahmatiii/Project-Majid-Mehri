@@ -40,6 +40,11 @@
             @endforeach
           </select>
         </div>
+        <div class="form-group">
+          <label for="price">قیمت</label>
+          <input type="number" name="price" id="price" class="form-control" value="{{ old('price', $consultation->price ?? '') }}" required>
+        </div>
+
         <button type="submit" class="btn btn-primary">ذخیره</button>
       </form>
     </div>

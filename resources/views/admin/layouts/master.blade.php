@@ -13,6 +13,10 @@
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
   <!--begin::Fonts-->
   <!-- <link rel="stylesheet" href="dddds://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" /> end::Fonts -->
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
   <link rel="stylesheet" href="https://cdn.ckeditor.com/ckeditor5/42.0.0/ckeditor5.css" />
   <!--begin::Page Vendors Styles(used by this page)-->
   <link href="/admin/assets/plugins/custom/fullcalendar/fullcalendar.bundle.rtl.css?v=7.0.6" rel="stylesheet" type="text/css" />
@@ -372,12 +376,12 @@
                 <div class="menu-submenu">
                   <i class="menu-arrow"></i>
                   <ul class="menu-subnav">
-                    <li class="menu-item" aria-haspopup="true">
+                    <!-- <li class="menu-item" aria-haspopup="true">
                       <a href="/admin/days/index" class="menu-link">
                         <i class="menu-bullet menu-bullet-dot"><span></span></i>
                         <span class="menu-text">مدیریت روزها</span>
                       </a>
-                    </li>
+                    </li> -->
                     <li class="menu-item" aria-haspopup="true">
                       <a href="/admin/time_slots/index" class="menu-link">
                         <i class="menu-bullet menu-bullet-dot"><span></span></i>
@@ -2035,6 +2039,11 @@
         console.error(error);
       });
   </script>
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
 
 
   <!-- jQuery -->
