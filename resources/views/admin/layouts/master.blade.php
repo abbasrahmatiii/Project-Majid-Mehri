@@ -1,18 +1,25 @@
 <!DOCTYPE html>
 
 <html direction="rtl" dir="rtl" style="direction: rtl">
+<!DOCTYPE html>
+<html direction="rtl" dir="rtl" style="direction: rtl">
 <!--begin::Head-->
 
 <head>
   <base href="">
   <meta charset="utf-8" />
   <title>داشبرد مدیریت سایت</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Summernote CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.18/summernote.min.css" rel="stylesheet">
+
+
   <meta name="description" content="Updates and statistics" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <link rel="stylesheet" href="\css\all.min.css">
+  <link rel="stylesheet" href="/css/all.min.css">
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
   <!--begin::Fonts-->
-  <!-- <link rel="stylesheet" href="dddds://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" /> end::Fonts -->
+  <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" /> end::Fonts -->
   <!-- jQuery -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <!-- SweetAlert2 -->
@@ -22,27 +29,26 @@
   <link href="/admin/assets/plugins/custom/fullcalendar/fullcalendar.bundle.rtl.css?v=7.0.6" rel="stylesheet" type="text/css" />
   <!--end::Page Vendors Styles-->
   <!-- persian-datepicker CSS -->
-  <link rel="stylesheet" href="\css\persian-datepicker.min.css">
-  <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+  <link rel="stylesheet" href="/css/persian-datepicker.min.css">
   <link href="{{ asset('css/custom.css') }}" rel="stylesheet"> <!-- اضافه کردن فایل CSS -->
   <script src="{{ asset('js/app.js') }}" defer></script>
-  <!--begin::Global تم Styles(used by all pages)-->
+  <!--begin::Global Theme Styles(used by all pages)-->
   <link href="/admin/assets/plugins/global/plugins.bundle.rtl.css?v=7.0.6" rel="stylesheet" type="text/css" />
   <link href="/admin/assets/plugins/custom/prismjs/prismjs.bundle.rtl.css?v=7.0.6" rel="stylesheet" type="text/css" />
-  <link href="/admin/assets/css/style.bundle.rtl.css?v=7.0.6" rel="stylesheet" rel="preload" type="text/css" />
-  <!--end::Global تم Styles-->
+  <link href="/admin/assets/css/style.bundle.rtl.css?v=7.0.6" rel="stylesheet" type="text/css" />
+  <!--end::Global Theme Styles-->
 
-  <!--begin::چیدمان تم ها(used by all pages)-->
-
+  <!--begin::Layout Themes(used by all pages)-->
   <link href="/admin/assets/css/themes/layout/header/base/light.rtl.css?v=7.0.6" rel="stylesheet" type="text/css" />
   <link href="/admin/assets/css/themes/layout/header/menu/light.rtl.css?v=7.0.6" rel="stylesheet" type="text/css" />
   <link href="/admin/assets/css/themes/layout/brand/dark.rtl.css?v=7.0.6" rel="stylesheet" type="text/css" />
-  <link href="/admin/assets/css/themes/layout/aside/dark.rtl.css?v=7.0.6" rel="stylesheet" type="text/css" /> <!--end::چیدمان تم ها-->
+  <link href="/admin/assets/css/themes/layout/aside/dark.rtl.css?v=7.0.6" rel="stylesheet" type="text/css" />
+  <!--end::Layout Themes-->
 
   <link rel="shortcut icon" href="/admin/assets/media/logos/favicon.ico" />
-
 </head>
 <!--end::Head-->
+
 
 <!--begin::Body-->
 
@@ -563,6 +569,11 @@
             </div>
           </div>
           @yield('content')
+          <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+          <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+          <!-- Summernote JS -->
+          <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+
         </div>
         <!--end::Content-->
 
@@ -1904,10 +1915,10 @@
   </div>
   <!--end::نسخه ی نمایشی Panel-->
 
+  <!--begin::Global Config(global config for global JS scripts)-->
   <script>
-    var HOST_URL = "dddds://preview.keenthemes.com/metronic/theme/html/tools/preview";
+    var HOST_URL = "https://preview.keenthemes.com/metronic/theme/html/tools/preview";
   </script>
-  <!--begin::Global Config(global config for global جی اس scripts)-->
   <script>
     var KTAppSettings = {
       "breakpoints": {
@@ -1970,11 +1981,11 @@
   </script>
   <!--end::Global Config-->
 
-  <!--begin::Global تم Bundle(used by all pages)-->
+  <!--begin::Global Theme Bundle(used by all pages)-->
   <script src="/admin/assets/plugins/global/plugins.bundle.js?v=7.0.6"></script>
   <script src="/admin/assets/plugins/custom/prismjs/prismjs.bundle.js?v=7.0.6"></script>
   <script src="/admin/assets/js/scripts.bundle.js?v=7.0.6"></script>
-  <!--end::Global تم Bundle-->
+  <!--end::Global Theme Bundle-->
 
   <!--begin::Page Vendors(used by this page)-->
   <script src="/admin/assets/plugins/custom/fullcalendar/fullcalendar.bundle.js?v=7.0.6"></script>
@@ -1982,19 +1993,17 @@
 
   <!--begin::Page Scripts(used by this page)-->
   <script src="/admin/assets/js/pages/widgets.js?v=7.0.6"></script>
-  <!--end::Page Scripts-->
-  <!--begin::Page Scripts(used by this page)-->
   <script src="/admin/assets/js/pages/crud/ktdatatable/base/data-local.js?v=7.0.6"></script>
   <!--end::Page Scripts-->
 
   <script type="importmap">
     {
-                "imports": {
-                    "ckeditor5": "https://cdn.ckeditor.com/ckeditor5/42.0.0/ckeditor5.js",
-                    "ckeditor5/": "https://cdn.ckeditor.com/ckeditor5/42.0.0/"
-                }
-            }
-        </script>
+      "imports": {
+        "ckeditor5": "https://cdn.ckeditor.com/ckeditor5/42.0.0/ckeditor5.js",
+        "ckeditor5/": "https://cdn.ckeditor.com/ckeditor5/42.0.0/"
+      }
+    }
+  </script>
   <script type="module">
     import {
       ClassicEditor,
@@ -2004,7 +2013,6 @@
       Font,
       Paragraph,
       Image,
-
     } from 'ckeditor5';
 
     const editorConfig = {
@@ -2044,17 +2052,12 @@
   <!-- SweetAlert2 -->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
-
-
   <!-- jQuery -->
-  <script src="\js\jquery.min.js"></script>
-
+  <script src="/js/jquery.min.js"></script>
   <!-- persian-date JS -->
-  <script src="\js\persian-date.min.js"></script>
-
+  <script src="/js/persian-date.min.js"></script>
   <!-- persian-datepicker JS -->
-  <script src="\js\persian-datepicker.min.js"></script>
-
+  <script src="/js/persian-datepicker.min.js"></script>
 
   <script>
     $(document).ready(function() {
@@ -2065,10 +2068,9 @@
       });
     });
   </script>
-  </script>
-
-
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.18/summernote.min.js"></script>
   @include('admin.layouts.notifications')
   <!-- @yield('js') -->
 </body>

@@ -46,7 +46,9 @@ Route::get('login', [LoginController::class, 'showLoginForm'])->middleware('gues
 Route::post('login', [LoginController::class, 'login'])->middleware('guest')->name('user.login');
 Route::post('logout', [LoginController::class, 'logout'])->name('user.logout');
 
-
+Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
+    \UniSharp\LaravelFilemanager\Lfm::routes();
+});
 // Front-Posts
 Route::get('/posts/{slug}', [PostController::class, 'show'])->middleware('count.views')->name('posts.show');
 

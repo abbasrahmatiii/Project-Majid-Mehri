@@ -45,15 +45,36 @@ class PostController extends Controller
 
     public function store(Request $request)
     {
+        $messages = [
+            'title.required' => 'عنوان الزامی است.',
+            'title.string' => 'عنوان باید یک رشته باشد.',
+            'title.max' => 'عنوان نباید بیشتر از 255 کاراکتر باشد.',
+            'slug.required' => 'اسلاگ الزامی است.',
+            'slug.string' => 'اسلاگ باید یک رشته باشد.',
+            'slug.max' => 'اسلاگ نباید بیشتر از 255 کاراکتر باشد.',
+            'slug.unique' => 'اسلاگ قبلا انتخاب شده است.',
+            'summary.required' => 'خلاصه الزامی است.',
+            'summary.string' => 'خلاصه باید یک رشته باشد.',
+            'body.required' => 'محتوا الزامی است.',
+            'body.string' => 'محتوا باید یک رشته باشد.',
+            'published.required' => 'وضعیت انتشار الزامی است.',
+            'category_id.required' => 'دسته‌بندی الزامی است.',
+            'category_id.exists' => 'دسته‌بندی انتخاب شده معتبر نیست.',
+            'image.image' => 'تصویر باید یک فایل تصویری باشد.',
+            'image.mimes' => 'تصویر باید یکی از انواع jpeg, png, jpg, gif, svg باشد.',
+            'image.max' => 'تصویر نباید بیشتر از 2048 کیلوبایت باشد.',
+            'image.required' => 'تصویر الزامی است.',
+        ];
+
         $request->validate([
             'title' => 'required|string|max:255',
             'slug' => 'required|string|max:255|unique:posts,slug',
-            'summary' => 'required|string|max:500',
+            'summary' => 'required|string',
             'body' => 'required|string',
             'published' => 'required',
             'category_id' => 'required|exists:categories,id',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-        ]);
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ], $messages);
 
         $post = new Post();
         $post->title = $request->title;
@@ -63,7 +84,7 @@ class PostController extends Controller
         $post->user_id = auth()->id();
         $post->category_id = $request->category_id;
         $post->views = 0;
-        $post->published;
+        $post->published = $request->published;
 
         if ($request->hasFile('image')) {
             $imagePath = $request->file('image')->store('posts', 'public');
@@ -75,6 +96,7 @@ class PostController extends Controller
         return redirect('admin/posts/index')->with('success', 'پست با موفقیت ایجاد شد.');
     }
 
+
     public function edit(Post $post)
     {
         $categories = Category::all();
@@ -84,6 +106,26 @@ class PostController extends Controller
 
     public function update(Request $request, Post $post)
     {
+        $messages = [
+            'title.required' => 'عنوان الزامی است.',
+            'title.string' => 'عنوان باید یک رشته باشد.',
+            'title.max' => 'عنوان نباید بیشتر از 255 کاراکتر باشد.',
+            'slug.required' => 'اسلاگ الزامی است.',
+            'slug.string' => 'اسلاگ باید یک رشته باشد.',
+            'slug.max' => 'اسلاگ نباید بیشتر از 255 کاراکتر باشد.',
+            'slug.unique' => 'اسلاگ قبلا انتخاب شده است.',
+            'summary.required' => 'خلاصه الزامی است.',
+            'summary.string' => 'خلاصه باید یک رشته باشد.',
+            'body.required' => 'محتوا الزامی است.',
+            'body.string' => 'محتوا باید یک رشته باشد.',
+            'category_id.required' => 'دسته‌بندی الزامی است.',
+            'category_id.exists' => 'دسته‌بندی انتخاب شده معتبر نیست.',
+            'published.required' => 'وضعیت انتشار الزامی است.',
+            'published.in' => 'وضعیت انتشار معتبر نیست.',
+            'image.image' => 'تصویر باید یک فایل تصویری باشد.',
+            'image.max' => 'تصویر نباید بیشتر از 2048 کیلوبایت باشد.',
+        ];
+
         $request->validate([
             'title' => 'required|string|max:255',
             'slug' => 'required|string|max:255|unique:posts,slug,' . $post->id,
@@ -92,7 +134,7 @@ class PostController extends Controller
             'category_id' => 'required|exists:categories,id',
             'published' => 'required|in:0,1',
             'image' => 'nullable|image|max:2048',
-        ]);
+        ], $messages);
 
         $data = $request->only(['title', 'slug', 'summary', 'body', 'category_id', 'published']);
 
@@ -102,13 +144,14 @@ class PostController extends Controller
 
         $post->update($data);
 
-        return redirect()->route('posts.index')->with('success', 'پست با موفقیت به روز شد.');
+        return redirect('admin/posts/index')->with('success', 'پست با موفقیت به روز شد.');
     }
+
 
     public function destroy(Post $post)
     {
         $post->delete();
-        return redirect()->route('posts.index')->with('success', 'پست با موفقیت حذف شد.');
+        return redirect('admin/posts/index')->with('success', 'پست با موفقیت حذف شد.');
     }
 
 

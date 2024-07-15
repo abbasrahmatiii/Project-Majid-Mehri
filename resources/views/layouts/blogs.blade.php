@@ -27,7 +27,7 @@
               <h4 class="line-height-8 text-4 primary-font mt-n1">
                 <a href="{{ route('posts.show', $post->slug) }}" class="text-light">{{ $post->title }}</a>
               </h4>
-              <p class="text-color-light opacity-6 pr-4 mb-1">{{ Str::limit($post->summary, 100) }}</p>
+              <p class="text-color-light opacity-6 pr-4 mb-1">{!! Str::limit($post->summary, 100) !!}</p>
               <a href="{{ route('posts.show', $post->slug) }}" class="read-more text-color-light font-weight-semibold text-2 mt-1">بیشتر بخوانید <i class="fas fa-chevron-left text-1 ml-1"></i></a>
             </div>
           </div>
