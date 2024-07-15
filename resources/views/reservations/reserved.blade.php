@@ -83,17 +83,4 @@
         </div>
       </div>
     </div>
-  </div>
-</div>
-@if(isset($reservation))
-<script>
-  $('#cancelModal').on('show.bs.modal', function(event) {
-    var button = $(event.relatedTarget)
-    var id = button.data('id')
-    var action = "{{ url('reservations') }}/" + id
-    var modal = $(this)
-    modal.find('#cancelForm').attr('action', action)
-  })
-</script>
-@endif
 @endsection
