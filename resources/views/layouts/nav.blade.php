@@ -17,6 +17,11 @@
                       اخبار
                     </a>
                   </li>
+                  <li class="dropdown dropdown-full-color dropdown-light">
+                    <a class="dropdown-item dropdown-toggle" href="{{ route('articles') }}">
+                      مقالات
+                    </a>
+                  </li>
                   @if(auth()->check())
                   @if(auth()->user()->hasRole('مدیر کل'))
                   <li class="dropdown dropdown-full-color dropdown-light">

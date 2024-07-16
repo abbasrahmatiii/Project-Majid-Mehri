@@ -67,6 +67,7 @@ return array(
     'App\\Models\\Consultation' => $baseDir . '/app/Models/Consultation.php',
     'App\\Models\\Contacts' => $baseDir . '/app/Models/Contacts.php',
     'App\\Models\\Day' => $baseDir . '/app/Models/Day.php',
+    'App\\Models\\Page' => $baseDir . '/app/Models/Page.php',
     'App\\Models\\Post' => $baseDir . '/app/Models/Post.php',
     'App\\Models\\Reservation' => $baseDir . '/app/Models/Reservation.php',
     'App\\Models\\Setting' => $baseDir . '/app/Models/Setting.php',

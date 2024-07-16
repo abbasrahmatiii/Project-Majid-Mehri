@@ -6,16 +6,9 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12 align-self-center p-static order-2 text-center">
-          <h1 class="text-dark font-weight-bold text-8">{{ $article->title }}</h1>
-          <span class="sub-title text-dark">{!! $article->summary !!}</span>
+          <h1 class="text-dark font-weight-bold text-5">{{ $article->title }}</h1>
         </div>
-        <div class="col-md-12 align-self-center order-1">
-          <ul class="breadcrumb d-block text-center">
-            <li><a href="/">خانه</a></li>
-            <li><a href="{{ route('articles.index') }}">بلاگ</a></li>
-            <li class="active">{{ $article->title }}</li>
-          </ul>
-        </div>
+
       </div>
     </div>
   </section>
@@ -32,10 +25,10 @@
         <div class="blog-posts single-post">
           <article class="post post-large blog-single-post border-0 m-0 p-0">
 
-            <div class="post-content ml-0 p-0 rounded bg-white shadow-sm mt-0">
-              <img src="{{ asset('storage/' . $article->image) }}" class="img-fluid mx-auto d-block" alt="{{ $article->title }}">
-            </div>
             <div class="post-content ml-0 p-4 rounded bg-white shadow-sm mt-4">
+
+              <img src="{{ asset('storage/' . $article->image) }}" class="img-fluid mx-auto d-block" alt="{{ $article->title }}">
+
               <div class="post-date ml-0">
                 <span class="day">{{ \Verta::instance($article->created_at)->format('d') }}</span>
                 <span class="month">{{ \Verta::instance($article->created_at)->format('F') }}</span>
@@ -80,16 +73,7 @@
                 </div>
               </div>
 
-              <div class="post-block mt-4 pt-2 post-author">
-                <h4 class="mb-3 secondary-font pb-1">نویسنده</h4>
-                <div class="img-thumbnail img-thumbnail-no-borders rounded-circle">
-                  <a href="1">
-                    <img src="{{ asset('img/avatars/avatar.jpg') }}" alt="{{ $article->user->name }}" class="img-fluid rounded-circle" style="border-radius: 100% !important;width: 100%; height: 100%; object-fit: cover;">
-                  </a>
-                </div>
-                <p><strong class="name"><a href="#" class="text-4 pb-1 d-block">{{ $article->user->name }}</a></strong></p>
-                <p>{{ $article->user->bio }}</p>
-              </div>
+
 
 
             </div>
@@ -140,38 +124,27 @@
     /* کاهش فاصله بین باکس کامنت و سایر عناصر */
   }
 
-  .comment-by {
-    font-weight: bold;
-    margin-bottom: 5px;
-  }
+
 
   .date {
     font-size: 0.85em;
     color: #888;
   }
 
-  .reply-form {
-    margin-top: 10px;
-  }
 
-  .comment-arrow {
-    /* Adjust the arrow style or remove it */
-  }
 
-  .comment-content-box p {
-    margin: 0;
-  }
 
-  .comment-content-box .date {
-    margin-top: 10px;
-    display: block;
-  }
 
   .post-content {
     background-color: #fff;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .post-content img {
+    margin: 10px;
+    border-radius: 10px;
   }
 
   .post-meta span {
@@ -184,7 +157,7 @@
   }
 
   .post-image {
-    width: 100%;
+    width: 100% !important;
   }
 
   .post-date {

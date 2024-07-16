@@ -145,6 +145,7 @@ Route::middleware(['auth', 'check.role'])->group(function () {
     Route::delete('admin/posts/{post}', [PostController::class, 'destroy'])->name('posts.destroy');
 });
 Route::get('/posts', [HomeController::class, 'list_posts'])->name('posts.index');
+Route::get('/articles', [HomeController::class, 'list_articles'])->name('articles');
 
 // Authentication Routes...
 Route::get('login', [LoginController::class, 'showLoginForm'])->middleware('guest')->name('login');
@@ -228,3 +229,16 @@ Route::prefix('admin')->group(function () {
 
 
 Route::get('/articles/{slug}', [ArticleController::class, 'show'])->name('articles.show');
+
+use App\Http\Controllers\PageController;
+
+Route::middleware(['auth'])->group(function () {
+    // Routes for PageController
+    Route::get('admin/pages', [PageController::class, 'index'])->name('pages.index');
+    Route::get('admin/pages/create', [PageController::class, 'create'])->name('pages.create');
+    Route::post('admin/pages', [PageController::class, 'store'])->name('pages.store');
+    Route::get('admin/pages/{page}/edit', [PageController::class, 'edit'])->name('pages.edit');
+    Route::put('admin/pages/{page}', [PageController::class, 'update'])->name('pages.update');
+    Route::delete('admin/pages/{page}', [PageController::class, 'destroy'])->name('pages.destroy');
+    Route::get('pages/{slug}', [PageController::class, 'show'])->name('pages.show');
+});

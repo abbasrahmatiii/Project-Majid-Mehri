@@ -55,6 +55,12 @@ class HomeController extends Controller
         return view('layouts/posts', compact('posts'));
     }
 
+    public function list_articles()
+    {
+        $latestArticles  = Article::latest()->paginate(12);
+        return view('layouts/frontArticles', compact('latestArticles'));
+    }
+
     public function profile()
     {
 

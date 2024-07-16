@@ -672,6 +672,7 @@ class ComposerStaticInit0d52140ec7c90ee744c21819ec58c6f3
         'App\\Models\\Consultation' => __DIR__ . '/../..' . '/app/Models/Consultation.php',
         'App\\Models\\Contacts' => __DIR__ . '/../..' . '/app/Models/Contacts.php',
         'App\\Models\\Day' => __DIR__ . '/../..' . '/app/Models/Day.php',
+        'App\\Models\\Page' => __DIR__ . '/../..' . '/app/Models/Page.php',
         'App\\Models\\Post' => __DIR__ . '/../..' . '/app/Models/Post.php',
         'App\\Models\\Reservation' => __DIR__ . '/../..' . '/app/Models/Reservation.php',
         'App\\Models\\Setting' => __DIR__ . '/../..' . '/app/Models/Setting.php',
