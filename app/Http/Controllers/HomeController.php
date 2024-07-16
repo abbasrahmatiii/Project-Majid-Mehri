@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Article;
 use App\Models\CenterAd;
 use App\Models\Contacts;
 use App\Models\Post;
@@ -30,6 +31,9 @@ class HomeController extends Controller
     {
 
 
+        $latestArticles = Article::where('published', 1)->orderBy('created_at', 'desc')->take(4)->get();
+
+
         $centerAds = CenterAd::where('is_active', true)
             ->orderBy('created_at', 'desc')
             ->take(3)
@@ -42,7 +46,7 @@ class HomeController extends Controller
         $contact = Contacts::first();
         $latestPosts = Post::where('published', 1)->orderBy('created_at', 'desc')->take(4)->get();
 
-        return view('home', compact('settings', 'slides', 'contact', 'centerAds', 'latestPosts'));
+        return view('home', compact('settings', 'slides', 'contact', 'centerAds', 'latestPosts', 'latestArticles'));
     }
 
     public function list_posts()

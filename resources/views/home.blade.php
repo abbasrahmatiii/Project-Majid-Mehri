@@ -7,4 +7,5 @@
 @include('layouts.ourteams')
 @include('layouts.blogs')
 @include('layouts.ourclients')
+@include('layouts.articles')
 @endsection
