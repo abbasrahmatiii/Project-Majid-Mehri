@@ -12,13 +12,13 @@
         @method('PUT')
         <div class="form-group">
           <label for="title">عنوان</label>
-          <input type="text" name="title" class="form-control" value="{{ $article->title }}">
+          <input type="text" name="title" id="title" class="form-control" value="{{ $article->title }}">
           <div class="text-danger" id="titleError"></div>
         </div>
 
         <div class="form-group">
           <label for="slug">اسلاگ</label>
-          <input type="text" name="slug" class="form-control" value="{{ $article->slug }}">
+          <input type="text" name="slug" id="slug" class="form-control" value="{{ $article->slug }}" readonly>
           <div class="text-danger" id="slugError"></div>
         </div>
 
@@ -87,6 +87,16 @@
 
 <script>
   $(document).ready(function() {
+    $('#title').on('input', function() {
+      var title = $(this).val();
+      var slug = generateSlug(title);
+      $('#slug').val(slug);
+    });
+
+    function generateSlug(title) {
+      return title.trim().replace(/\s+/g, '-');
+    }
+
     var route_prefix = "/laravel-filemanager";
 
     function lfm(type, options, cb) {
@@ -101,10 +111,8 @@
           return item.url;
         }).join(',');
 
-        // set the value of the desired input to image url
         cb(file_path);
 
-        // trigger change event
         target_input.trigger('change');
         target_preview.trigger('change');
       };
@@ -157,7 +165,7 @@
           toastr.success(response.message);
           setTimeout(function() {
             window.location.href = "{{ route('articles.index') }}";
-          }, 100);
+          }, 1000);
         },
         error: function(xhr) {
           var errors = xhr.responseJSON.errors;
