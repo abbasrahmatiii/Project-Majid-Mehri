@@ -8,8 +8,8 @@
             <div class="header-logo header-logo-sticky-change">
               <a href="/">
                 @if(isset($contact->logo))
-                <img class="header-logo-sticky opacity-0" alt="Logo" width="100" height="48" data-sticky-width="89" data-sticky-height="43" data-sticky-top="88" src="{{ asset('/storage/logos/'.$contact->logo) }}">
-                <img class="header-logo-non-sticky opacity-0" alt="Logo" width="100" height="48" src="{{ asset('/storage/logos/'. $contact->logo) }}">
+                <img style="position: absolute; top: -20px; right: 0;" class="header-logo-sticky opacity-0" alt="Logo" width="100" height="88" data-sticky-width="89" data-sticky-height="43" data-sticky-top="88" src="{{ asset('/storage/logos/'.$contact->logo) }}">
+                <img class="header-logo-non-sticky opacity-0" alt="Logo" width="100" height="88" src="{{ asset('/storage/logos/'. $contact->logo) }}">
                 @else
                 <img class="header-logo-sticky opacity-0" alt="Logo" width="100" height="48" data-sticky-width="89" data-sticky-height="43" data-sticky-top="88" src="img/logo-dark.png">
                 <img class="header-logo-non-sticky opacity-0" alt="Logo" width="100" height="48" src="img/logo-default.png">

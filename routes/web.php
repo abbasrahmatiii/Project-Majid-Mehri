@@ -231,6 +231,7 @@ Route::prefix('admin')->group(function () {
 Route::get('/articles/{slug}', [ArticleController::class, 'show'])->name('articles.show');
 
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\WhoWeAreController;
 
 Route::middleware(['auth'])->group(function () {
     // Routes for PageController
@@ -241,4 +242,10 @@ Route::middleware(['auth'])->group(function () {
     Route::put('admin/pages/{page}', [PageController::class, 'update'])->name('pages.update');
     Route::delete('admin/pages/{page}', [PageController::class, 'destroy'])->name('pages.destroy');
     Route::get('pages/{slug}', [PageController::class, 'show'])->name('pages.show');
+});
+
+
+Route::prefix('admin')->middleware('auth')->group(function () {
+    Route::get('who-we-are/edit', [WhoWeAreController::class, 'edit'])->name('who-we-are.edit');
+    Route::post('who-we-are/update', [WhoWeAreController::class, 'update'])->name('who-we-are.update');
 });
