@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ClientSectionController;
 use App\Http\Controllers\AdminReservationController;
 use App\Http\Controllers\TimeSlotController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
@@ -250,4 +251,10 @@ Route::middleware(['auth'])->group(function () {
 Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('who-we-are/edit', [WhoWeAreController::class, 'edit'])->name('who-we-are.edit');
     Route::post('who-we-are/update', [WhoWeAreController::class, 'update'])->name('who-we-are.update');
+});
+// routes/web.php
+
+Route::prefix('admin')->name('admin.')->namespace('Admin')->group(function () {
+    Route::get('client-section', [ClientSectionController::class, 'edit'])->name('client-section.edit');
+    Route::patch('client-section', [ClientSectionController::class, 'update'])->name('client-section.update');
 });

@@ -155,6 +155,12 @@
                       </a>
                     </li>
                     <li class="menu-item " aria-haspopup="true">
+                      <a href="/admin/client-section" class="menu-link ">
+                        <i class="menu-bullet menu-bullet-dot"><span></span></i>
+                        <span class="menu-text">مدیریت تیم ما</span>
+                      </a>
+                    </li>
+                    <li class="menu-item " aria-haspopup="true">
                       <a href="/admin/roles/index" class="menu-link ">
                         <i class="menu-bullet menu-bullet-dot"><span></span></i>
                         <span class="menu-text">مدیریت نقش‌ها</span>

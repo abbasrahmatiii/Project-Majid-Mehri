@@ -4,10 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Models\Article;
 use App\Models\CenterAd;
+use App\Models\ClientSection;
 use App\Models\Contacts;
 use App\Models\Post;
 use App\Models\Setting;
 use App\Models\Slide;
+use App\Models\UserProfile;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -45,8 +47,17 @@ class HomeController extends Controller
         $slides = Slide::where('is_active', true)->get();
 
         $latestPosts = Post::where('published', 1)->orderBy('created_at', 'desc')->take(4)->get();
+        $clientSection = ClientSection::first(); // فرض می‌کنیم فقط یک رکورد در این جدول دارید.
+        // دریافت کاربران به همراه پروفایل‌ها و نقش‌ها
+        $teamMembers = UserProfile::whereHas('user.roles', function ($query) {
+            $query->where('name', '!=', 'کاربر عادی');
+        })->with(['user.roles' => function ($query) {
+            $query->where('name', '!=', 'کاربر عادی');
+        }])->get();
 
-        return view('home', compact('settings', 'slides', 'contact', 'centerAds', 'latestPosts', 'latestArticles'));
+        // فرض می‌کنیم فقط یک رکورد در جدول ClientSection دارید
+        $clientSection = ClientSection::first();
+        return view('home', compact('settings', 'slides', 'contact', 'centerAds', 'latestPosts', 'latestArticles', 'clientSection', 'teamMembers'));
     }
 
     public function list_posts()
