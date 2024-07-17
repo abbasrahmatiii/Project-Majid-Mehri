@@ -2,7 +2,7 @@
 
 @section('content')
 <section class="section section-height-3 bg-light border-0 m-0 appear-animation" data-appear-animation="fadeIn">
-  <div class="container">
+  <div class="container iransans-font">
     <div class="row">
       <div class="col appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="200">
         <h2 class="font-weight-bold text-color-dark text-6 pb-1">لیست پست‌ها</h2>
@@ -10,7 +10,7 @@
     </div>
     <div class="row recent-posts appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="200">
       @foreach($posts as $post)
-      <div class="col-md-6 col-lg-3 mb-4 mb-lg-5">
+      <div class="col-md-6 col-lg-3 col-sm-6 mb-4 mb-lg-5"> <!-- اضافه کردن col-sm-6 برای اندازه‌های کوچک‌تر -->
         <article class="article-box">
           <div class="article-img">
             <a href="{{ route('posts.show', $post->slug) }}" class="text-decoration-none">
@@ -21,6 +21,7 @@
             <h4 class="line-height-8 text-4 primary-font mt-n1">
               <a href="{{ route('posts.show', $post->slug) }}" class="text-dark">{!! Str::limit($post->title, 80) !!}</a>
             </h4>
+            <p class="summary" style="font-size: 10px;">{!! Str::limit($post->summary, 150) !!}</p> <!-- اضافه کردن خلاصه پست -->
             <p>{!! Str::limit($post->content, 120) !!}</p>
             <div class="d-flex justify-content-between align-items-center">
               <a href="{{ route('posts.show', $post->slug) }}" class="btn btn-success btn-sm">ادامه مطلب</a>
@@ -43,7 +44,6 @@
     border-radius: 5px;
     overflow: hidden;
     background-color: #f9f9f9;
-    /* بک‌گراند سفید با تیرگی کم */
     transition: box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
@@ -112,6 +112,19 @@
 
   .pagination .page-link:hover {
     color: #218838;
+  }
+
+  /* مدیا کوئری برای اندازه‌های کوچک‌تر */
+  @media (max-width: 767px) {
+    .col-sm-6 {
+      width: 100%;
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+
+    .article-box {
+      margin-bottom: 20px;
+    }
   }
 </style>
 @endsection

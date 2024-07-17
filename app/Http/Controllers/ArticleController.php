@@ -63,7 +63,7 @@ class ArticleController extends Controller
         if ($request->hasFile('image')) {
             $data['image'] = $request->file('image')->store('images', 'public');
         }
-
+        $data['user_id'] = auth()->id(); // اضافه کردن شناسه کاربر لاگین شده
         Article::create($data);
 
         return response()->json([

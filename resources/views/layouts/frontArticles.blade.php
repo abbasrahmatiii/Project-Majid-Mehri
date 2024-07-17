@@ -21,6 +21,7 @@
             <h4 class="line-height-8 text-4 primary-font mt-n1">
               <a href="{{ route('articles.show', $article->slug) }}" class="text-dark">{!! Str::limit($article->title, 80) !!}</a>
             </h4>
+            <p class="summary" style="font-size: 10px;">{!! Str::limit($article->summary, 150) !!}</p> <!-- اضافه کردن خلاصه مقاله -->
             <p>{!! Str::limit($article->content, 120) !!}</p>
             <div class="d-flex justify-content-between align-items-center">
               <a href="{{ route('articles.show', $article->slug) }}" class="btn btn-success btn-sm read-more-btn">بخوانید</a>

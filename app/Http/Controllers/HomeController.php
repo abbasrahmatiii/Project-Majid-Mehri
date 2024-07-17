@@ -51,7 +51,7 @@ class HomeController extends Controller
 
     public function list_posts()
     {
-        $posts = Post::latest()->paginate(9);
+        $posts = Post::latest()->paginate(12);
         return view('layouts/posts', compact('posts'));
     }
 
