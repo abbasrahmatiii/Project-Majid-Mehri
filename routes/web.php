@@ -155,7 +155,9 @@ Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 // Registration Routes...
 Route::get('register', [RegisterController::class, 'showRegistrationForm'])->middleware('guest')->name('register');
 Route::post('register', [RegisterController::class, 'register'])->middleware('guest');
-
+Route::middleware('auth')->group(function () {
+    Route::patch('/profile', [RegisterController::class, 'updateProfile'])->name('user.profile.update');
+});
 // Password Reset Routes...
 Route::get('password/reset', [ForgotPasswordController::class, 'showLinkRequestForm'])->middleware('guest')->name('password.request');
 Route::post('password/email', [ForgotPasswordController::class, 'sendResetLinkEmail'])->middleware('guest')->name('password.email');

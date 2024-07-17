@@ -58,6 +58,46 @@
           <span class="form-text text-danger" id="error_role"></span>
         </div>
       </div>
+
+      <!-- New fields for user profile -->
+      <div class="form-group row">
+        <div class="col-lg-6">
+          <label for="address">آدرس</label>
+          <input type="text" class="form-control" id="address" name="address" value="{{ old('address') }}">
+          <span class="form-text text-danger" id="error_address"></span>
+        </div>
+        <div class="col-lg-6">
+          <label for="state">استان</label>
+          <input type="text" class="form-control" id="state" name="state" value="{{ old('state') }}">
+          <span class="form-text text-danger" id="error_state"></span>
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col-lg-6">
+          <label for="city">شهر</label>
+          <input type="text" class="form-control" id="city" name="city" value="{{ old('city') }}">
+          <span class="form-text text-danger" id="error_city"></span>
+        </div>
+        <div class="col-lg-6">
+          <label for="phone">تلفن ثابت</label>
+          <input type="text" class="form-control" id="phone" name="phone" value="{{ old('phone') }}">
+          <span class="form-text text-danger" id="error_phone"></span>
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col-lg-6">
+          <label for="profile_picture">عکس پروفایل</label>
+          <input type="file" class="form-control" id="profile_picture" name="profile_picture">
+          <span class="form-text text-danger" id="error_profile_picture"></span>
+        </div>
+        <div class="col-lg-6">
+          <label for="biography">بیوگرافی</label>
+          <textarea class="form-control" id="biography" name="biography">{{ old('biography') }}</textarea>
+          <span class="form-text text-danger" id="error_biography"></span>
+        </div>
+      </div>
+      <!-- End of new fields -->
+
     </div>
     <div class="card-footer">
       <button type="submit" class="btn btn-primary mr-2">ایجاد</button>

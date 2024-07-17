@@ -654,6 +654,7 @@ class ComposerStaticInit0d52140ec7c90ee744c21819ec58c6f3
         'App\\Http\\Controllers\\SlideController' => __DIR__ . '/../..' . '/app/Http/Controllers/SlideController.php',
         'App\\Http\\Controllers\\TimeSlotController' => __DIR__ . '/../..' . '/app/Http/Controllers/TimeSlotController.php',
         'App\\Http\\Controllers\\UserController' => __DIR__ . '/../..' . '/app/Http/Controllers/UserController.php',
+        'App\\Http\\Controllers\\WhoWeAreController' => __DIR__ . '/../..' . '/app/Http/Controllers/WhoWeAreController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\CheckPermission' => __DIR__ . '/../..' . '/app/Http/Middleware/CheckPermission.php',

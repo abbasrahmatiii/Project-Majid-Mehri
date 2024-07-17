@@ -40,10 +40,10 @@ class HomeController extends Controller
             ->get();
 
         $settings = Setting::first();
+        $contact = Contacts::first();
 
         $slides = Slide::where('is_active', true)->get();
 
-        $contact = Contacts::first();
         $latestPosts = Post::where('published', 1)->orderBy('created_at', 'desc')->take(4)->get();
 
         return view('home', compact('settings', 'slides', 'contact', 'centerAds', 'latestPosts', 'latestArticles'));

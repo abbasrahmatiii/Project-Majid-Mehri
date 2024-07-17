@@ -34,6 +34,7 @@ return array(
     'App\\Http\\Controllers\\SlideController' => $baseDir . '/app/Http/Controllers/SlideController.php',
     'App\\Http\\Controllers\\TimeSlotController' => $baseDir . '/app/Http/Controllers/TimeSlotController.php',
     'App\\Http\\Controllers\\UserController' => $baseDir . '/app/Http/Controllers/UserController.php',
+    'App\\Http\\Controllers\\WhoWeAreController' => $baseDir . '/app/Http/Controllers/WhoWeAreController.php',
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
     'App\\Http\\Middleware\\Authenticate' => $baseDir . '/app/Http/Middleware/Authenticate.php',
     'App\\Http\\Middleware\\CheckPermission' => $baseDir . '/app/Http/Middleware/CheckPermission.php',

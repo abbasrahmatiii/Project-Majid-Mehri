@@ -47,6 +47,13 @@ class UserController extends Controller
             'password' => 'required|string|min:8|confirmed',
             'mobile' => 'required|string|max:15|unique:users',
             'role' => 'required|string|exists:roles,name',
+            // Additional validation rules for user profile
+            'address' => 'nullable|string|max:255',
+            'state' => 'nullable|string|max:255',
+            'city' => 'nullable|string|max:255',
+            'phone' => 'nullable|string|max:20',
+            'profile_picture' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'biography' => 'nullable|string|max:1000',
         ], $messages);
 
         if ($validator->fails()) {
@@ -64,8 +71,18 @@ class UserController extends Controller
         // اضافه کردن نقش به کاربر
         $user->assignRole($request->role);
 
+        // ذخیره اطلاعات پروفایل کاربر
+        $profileData = $request->only(['address', 'state', 'city', 'phone', 'biography']);
+
+        if ($request->hasFile('profile_picture')) {
+            $profileData['profile_picture'] = $request->file('profile_picture')->store('profile_pictures', 'public');
+        }
+
+        $user->profile()->create($profileData);
+
         return response()->json(['success' => 'کاربر با موفقیت ایجاد شد.']);
     }
+
 
 
     public function edit(User $user)
@@ -82,6 +99,13 @@ class UserController extends Controller
             'password' => 'nullable|string|min:8|confirmed',
             'mobile' => 'required|string|max:15|unique:users,mobile,' . $user->id,
             'roles' => 'required|array',
+            // Additional validation rules for user profile
+            'address' => 'nullable|string|max:255',
+            'state' => 'nullable|string|max:255',
+            'city' => 'nullable|string|max:255',
+            'phone' => 'nullable|string|max:20',
+            'profile_picture' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'biography' => 'nullable|string|max:1000',
         ], [
             'first_name.required' => 'لطفاً نام را وارد کنید.',
             'last_name.required' => 'لطفاً نام خانوادگی را وارد کنید.',
@@ -108,8 +132,18 @@ class UserController extends Controller
 
         $user->syncRoles($request->roles);
 
+        // ذخیره اطلاعات پروفایل کاربر
+        $profileData = $request->only(['address', 'state', 'city', 'phone', 'biography']);
+
+        if ($request->hasFile('profile_picture')) {
+            $profileData['profile_picture'] = $request->file('profile_picture')->store('profile_pictures', 'public');
+        }
+
+        $user->profile()->updateOrCreate(['user_id' => $user->id], $profileData);
+
         return response()->json(['success' => 'کاربر با موفقیت به روز شد.']);
     }
+
 
 
 

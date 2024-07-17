@@ -7,7 +7,7 @@
       <h3>ویرایش کاربر</h3>
     </div>
     <div class="card-body">
-      <form id="editUserForm" method="POST" action="{{ route('admin.users.update', $user->id) }}">
+      <form id="editUserForm" method="POST" action="{{ route('admin.users.update', $user->id) }}" enctype="multipart/form-data">
         @csrf
         @method('PATCH')
         <div class="row">
@@ -70,6 +70,66 @@
           </select>
           <span class="form-text text-danger" id="error_roles"></span>
         </div>
+
+        <!-- New fields for user profile -->
+        @php
+        $profile = $user->profile ?: new \App\Models\UserProfile();
+        @endphp
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="address">آدرس</label>
+              <input type="text" name="address" class="form-control" value="{{ old('address', $profile->address) }}">
+              <span class="form-text text-danger" id="error_address"></span>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="state">استان</label>
+              <input type="text" name="state" class="form-control" value="{{ old('state', $profile->state) }}">
+              <span class="form-text text-danger" id="error_state"></span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="city">شهر</label>
+              <input type="text" name="city" class="form-control" value="{{ old('city', $profile->city) }}">
+              <span class="form-text text-danger" id="error_city"></span>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="phone">تلفن ثابت</label>
+              <input type="text" name="phone" class="form-control" value="{{ old('phone', $profile->phone) }}">
+              <span class="form-text text-danger" id="error_phone"></span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="profile_picture">عکس پروفایل</label>
+              <input type="file" name="profile_picture" class="form-control">
+              <span class="form-text text-danger" id="error_profile_picture"></span>
+              @if ($profile->profile_picture)
+              <div class="mt-2">
+                <img src="{{ asset('storage/' . $profile->profile_picture) }}" alt="Profile Picture" class="rounded-circle" width="100">
+              </div>
+              @endif
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="biography">بیوگرافی</label>
+              <textarea name="biography" class="form-control">{{ old('biography', $profile->biography) }}</textarea>
+              <span class="form-text text-danger" id="error_biography"></span>
+            </div>
+          </div>
+        </div>
+        <!-- End of new fields -->
+
         <button type="submit" class="btn btn-success">ذخیره</button>
       </form>
     </div>
@@ -81,7 +141,6 @@
     event.preventDefault();
 
     let formData = new FormData(this);
-    let userId = "{{ $user->id }}";
 
     fetch('{{ route("admin.users.update", $user->id) }}', {
         method: 'POST',

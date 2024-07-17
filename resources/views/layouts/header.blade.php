@@ -1,6 +1,5 @@
 <header id="header" data-plugin-options="{'stickyEnabled': true, 'stickyEnableOnBoxed': true, 'stickyEnableOnMobile': true, 'stickyStartAt': 148, 'stickySetTop': '-148px', 'stickyChangeLogo': true}">
   <div class="header-body border-color-primary border-top-0 box-shadow-none">
-
     <div class="header-container container z-index-2">
       <div class="header-row py-2">
         <div class="header-column">
