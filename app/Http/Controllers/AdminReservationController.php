@@ -11,17 +11,20 @@ class AdminReservationController extends Controller
 {
     public function index()
     {
-        $reservations = Reservation::with(['consultation.timeSlot', 'consultation.consultant', 'user'])->get();
+        $reservations = Reservation::with(['consultation.timeSlot', 'consultation.consultant', 'user'])->paginate(10);
 
         return view('admin.reservations.index', compact('reservations'));
     }
 
 
-    public function destroy($id)
+    public function destroy(Reservation $reservation)
     {
-        $reservation = Reservation::findOrFail($id);
-        $reservation->delete();
+        // بررسی اینکه آیا رزرو پرداخت شده است
+        if ($reservation->is_paid) {
+            return redirect()->back()->with('error', 'این رزرو پرداخت شده است و نمی‌توان آن را حذف کرد.');
+        }
 
+        $reservation->delete();
         return redirect()->route('admin.reservations.index')->with('success', 'رزرو با موفقیت حذف شد.');
     }
 }

@@ -17,13 +17,29 @@ class RegisterController extends Controller
 
     public function register(Request $request)
     {
+
         $request->validate([
             'first_name' => 'required|string|max:255',
             'last_name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
-            'mobile' => 'required|string|max:15|unique:users',
+            'mobile' => 'required|string|digits_between:11,15|unique:users',
             'password' => 'required|string|min:8|confirmed',
+        ], [
+            'first_name.required' => 'نام الزامی است.',
+            'last_name.required' => 'نام خانوادگی الزامی است.',
+            'email.required' => 'ایمیل الزامی است.',
+            'email.email' => 'ایمیل باید معتبر باشد.',
+            'email.unique' => 'ایمیل قبلاً ثبت شده است.',
+            'mobile.required' => 'موبایل الزامی است.',
+            'mobile.unique' => 'موبایل قبلاً ثبت شده است.',
+            'mobile.digits_between' => 'شماره موبایل باید بین ۱۰ تا ۱۵ رقم باشد.',
+
+            'mobile.integer' => 'موبایل باید عدد باشد.',
+            'password.required' => 'رمز عبور الزامی است.',
+            'password.min' => 'رمز عبور باید حداقل ۸ کاراکتر باشد.',
+            'password.confirmed' => 'تأییدیه رمز عبور با هم مطابقت ندارد.',
         ]);
+
 
         $user = User::create([
             'first_name' => $request->first_name,
@@ -59,6 +75,8 @@ class RegisterController extends Controller
             'mobile.required' => 'لطفاً شماره موبایل را وارد کنید.',
             'mobile.string' => 'شماره موبایل باید یک رشته باشد.',
             'mobile.max' => 'شماره موبایل نباید بیشتر از ۱۵ کاراکتر باشد.',
+            'mobile.digits_between' => 'شماره موبایل باید بین ۱۰ تا ۱۵ رقم باشد.',
+
             'mobile.unique' => 'شماره موبایل وارد شده قبلاً ثبت شده است.',
             'password.nullable' => 'رمز عبور می‌تواند خالی باشد.',
             'password.string' => 'رمز عبور باید یک رشته باشد.',

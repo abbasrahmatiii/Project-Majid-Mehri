@@ -81,15 +81,17 @@ class ConsultationController extends Controller
 
         return redirect()->route('admin.consultations.index')->with('success', 'مشاوره با موفقیت به‌روزرسانی شد');
     }
+
     public function store(Request $request)
     {
+
         $request->validate([
-            // 'day_id' => 'required|exists:days,id',
             'time_slot_id' => 'required|exists:time_slots,id',
             'date' => 'required',
             'price' => 'required|integer',
             'consultant_id' => 'required|exists:users,id',
         ]);
+
         $dateShamsi = $request->input('date');
         $dateMiladi = Verta::parse($dateShamsi)->datetime()->format('Y-m-d');
         $time_slot_id = $request->input('time_slot_id');
@@ -112,7 +114,6 @@ class ConsultationController extends Controller
         }
 
         Consultation::create([
-            // 'day_id' => $day_id,
             'time_slot_id' => $time_slot_id,
             'date' => $date,
             'consultant_id' => $consultant_id,
@@ -120,5 +121,17 @@ class ConsultationController extends Controller
         ]);
 
         return redirect()->route('admin.consultations.index')->with('success', 'زمان مشاوره با موفقیت ثبت شد.');
+    }
+
+    public function destroy(Consultation $consultation)
+    {
+        // بررسی اینکه آیا جلسه مشاوره توسط فردی رزرو و پرداخت شده است
+        if ($consultation->reservation()->where('is_paid', 1)->exists()) {
+            return redirect()->back()->with('error', 'این جلسه مشاوره توسط فردی رزرو و پرداخت شده است و نمی‌توان آن را حذف کرد.');
+        }
+
+        // حذف جلسه مشاوره
+        $consultation->delete();
+        return redirect()->back()->with('success', 'جلسه مشاوره با موفقیت حذف شد.');
     }
 }

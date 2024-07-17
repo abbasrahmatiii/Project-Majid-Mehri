@@ -62,6 +62,7 @@ class ReservationController extends Controller
         if ($reservation->user_id !== auth()->id()) {
             return redirect()->route('reservations.index')->withErrors('شما اجازه لغو این رزرو را ندارید.');
         }
+
         $reservation->delete();
         return redirect()->route('reservations.index')->with('success', 'رزرو با موفقیت لغو شد.');
     }

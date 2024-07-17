@@ -201,7 +201,7 @@ Route::middleware('auth')->prefix('admin')->group(function () {
     Route::delete('consultations/{consultation}', [ConsultationController::class, 'destroy'])->name('admin.consultations.destroy');
 
     Route::get('reservations', [AdminReservationController::class, 'index'])->name('admin.reservations.index');
-    Route::delete('reservations/{id}', [AdminReservationController::class, 'destroy'])->name('admin.reservations.destroy');
+    Route::delete('reservations/{reservation}', [AdminReservationController::class, 'destroy'])->name('admin.reservations.destroy');
 });
 
 Route::middleware('auth')->group(function () {
