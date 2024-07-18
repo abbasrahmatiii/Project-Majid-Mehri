@@ -154,19 +154,7 @@
                         <span class="menu-text">تنظیمات عمومی</span>
                       </a>
                     </li>
-                    <li class="menu-item " aria-haspopup="true">
-                      <a href="/admin/client-section" class="menu-link ">
-                        <i class="menu-bullet menu-bullet-dot"><span></span></i>
-                        <span class="menu-text">مدیریت تیم ما</span>
-                      </a>
-                    </li>
 
-                    <li class="menu-item " aria-haspopup="true">
-                      <a href="who-we-are/edit" class="menu-link ">
-                        <i class="menu-bullet menu-bullet-dot"><span></span></i>
-                        <span class="menu-text">ما چه کسی هستیم</span>
-                      </a>
-                    </li>
                   </ul>
                 </div>
               </li>
@@ -204,6 +192,19 @@
                       <a href="/admin/testimonials" class="menu-link ">
                         <i class="menu-bullet menu-bullet-dot"><span></span></i>
                         <span class="menu-text">فیدبک کاربران</span>
+                      </a>
+                    </li>
+                    <li class="menu-item " aria-haspopup="true">
+                      <a href="/admin/client-section" class="menu-link ">
+                        <i class="menu-bullet menu-bullet-dot"><span></span></i>
+                        <span class="menu-text">مدیریت تیم ما</span>
+                      </a>
+                    </li>
+
+                    <li class="menu-item " aria-haspopup="true">
+                      <a href="who-we-are/edit" class="menu-link ">
+                        <i class="menu-bullet menu-bullet-dot"><span></span></i>
+                        <span class="menu-text">ما چه کسی هستیم</span>
                       </a>
                     </li>
                   </ul>
@@ -518,6 +519,40 @@
                   </ul>
                 </div>
               </li>
+
+
+
+
+
+
+
+              <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
+                <a href="javascript:;" class="menu-link menu-toggle">
+                  <span class="svg-icon menu-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="white">
+                      <path d="M12 0c-3.313 0-6 2.687-6 6 0 2.961 2.164 5.436 5 5.92v.08c-2.836.484-5 2.959-5 5.92 0 3.313 2.687 6 6 6s6-2.687 6-6c0-2.961-2.164-5.436-5-5.92v-.08c2.836-.484 5-2.959 5-5.92 0-3.313-2.687-6-6-6zm0 20c-2.206 0-4-1.794-4-4s1.794-4 4-4 4 1.794 4 4-1.794 4-4 4zm0-10c-2.206 0-4-1.794-4-4s1.794-4 4-4 4 1.794 4 4-1.794 4-4 4z" />
+                    </svg>
+                  </span>
+                  <span class="menu-text">راهنمای سایت</span>
+                  <i class="menu-arrow"></i>
+                </a>
+                <div class="menu-submenu ">
+                  <i class="menu-arrow"></i>
+                  <ul class="menu-subnav">
+                    <li class="menu-item " aria-haspopup="true">
+                      <a href="{{ route('help.settings') }}" class="menu-link ">
+                        <i class="menu-bullet menu-bullet-dot"><span></span></i>
+                        <span class="menu-text">تنظیمات سراسری</span>
+                      </a>
+                    </li>
+
+                  </ul>
+                </div>
+              </li>
+
+
+
+
 
 
 
