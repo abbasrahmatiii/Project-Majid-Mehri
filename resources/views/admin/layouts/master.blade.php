@@ -200,6 +200,12 @@
                         <span class="menu-text">ما چه کسی هستیم</span>
                       </a>
                     </li>
+                    <li class="menu-item " aria-haspopup="true">
+                      <a href="/admin/testimonials" class="menu-link ">
+                        <i class="menu-bullet menu-bullet-dot"><span></span></i>
+                        <span class="menu-text">فیدبک کاربران</span>
+                      </a>
+                    </li>
                   </ul>
                 </div>
               </li>

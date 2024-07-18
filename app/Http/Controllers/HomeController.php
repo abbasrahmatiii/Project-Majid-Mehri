@@ -9,6 +9,7 @@ use App\Models\Contacts;
 use App\Models\Post;
 use App\Models\Setting;
 use App\Models\Slide;
+use App\Models\Testimonial;
 use App\Models\UserProfile;
 use Illuminate\Http\Request;
 
@@ -32,7 +33,7 @@ class HomeController extends Controller
     public function index()
     {
 
-
+        $testimonials = Testimonial::all();
         $latestArticles = Article::where('published', 1)->orderBy('created_at', 'desc')->take(4)->get();
 
 
@@ -57,7 +58,7 @@ class HomeController extends Controller
 
         // فرض می‌کنیم فقط یک رکورد در جدول ClientSection دارید
         $clientSection = ClientSection::first();
-        return view('home', compact('settings', 'slides', 'contact', 'centerAds', 'latestPosts', 'latestArticles', 'clientSection', 'teamMembers'));
+        return view('home', compact('settings', 'slides', 'contact', 'centerAds', 'latestPosts', 'latestArticles', 'clientSection', 'teamMembers', 'testimonials'));
     }
 
     public function list_posts()

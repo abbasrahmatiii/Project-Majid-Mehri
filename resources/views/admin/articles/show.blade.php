@@ -6,9 +6,11 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12 align-self-center p-static order-2 text-center">
-          <h1 class="text-dark font-weight-bold text-5">{{ $article->title }}</h1>
+          <div class="d-flex align-items-center justify-content-center">
+            <img src="{{ asset('storage/' . $article->image) }}" class="img-fluid thumbnail-image" alt="{{ $article->title }}">
+            <h1 class="text-dark font-weight-bold text-5 ml-3">{{ $article->title }}</h1>
+          </div>
         </div>
-
       </div>
     </div>
   </section>
@@ -24,22 +26,15 @@
 
         <div class="blog-posts single-post">
           <article class="post post-large blog-single-post border-0 m-0 p-0">
-
             <div class="post-content ml-0 p-4 rounded bg-white shadow-sm mt-4">
-
-              <img src="{{ asset('storage/' . $article->image) }}" class="img-fluid mx-auto d-block" alt="{{ $article->title }}">
-
-              <div class="post-date ml-0">
-                <span class="day">{{ \Verta::instance($article->created_at)->format('d') }}</span>
-                <span class="month">{{ \Verta::instance($article->created_at)->format('F') }}</span>
-              </div>
-
               <div class="post-meta">
-                <span><i class="far fa-user"></i> توسط <a href="#">{{ $article->user->first_name }} {{ $article->user->last_name }}</a> </span>
+                <span><i class="far fa-user"></i> توسط <a href="#">{{ $article->user->first_name }} {{ $article->user->last_name }}</a></span>
                 <span><i class="far fa-folder"></i> <a href="#">{{ $article->category->name }}</a></span>
-
+                <span><i class="far fa-calendar-alt"></i> {{ \Verta::instance($article->created_at)->format('d F Y') }}</span>
               </div>
-              <p>{!! $article->body !!}</p>
+              <div class="post-body">
+                {!! $article->body !!}
+              </div>
               <div class="post-block mt-5 post-share">
                 <h4 class="mb-3 secondary-font">به اشتراک گذاری این مطلب</h4>
                 <div class="d-flex justify-content-start">
@@ -72,10 +67,6 @@
                   </a>
                 </div>
               </div>
-
-
-
-
             </div>
           </article>
         </div>
@@ -84,88 +75,54 @@
   </div>
 </div>
 
-<script>
-  function showReplyForm(commentId) {
-    // Hide all reply forms
-    document.querySelectorAll('.reply-form').forEach(form => form.style.display = 'none');
-    // Show the reply form for the specific comment
-    document.getElementById('reply-form-' + commentId).style.display = 'block';
-  }
-</script>
 <style>
-  .comment {
-    display: flex;
-    align-items: flex-start;
-    margin-bottom: 10px;
-    /* کاهش فاصله بین کامنت‌ها */
-  }
-
-  .img-thumbnail {
-    flex-shrink: 0;
-    width: 40px;
-    /* کاهش اندازه آواتار */
-    height: 40px;
-    /* کاهش اندازه آواتار */
-    border-radius: 50%;
-  }
-
-  .comment-block {
-    flex-grow: 1;
-    margin-left: 1px;
-    /* کاهش فاصله بین آواتار و متن کامنت */
-  }
-
-  .comment-content-box {
-    /* border: 1px solid #ccc; */
-    border-radius: 8px;
-    padding: 0px;
-    /* کاهش padding داخل باکس کامنت */
-    margin-bottom: 1px;
-    /* کاهش فاصله بین باکس کامنت و سایر عناصر */
-  }
-
-
-
-  .date {
-    font-size: 0.85em;
-    color: #888;
-  }
-
-
-
-
-
-  .post-content {
-    background-color: #fff;
-    padding: 20px;
+  .thumbnail-image {
+    width: 70px;
+    height: 70px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
 
-  .post-content img {
-    margin: 10px;
+  .page-header-md .container {
+    padding-bottom: 0;
+    /* حذف فاصله پایین */
+  }
+
+  .page-header-md .row {
+    margin-bottom: 0;
+    /* حذف فاصله پایین */
+  }
+
+  .page-header-md .col-md-12 {
+    margin-bottom: 0;
+    /* حذف فاصله پایین */
+  }
+
+  .blog-single-post .post-content {
+    margin-top: 20px;
+    /* کاهش فاصله بین عنوان و تصویر */
+  }
+
+  .post-body img {
+    margin: 10px !important;
+    /* ایجاد فاصله بین تصاویر و متون */
+    max-width: 100%;
+    /* اطمینان از اینکه تصاویر از عرض صفحه تجاوز نمی‌کنند */
     border-radius: 10px;
+    /* خمیده کردن گوشه‌ها */
+  }
+
+  .post-body p {
+    margin-top: 20px;
+    /* فاصله بین پاراگراف‌ها */
   }
 
   .post-meta span {
     display: inline-block;
-    margin-right: 5px;
+    margin-right: 10px;
   }
 
   .post-meta span i {
     margin-right: 5px;
-  }
-
-  .post-image {
-    width: 100% !important;
-  }
-
-  .post-date {
-    display: none;
-  }
-
-  h2.font-weight-bold {
-    margin-top: 0;
   }
 </style>
 @endsection

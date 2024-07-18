@@ -12,7 +12,7 @@
       </div>
     </div>
     <div class="col-md-6 order-1 order-md-2 text-center text-md-left mb-5 mb-md-0 appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="200">
-      <h2 class="text-color-dark font-weight-normal text-5 mb-2">با <strong class="font-weight-extra-bold">{{ $clientSection->title ?? 'تیم ما' }}</strong> آشنا شوید</h2>
+      <h2 class="text-color-dark font-weight-normal text-5 mb-2"><strong class="font-weight-extra-bold">{{ $clientSection->title ?? 'تیم ما' }}</strong></h2>
       <p class="lead text-3">{!! $clientSection->description ?? 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.' !!}</p>
       <p class="mb-4 text-2">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط</p>
       <a href="{{ $clientSection->button_url ?? '#' }}" class="btn btn-dark font-weight-semibold rounded-0 px-4 btn-py-1 text-2 p-relative bottom-3">{{ $clientSection->button_text ?? 'آشنایی بیشتر' }}</a>

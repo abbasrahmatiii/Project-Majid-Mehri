@@ -258,3 +258,16 @@ Route::prefix('admin')->name('admin.')->namespace('Admin')->group(function () {
     Route::get('client-section', [ClientSectionController::class, 'edit'])->name('client-section.edit');
     Route::patch('client-section', [ClientSectionController::class, 'update'])->name('client-section.update');
 });
+
+
+use App\Http\Controllers\TestimonialController;
+
+Route::prefix('admin')->middleware('auth')->group(function () {
+    Route::get('testimonials', [TestimonialController::class, 'index'])->name('testimonials.index');
+    Route::get('testimonials/create', [TestimonialController::class, 'create'])->name('testimonials.create');
+    Route::post('testimonials', [TestimonialController::class, 'store'])->name('testimonials.store');
+    Route::get('testimonials/{testimonial}', [TestimonialController::class, 'show'])->name('testimonials.show');
+    Route::get('testimonials/{testimonial}/edit', [TestimonialController::class, 'edit'])->name('testimonials.edit');
+    Route::put('testimonials/{testimonial}', [TestimonialController::class, 'update'])->name('testimonials.update');
+    Route::delete('testimonials/{testimonial}', [TestimonialController::class, 'destroy'])->name('testimonials.destroy');
+});
