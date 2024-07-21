@@ -29,12 +29,12 @@ class DatabaseSeeder extends Seeder
         $this->call(FailedJobsTableSeeder::class);
         $this->call(ModelHasPermissionsTableSeeder::class);
         $this->call(MigrationsTableSeeder::class);
+        $this->call(RolesTableSeeder::class);
         $this->call(ModelHasRolesTableSeeder::class);
         $this->call(PasswordResetsTableSeeder::class);
         $this->call(PersonalAccessTokensTableSeeder::class);
         $this->call(PostsTableSeeder::class);
         $this->call(RoleHasPermissionsTableSeeder::class);
-        $this->call(RolesTableSeeder::class);
         $this->call(SettingsTableSeeder::class);
         $this->call(SlidesTableSeeder::class);
     }

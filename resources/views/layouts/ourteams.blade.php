@@ -36,4 +36,45 @@
       <a href="page-team.html" class="btn btn-dark font-weight-semibold rounded-0 px-5 btn-py-2 text-2 p-relative bottom-3">آشنایی بیشتر</a>
     </div>
   </div>
+<<<<<<< HEAD
 </div>
+=======
+</div>
+
+<style>
+  .team-member-img {
+    height: 200px;
+    width: 200px;
+  }
+
+  .team-member h3 {
+    font-size: 1.25rem;
+    /* اندازه متن کوچکتر */
+  }
+
+  .team-member p {
+    font-size: 0.875rem;
+    /* اندازه متن کوچکتر */
+  }
+
+  .text-2 {
+    font-size: 0.875rem;
+    /* اندازه متن کوچکتر */
+  }
+
+  .text-3 {
+    font-size: 1rem;
+    /* اندازه متن کوچکتر */
+  }
+
+  .text-5 {
+    font-size: 1.5rem;
+    /* اندازه متن کوچکتر */
+  }
+
+  p img {
+    margin: 10px;
+    border-radius: 10px;
+  }
+</style>
+>>>>>>> d088776b (add session link)

@@ -9,7 +9,11 @@
       <div class="col-lg-9">
 
         <div class="container mt-4">
+<<<<<<< HEAD
           <h3>جلسات مشاور رزرو شده</h3>
+=======
+          <h3>جلسات مشاوره رزرو شده : </h3>
+>>>>>>> d088776b (add session link)
           @if(session('success'))
           <div class="alert alert-success">
             {{ session('success') }}
@@ -28,7 +32,13 @@
                   <th>ساعت شروع</th>
                   <th>ساعت پایان</th>
                   <th>مشاور</th>
+<<<<<<< HEAD
+=======
+                  <th>قیمت</th>
+                  <th>نوع مشاوره</th>
+>>>>>>> d088776b (add session link)
                   <th>عملیات</th>
+                  <th>لینک</th>
                 </tr>
               </thead>
               <tbody>
@@ -44,9 +54,20 @@
                   <td>{{ $start_time }} {{ (int)explode(':', $start_time)[0] < 12 ? 'صبح' : 'عصر' }}</td>
                   <td>{{ $end_time }} {{ (int)explode(':', $end_time)[0] < 12 ? 'صبح' : 'عصر' }}</td>
                   <td>{{ $reservation->consultation->consultant->first_name }} {{ $reservation->consultation->consultant->last_name }}</td>
+<<<<<<< HEAD
+=======
+                  <td>{{ number_format($reservation->consultation->price) }} ریال</td>
+                  <td>{{ $reservation->type ? 'حضوری' : 'غیر حضوری' }}</td>
+>>>>>>> d088776b (add session link)
                   <td>
                     <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#cancelModal" data-id="{{ $reservation->id }}">لغو</button>
                   </td>
+                  <td>
+                    @if($reservation->session_link)
+                    <a href="{{ $reservation->session_link }}" target="_blank" class="session-link">ورود</a>
+                    @endif
+                  </td>
+          
                 </tr>
                 @endforeach
               </tbody>
@@ -96,4 +117,22 @@
   })
 </script>
 @endif
+
+<style>
+  .session-link {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    padding: 2px 6px;
+    font-size: 0.52rem;
+    border-radius: 4px;
+    text-decoration: none;
+  }
+
+  .session-link:hover {
+    background-color: #0056b3;
+    color: #fff;
+    text-decoration: none;
+  }
+</style>
 @endsection

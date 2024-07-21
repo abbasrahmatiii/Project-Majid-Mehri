@@ -3,212 +3,137 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
+use Spatie\Permission\Models\Permission;
 
 class PermissionsTableSeeder extends Seeder
 {
-
     /**
-     * Auto generated seed file
+     * Run the database seeds.
      *
      * @return void
      */
     public function run()
     {
+        // Define permissions
+        $permissions = [
+            // User Management
+            ['name' => 'dashboard', 'display_name' => 'داشبرد مدیریت'],
+            // User Management
+            ['name' => 'manage users', 'display_name' => 'مدیریت کاربران'],
+            ['name' => 'manage users add', 'display_name' => 'اضافه کردن کاربران'],
+            ['name' => 'manage users list', 'display_name' => 'نمایش لیست کاربران'],
+            ['name' => 'manage users edit', 'display_name' => 'ویرایش کاربران'],
+            ['name' => 'manage users delete', 'display_name' => 'حذف کاربران'],
+            ['name' => 'manage assign roles', 'display_name' => 'اختصاص نقش‌ها'],
 
+            // Settings Management
+            ['name' => 'manage settings SEO', 'display_name' => 'مدیریت تنظیمات SEO'],
+            ['name' => 'manage settings general', 'display_name' => 'مدیریت تنظیمات عمومی'],
 
-        DB::table('permissions')->delete();
+            // Role Management
+            ['name' => 'manage roles', 'display_name' => 'مدیریت نقش‌ها'],
+            ['name' => 'manage roles list', 'display_name' => 'نمایش لیست نقش‌ها'],
+            ['name' => 'manage roles add', 'display_name' => 'اضافه کردن نقش‌ها'],
+            ['name' => 'manage roles edit', 'display_name' => 'ویرایش نقش‌ها'],
+            ['name' => 'manage roles delete', 'display_name' => 'حذف نقش‌ها'],
 
-        DB::table('permissions')->insert(array(
-            0 =>
-            array(
-                'created_at' => '2024-07-04 21:11:45',
-                'display_name' => 'مدیریت کاربران',
-                'guard_name' => 'web',
-                'id' => 1,
-                'name' => 'manage users',
-                'updated_at' => '2024-07-04 21:11:45',
-            ),
-            1 =>
-            array(
-                'created_at' => '2024-07-04 21:11:45',
-                'display_name' => 'اضافه کردن کاربران',
-                'guard_name' => 'web',
-                'id' => 2,
-                'name' => 'manage users add',
-                'updated_at' => '2024-07-04 21:11:45',
-            ),
-            2 =>
-            array(
-                'created_at' => '2024-07-04 21:11:46',
-                'display_name' => 'نمایش لیست کاربران',
-                'guard_name' => 'web',
-                'id' => 3,
-                'name' => 'manage users list',
-                'updated_at' => '2024-07-04 21:11:46',
-            ),
-            3 =>
-            array(
-                'created_at' => '2024-07-04 21:11:46',
-                'display_name' => 'ویرایش کاربران',
-                'guard_name' => 'web',
-                'id' => 4,
-                'name' => 'manage users edit',
-                'updated_at' => '2024-07-04 21:11:46',
-            ),
-            4 =>
-            array(
-                'created_at' => '2024-07-04 21:11:46',
-                'display_name' => 'حذف کاربران',
-                'guard_name' => 'web',
-                'id' => 5,
-                'name' => 'manage users delete',
-                'updated_at' => '2024-07-04 21:11:46',
-            ),
-            5 =>
-            array(
-                'created_at' => '2024-07-04 21:11:46',
-                'display_name' => 'مدیریت تنظیمات SEO',
-                'guard_name' => 'web',
-                'id' => 6,
-                'name' => 'manage settings SEO',
-                'updated_at' => '2024-07-04 21:11:46',
-            ),
-            6 =>
-            array(
-                'created_at' => '2024-07-04 21:11:46',
-                'display_name' => 'مدیریت تنظیمات عمومی',
-                'guard_name' => 'web',
-                'id' => 7,
-                'name' => 'manage settings general',
-                'updated_at' => '2024-07-04 21:11:46',
-            ),
-            7 =>
-            array(
-                'created_at' => '2024-07-04 21:11:46',
-                'display_name' => 'مدیریت نقش ها',
-                'guard_name' => 'web',
-                'id' => 8,
-                'name' => 'manage roles',
-                'updated_at' => '2024-07-04 21:11:46',
-            ),
-            8 =>
-            array(
-                'created_at' => '2024-07-04 21:11:46',
-                'display_name' => 'نمایش لیست نقش‌ها',
-                'guard_name' => 'web',
-                'id' => 9,
-                'name' => 'manage roles list',
-                'updated_at' => '2024-07-04 21:11:46',
-            ),
-            9 =>
-            array(
-                'created_at' => '2024-07-04 21:11:46',
-                'display_name' => 'اضافه کردن نقش‌ها',
-                'guard_name' => 'web',
-                'id' => 10,
-                'name' => 'manage roles add',
-                'updated_at' => '2024-07-04 21:11:46',
-            ),
-            10 =>
-            array(
-                'created_at' => '2024-07-04 21:11:46',
-                'display_name' => 'اختصاص نقش‌ها',
-                'guard_name' => 'web',
-                'id' => 11,
-                'name' => 'manage assign roles',
-                'updated_at' => '2024-07-04 21:11:46',
-            ),
-            11 =>
-            array(
-                'created_at' => '2024-07-04 21:11:46',
-                'display_name' => 'مدیریت اسلایدشوها',
-                'guard_name' => 'web',
-                'id' => 12,
-                'name' => 'manage slideshows',
-                'updated_at' => '2024-07-04 21:11:46',
-            ),
-            12 =>
-            array(
-                'created_at' => '2024-07-04 21:11:46',
-                'display_name' => 'اضافه کردن اسلایدشوها',
-                'guard_name' => 'web',
-                'id' => 13,
-                'name' => 'manage slideshows add',
-                'updated_at' => '2024-07-04 21:11:46',
-            ),
-            13 =>
-            array(
-                'created_at' => '2024-07-04 21:11:46',
-                'display_name' => 'نمایش لیست اسلایدشوها',
-                'guard_name' => 'web',
-                'id' => 14,
-                'name' => 'manage slideshows list',
-                'updated_at' => '2024-07-04 21:11:46',
-            ),
-            14 =>
-            array(
-                'created_at' => '2024-07-04 21:11:46',
-                'display_name' => 'ویرایش اسلایدشوها',
-                'guard_name' => 'web',
-                'id' => 15,
-                'name' => 'manage slideshows edit',
-                'updated_at' => '2024-07-04 21:11:46',
-            ),
-            15 =>
-            array(
-                'created_at' => '2024-07-04 21:11:46',
-                'display_name' => 'حذف اسلایدشوها',
-                'guard_name' => 'web',
-                'id' => 16,
-                'name' => 'manage slideshows delete',
-                'updated_at' => '2024-07-04 21:11:46',
-            ),
-            16 =>
-            array(
-                'created_at' => '2024-07-04 21:30:01',
-                'display_name' => 'مدیریت پستها',
-                'guard_name' => 'web',
-                'id' => 17,
-                'name' => 'manage Posts',
-                'updated_at' => '2024-07-04 21:30:01',
-            ),
-            17 =>
-            array(
-                'created_at' => '2024-07-04 21:30:01',
-                'display_name' => 'لیست پستها',
-                'guard_name' => 'web',
-                'id' => 18,
-                'name' => 'manage Posts list',
-                'updated_at' => '2024-07-04 21:32:28',
-            ),
-            18 =>
-            array(
-                'created_at' => '2024-07-04 21:30:01',
-                'display_name' => 'افزودن پستها',
-                'guard_name' => 'web',
-                'id' => 19,
-                'name' => 'manage Posts add',
-                'updated_at' => '2024-07-04 21:32:28',
-            ),
-            19 =>
-            array(
-                'created_at' => '2024-07-04 21:30:01',
-                'display_name' => 'ویرایش پستها',
-                'guard_name' => 'web',
-                'id' => 20,
-                'name' => 'manage Posts edit',
-                'updated_at' => '2024-07-04 21:32:28',
-            ),
-            20 =>
-            array(
-                'created_at' => '2024-07-04 21:30:01',
-                'display_name' => 'حذف پستها',
-                'guard_name' => 'web',
-                'id' => 21,
-                'name' => 'manage Posts delete',
-                'updated_at' => '2024-07-04 21:32:28',
-            ),
-        ));
+            // Role Management
+            ['name' => 'manage articles', 'display_name' => 'مدیریت مقالات'],
+            ['name' => 'manage articles list', 'display_name' => 'نمایش لیست مقالات'],
+            ['name' => 'manage articles add', 'display_name' => 'اضافه کردن مقاله'],
+            ['name' => 'manage articles edit', 'display_name' => 'ویرایش مقالات'],
+            ['name' => 'manage articles delete', 'display_name' => 'حذف مقالات'],
+
+            // Permission Management
+            ['name' => 'manage permissions', 'display_name' => 'مدیریت دسترسی‌ها'],
+            ['name' => 'manage permissions list', 'display_name' => 'نمایش لیست دسترسی‌ها'],
+            ['name' => 'manage permissions add', 'display_name' => 'اضافه کردن دسترسی‌ها'],
+            ['name' => 'manage permissions edit', 'display_name' => 'ویرایش دسترسی‌ها'],
+            ['name' => 'manage permissions delete', 'display_name' => 'حذف دسترسی‌ها'],
+
+            // Slideshow Management
+            ['name' => 'manage slideshows', 'display_name' => 'مدیریت اسلایدشوها'],
+            ['name' => 'manage slideshows add', 'display_name' => 'اضافه کردن اسلایدشوها'],
+            ['name' => 'manage slideshows list', 'display_name' => 'نمایش لیست اسلایدشوها'],
+            ['name' => 'manage slideshows edit', 'display_name' => 'ویرایش اسلایدشوها'],
+            ['name' => 'manage slideshows delete', 'display_name' => 'حذف اسلایدشوها'],
+
+            // CenterAds Management
+            ['name' => 'manage centerads', 'display_name' => 'مدیریت تبلیغات مرکزی'],
+            ['name' => 'manage centerads add', 'display_name' => 'اضافه کردن تبلیغات مرکزی'],
+            ['name' => 'manage centerads list', 'display_name' => 'نمایش لیست تبلیغات مرکزی'],
+            ['name' => 'manage centerads edit', 'display_name' => 'ویرایش تبلیغات مرکزی'],
+            ['name' => 'manage centerads delete', 'display_name' => 'حذف تبلیغات مرکزی'],
+
+            // Post Management
+            ['name' => 'manage posts', 'display_name' => 'مدیریت پست‌ها'],
+            ['name' => 'manage posts add', 'display_name' => 'افزودن پست‌ها'],
+            ['name' => 'manage posts list', 'display_name' => 'لیست پست‌ها'],
+            ['name' => 'manage posts edit', 'display_name' => 'ویرایش پست‌ها'],
+            ['name' => 'manage posts delete', 'display_name' => 'حذف پست‌ها'],
+
+            // Category Management
+            ['name' => 'manage categories', 'display_name' => 'مدیریت دسته‌بندی‌ها'],
+            ['name' => 'manage categories add', 'display_name' => 'افزودن دسته‌بندی‌ها'],
+            ['name' => 'manage categories list', 'display_name' => 'لیست دسته‌بندی‌ها'],
+            ['name' => 'manage categories edit', 'display_name' => 'ویرایش دسته‌بندی‌ها'],
+            ['name' => 'manage categories delete', 'display_name' => 'حذف دسته‌بندی‌ها'],
+
+            // Page Management
+            ['name' => 'manage pages', 'display_name' => 'مدیریت صفحات'],
+            ['name' => 'manage pages add', 'display_name' => 'افزودن صفحات'],
+            ['name' => 'manage pages list', 'display_name' => 'لیست صفحات'],
+            ['name' => 'manage pages edit', 'display_name' => 'ویرایش صفحات'],
+            ['name' => 'manage pages delete', 'display_name' => 'حذف صفحات'],
+
+            // Consultation Management
+            ['name' => 'manage consultations', 'display_name' => 'مدیریت مشاوره‌ها'],
+            ['name' => 'manage consultations add', 'display_name' => 'افزودن مشاوره‌ها'],
+            ['name' => 'manage consultations list', 'display_name' => 'لیست مشاوره‌ها'],
+            ['name' => 'manage consultations edit', 'display_name' => 'ویرایش مشاوره‌ها'],
+            ['name' => 'manage consultations delete', 'display_name' => 'حذف مشاوره‌ها'],
+
+            // Reservation Management
+            ['name' => 'manage reservations', 'display_name' => 'مدیریت رزروها'],
+            ['name' => 'manage reservations list', 'display_name' => 'لیست رزروها'],
+            ['name' => 'manage reservations delete', 'display_name' => 'حذف رزروها'],
+
+            // Testimonial Management
+            ['name' => 'manage comments', 'display_name' => 'مدیریت کامنت کاربران'],
+            ['name' => 'manage comments delete', 'display_name' => 'حذف کامنت کاربران'],
+
+            // Time Slot Management
+            ['name' => 'manage time slots', 'display_name' => 'مدیریت بازه‌های زمانی'],
+            ['name' => 'manage time slots add', 'display_name' => 'افزودن بازه‌های زمانی'],
+            ['name' => 'manage time slots list', 'display_name' => 'لیست بازه‌های زمانی'],
+            ['name' => 'manage time slots edit', 'display_name' => 'ویرایش بازه‌های زمانی'],
+            ['name' => 'manage time slots delete', 'display_name' => 'حذف بازه‌های زمانی'],
+
+            // Testimonial Management
+            ['name' => 'manage testimonials', 'display_name' => 'مدیریت نظرات کاربران'],
+            ['name' => 'manage testimonials add', 'display_name' => 'افزودن نظرات کاربران'],
+            ['name' => 'manage testimonials list', 'display_name' => 'لیست نظرات کاربران'],
+            ['name' => 'manage testimonials edit', 'display_name' => 'ویرایش نظرات کاربران'],
+            ['name' => 'manage testimonials delete', 'display_name' => 'حذف نظرات کاربران'],
+            // Role Management
+            ['name' => 'manage roles', 'display_name' => 'مدیریت نقش کاربران'],
+            ['name' => 'manage roles add', 'display_name' => 'افزودن نقش کاربران'],
+            ['name' => 'manage roles list', 'display_name' => 'لیست نقش کاربران'],
+            ['name' => 'manage roles edit', 'display_name' => 'ویرایش نقش کاربران'],
+            ['name' => 'manage roles delete', 'display_name' => 'حذف نقش کاربران'],
+            // Help Settings
+            ['name' => 'manage help settings', 'display_name' => 'مدیریت تنظیمات راهنما'],
+            // Help Settings
+            ['name' => 'manage who-we-are edit', 'display_name' => 'ویرایش بخش ما چه کسی هستیم'],
+            ['name' => 'manage who-we-are', 'display_name' => 'مدیریت بخش ما چه کسی هستیم'],
+
+            // Client Section
+            ['name' => 'manage client section', 'display_name' => 'مدیریت بخش مشتریان'],
+        ];
+
+        // Insert permissions into the database if they do not exist
+        foreach ($permissions as $permission) {
+            Permission::firstOrCreate(['name' => $permission['name'], 'guard_name' => 'web'], ['display_name' => $permission['display_name']]);
+        }
     }
 }

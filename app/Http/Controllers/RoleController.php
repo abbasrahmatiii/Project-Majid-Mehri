@@ -40,7 +40,8 @@ class RoleController extends Controller
     {
         $permissions = Permission::all();
         $rolePermissions = $role->permissions->pluck('name')->toArray();
-        return view('admin.roles.edit', compact('role', 'permissions', 'rolePermissions'));
+        $permissionsCollection = Permission::all();
+        return view('admin.roles.edit', compact('role', 'permissions', 'rolePermissions', 'permissionsCollection'));
     }
 
     public function update(Request $request, Role $role)

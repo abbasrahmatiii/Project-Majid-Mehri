@@ -46,6 +46,7 @@
               <a href="{{ route('admin.users.edit', $user->id) }}" class="btn btn-sm btn-clean btn-icon mr-2" title="ویرایش">
                 <i class="fas fa-edit"></i>
               </a>
+<<<<<<< HEAD
               <a href="{{ route('admin.users.showAssignRolesForm', $user->id) }}" class="btn btn-sm btn-clean btn-icon mr-2" title="اختصاص نقش">
                 <i class="fas fa-user-tag"></i>
               </a>
@@ -56,6 +57,12 @@
                   <i class="fas fa-trash-alt"></i>
                 </button>
               </form>
+=======
+
+              <button class="btn btn-sm btn-clean btn-icon delete-button" data-id="{{ $user->id }}" title="حذف" data-toggle="modal" data-target="#deleteModal">
+                <i class="fas fa-trash-alt"></i>
+              </button>
+>>>>>>> d088776b (add session link)
             </td>
           </tr>
           @endforeach

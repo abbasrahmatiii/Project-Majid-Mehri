@@ -80,12 +80,24 @@
                 </div>
               </div>
 
+<<<<<<< HEAD
               <div class="post-block mt-4 pt-2 post-author">
                 <h4 class="mb-3 secondary-font pb-1">نویسنده</h4>
                 <div class="img-thumbnail img-thumbnail-no-borders rounded-circle">
                   <a href="1">
                     <img src="{{ asset('img/avatars/avatar.jpg') }}" alt="{{ $post->author->name }}" class="img-fluid rounded-circle" style="border-radius: 100% !important;width: 100%; height: 100%; object-fit: cover;">
                   </a>
+=======
+                <div class="post-block mt-4 pt-2 post-author">
+                  <h4 class="mb-3 secondary-font pb-1">نویسنده</h4>
+                  <div class="img-thumbnail img-thumbnail-no-borders rounded-circle" style="width: 80px; height: 80px;">
+                    <a href="#">
+                      <img src="{{ asset('storage/' . optional($post->author->profile)->profile_picture ?: 'default-profile-picture.png') }}" alt="{{ $post->author->name }}" class="img-fluid rounded-circle" style="width: 100%; height: 100%; object-fit: cover;">
+                    </a>
+                  </div>
+                  <p><strong class="name">{{ $post->author->first_name }} {{ $post->author->last_name }}</strong></p>
+                  <p>{{ optional($post->author->profile)->biography ?: '' }}</p>
+>>>>>>> d088776b (add session link)
                 </div>
                 <p><strong class="name"><a href="#" class="text-4 pb-1 d-block">{{ $post->author->name }}</a></strong></p>
                 <p>{{ $post->author->bio }}</p>
