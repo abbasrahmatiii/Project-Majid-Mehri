@@ -24,18 +24,18 @@ class SlideController extends Controller
 
 
 
-    // نمونه‌ای از استفاده در یک متد کنترلر
     public function store(StoreSlideRequest $request)
     {
+        $imagePath = null;
+
         if ($request->hasFile('image')) {
             $image = $request->file('image');
             $filename = time() . '.' . $image->getClientOriginalExtension();
-            $path = public_path('images/' . $filename);
 
-            // استفاده از Intervention Image برای تغییر سایز یا ویرایش تصویر
-            Image::make($image)->save($path);
+            // ذخیره تصویر در دایرکتوری public/images
+            $path = $image->move(public_path('images'), $filename);
 
-            // مسیر ذخیره شده را در دیتابیس ذخیره کنید
+            // ذخیره مسیر تصویر برای ذخیره در دیتابیس
             $imagePath = 'images/' . $filename;
         }
 
@@ -58,19 +58,25 @@ class SlideController extends Controller
 
     public function update(StoreSlideRequest $request, Slide $slide)
     {
-        $imagePath = $slide->image;
+        $imagePath = $slide->image; // نگه داشتن مسیر تصویر فعلی
+
         if ($request->hasFile('image')) {
+            // حذف تصویر قبلی در صورت وجود
+            if ($imagePath && file_exists(public_path($imagePath))) {
+                unlink(public_path($imagePath));
+            }
+
             $image = $request->file('image');
             $filename = time() . '.' . $image->getClientOriginalExtension();
-            $path = public_path('images/' . $filename);
 
-            // استفاده از Intervention Image برای تغییر سایز یا ویرایش تصویر
-            Image::make($image)->save($path);
+            // ذخیره تصویر در دایرکتوری public/images
+            $image->move(public_path('images'), $filename);
 
-            // مسیر ذخیره شده را در دیتابیس ذخیره کنید
+            // ذخیره مسیر تصویر برای ذخیره در دیتابیس
             $imagePath = 'images/' . $filename;
         }
 
+        // به‌روزرسانی اطلاعات اسلاید
         $slide->update([
             'title' => $request->title,
             'description' => $request->description,

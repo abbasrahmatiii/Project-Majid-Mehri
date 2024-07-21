@@ -9,7 +9,7 @@
       <div class="col-lg-9">
 
         <div class="container mt-4">
-          <h3>درخواست مشاوره</h3>
+          <h3>درخواست مشاوره {{ $type ? 'حضوری' : 'غیر حضوری' }} </h3>
           @if(session('success'))
           <div class="alert alert-success">
             {{ session('success') }}
@@ -60,6 +60,8 @@
                     <form action="{{ route('reservations.store') }}" method="POST">
                       @csrf
                       <input type="hidden" name="consultation_id" value="{{ $consultation->id }}">
+                      <input type="hidden" name="type" value="{{ $type }}"> <!-- فیلد پنهان برای ارسال نوع -->
+
                       <button type="submit" class="btn btn-primary btn-sm">رزرو</button>
                     </form>
                     @else

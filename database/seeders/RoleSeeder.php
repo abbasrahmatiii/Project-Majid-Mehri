@@ -14,5 +14,6 @@ class RoleSeeder extends Seeder
         $roleAdmin = Role::create(['name' => 'مدیر کل']);
         $roleUser = Role::create(['name' => 'کاربر عادی']);
         $roleUser = Role::create(['name' => 'مشاور']);
+        $roleUser = Role::create(['name' => 'نویسنده']);
     }
 }

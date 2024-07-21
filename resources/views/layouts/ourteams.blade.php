@@ -22,7 +22,8 @@
 
 <style>
   .team-member-img {
-    height: auto;
+    height: 200px;
+    width: 200px;
   }
 
   .team-member h3 {

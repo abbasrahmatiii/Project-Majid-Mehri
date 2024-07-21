@@ -22,22 +22,11 @@ class ModelHasRolesTableSeeder extends Seeder
         DB::table('model_has_roles')->insert(array(
             0 =>
             array(
-                'model_id' => 6,
+                'model_id' => 1,
                 'model_type' => 'App\\Models\\User',
                 'role_id' => 1,
             ),
-            1 =>
-            array(
-                'model_id' => 7,
-                'model_type' => 'App\\Models\\User',
-                'role_id' => 2,
-            ),
-            2 =>
-            array(
-                'model_id' => 8,
-                'model_type' => 'App\\Models\\User',
-                'role_id' => 2,
-            ),
+
         ));
     }
 }

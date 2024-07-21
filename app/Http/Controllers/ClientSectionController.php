@@ -33,9 +33,16 @@ class ClientSectionController extends Controller
             'button_url' => 'nullable|url',
         ], $messages);
 
-        $clientSection = ClientSection::firstOrFail();
+        // فرض می‌کنیم که می‌خواهید از مقدار خاصی برای شناسایی رکورد استفاده کنید
+        // برای مثال، فرض می‌کنیم که شناسه رکورد 1 باشد
+        $clientSectionId = 1; // شناسه رکوردی که می‌خواهید ایجاد یا به‌روز کنید
 
-        $clientSection->update($validated);
+        // استفاده از updateOrCreate
+        $clientSection = ClientSection::updateOrCreate(
+            ['id' => $clientSectionId], // شرط برای پیدا کردن رکورد
+            $validated // مقادیر برای به‌روزرسانی یا ایجاد
+        );
+
         return redirect()->back()->with('success', 'بخش تیم ما با موفقیت بروزرسانی شد.');
     }
 }

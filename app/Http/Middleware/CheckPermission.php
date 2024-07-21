@@ -17,6 +17,6 @@ class CheckPermission
             return $next($request);
         }
 
-        return redirect()->route('admin.dashboard')->with('error', 'شما اجازه دسترسی به این بخش را ندارید.');
+        return redirect()->back()->with('error', 'شما اجازه دسترسی به این بخش را ندارید.');
     }
 }

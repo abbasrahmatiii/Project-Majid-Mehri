@@ -166,8 +166,9 @@
                 <a href="javascript:;" class="menu-link menu-toggle">
                   <span class="svg-icon menu-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="white">
-                      <path d="M12 0c-3.313 0-6 2.687-6 6 0 2.961 2.164 5.436 5 5.92v.08c-2.836.484-5 2.959-5 5.92 0 3.313 2.687 6 6 6s6-2.687 6-6c0-2.961-2.164-5.436-5-5.92v-.08c2.836-.484 5-2.959 5-5.92 0-3.313-2.687-6-6-6zm0 20c-2.206 0-4-1.794-4-4s1.794-4 4-4 4 1.794 4 4-1.794 4-4 4zm0-10c-2.206 0-4-1.794-4-4s1.794-4 4-4 4 1.794 4 4-1.794 4-4 4z" />
+                      <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 18c-4.418 0-8-3.582-8-8s3.582-8 8-8 8 3.582 8 8-3.582 8-8 8zm1-13h-2v6h2V7zm-2 8h2v2h-2v-2z" />
                     </svg>
+
                   </span>
                   <span class="menu-text">سایر بخش ها</span>
                   <i class="menu-arrow"></i>
@@ -326,12 +327,7 @@
                         <span class="menu-text">مدیریت نقش‌ها</span>
                       </a>
                     </li>
-                    <li class="menu-item" aria-haspopup="true">
-                      <a href="{{ route('admin.user.index') }}" class="menu-link">
-                        <i class="menu-bullet menu-bullet-dot"><span></span></i>
-                        <span class="menu-text">اختصاص نقش به کاربر</span>
-                      </a>
-                    </li>
+
                   </ul>
                 </div>
               </li>
@@ -530,8 +526,9 @@
                 <a href="javascript:;" class="menu-link menu-toggle">
                   <span class="svg-icon menu-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="white">
-                      <path d="M12 0c-3.313 0-6 2.687-6 6 0 2.961 2.164 5.436 5 5.92v.08c-2.836.484-5 2.959-5 5.92 0 3.313 2.687 6 6 6s6-2.687 6-6c0-2.961-2.164-5.436-5-5.92v-.08c2.836-.484 5-2.959 5-5.92 0-3.313-2.687-6-6-6zm0 20c-2.206 0-4-1.794-4-4s1.794-4 4-4 4 1.794 4 4-1.794 4-4 4zm0-10c-2.206 0-4-1.794-4-4s1.794-4 4-4 4 1.794 4 4-1.794 4-4 4z" />
+                      <path d="M11 18h2v2h-2v-2zm1-16C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm1 15h-2v-2h2v2zm1.07-7.75l-.9.92C12.45 11.68 12 12.5 12 14h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z" />
                     </svg>
+
                   </span>
                   <span class="menu-text">راهنمای سایت</span>
                   <i class="menu-arrow"></i>
@@ -654,7 +651,7 @@
       <!--begin::Header-->
       <div class="d-flex align-items-center mt-5">
         <div class="symbol symbol-100 mr-5">
-          <div class="symbol-label" style="background-image:url('/admin/assets/media/users/300_21.jpg')"></div>
+          <div class="symbol-label" style="background-image:url('/storage/{{ Auth::user()->profile->profile_picture ?? '/path/to/default/profile_picture.jpg' }}' )"></div>
           <i class="symbol-badge bg-success"></i>
         </div>
         <div class="d-flex flex-column">

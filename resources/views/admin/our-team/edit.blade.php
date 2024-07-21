@@ -6,23 +6,10 @@
 <div class="container mt-4">
   <div class="card">
     <div class="card-header">
-      <h3>ویرایش بخش مشتریان</h3>
+      <h3>ویرایش بخش تیم ما</h3>
     </div>
     <div class="card-body">
-      @if ($errors->any())
-      <div class="alert alert-danger">
-        <ul>
-          @foreach ($errors->all() as $error)
-          <li>{{ $error }}</li>
-          @endforeach
-        </ul>
-      </div>
-      @endif
-      @if (session('success'))
-      <div class="alert alert-success">
-        {{ session('success') }}
-      </div>
-      @endif
+
       <form action="{{ route('admin.client-section.update') }}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PATCH')

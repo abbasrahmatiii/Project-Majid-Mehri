@@ -10,7 +10,7 @@
       <div class="col-lg-9">
 
         <div class="container mt-4">
-          <h3>درخواست مشاوره</h3>
+          <h3>جلسات مشاوره رزرو شده : </h3>
           @if(session('success'))
           <div class="alert alert-success">
             {{ session('success') }}
@@ -36,7 +36,9 @@
                   <th>ساعت پایان</th>
                   <th>مشاور</th>
                   <th>قیمت</th>
+                  <th>نوع مشاوره</th>
                   <th>عملیات</th>
+                  <th>لینک</th>
                 </tr>
               </thead>
               <tbody>
@@ -53,6 +55,7 @@
                   <td>{{ $end_time }} {{ (int)explode(':', $end_time)[0] < 12 ? 'صبح' : 'عصر' }}</td>
                   <td>{{ $reservation->consultation->consultant->first_name }} {{ $reservation->consultation->consultant->last_name }}</td>
                   <td>{{ number_format($reservation->consultation->price) }} ریال</td>
+                  <td>{{ $reservation->type ? 'حضوری' : 'غیر حضوری' }}</td>
                   <td>
                     @if(!$reservation->is_paid)
                     <a href="{{ route('reservations.pay', $reservation->id) }}" class="btn btn-primary btn-sm">پرداخت</a>
@@ -61,6 +64,12 @@
                     <span class="badge badge-success">نهایی شده</span>
                     @endif
                   </td>
+                  <td>
+                    @if($reservation->session_link)
+                    <a href="{{ $reservation->session_link }}" target="_blank" class="session-link">ورود</a>
+                    @endif
+                  </td>
+          
                 </tr>
                 @endforeach
               </tbody>
@@ -109,4 +118,22 @@
   })
 </script>
 @endif
+
+<style>
+  .session-link {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    padding: 2px 6px;
+    font-size: 0.52rem;
+    border-radius: 4px;
+    text-decoration: none;
+  }
+
+  .session-link:hover {
+    background-color: #0056b3;
+    color: #fff;
+    text-decoration: none;
+  }
+</style>
 @endsection

@@ -31,4 +31,16 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+        // ...
+        'zarinpal' => [
+            'base_uri' => env('ZARINPAL_BASE_URI', 'https://sandbox.zarinpal.com/pg/rest/WebGate/'),
+            'merchant_id' => env('ZARINPAL_MERCHANT_ID'),
+            'callback_url' => env('ZARINPAL_CALLBACK_URL'),
+            'description' => env('ZARINPAL_DESCRIPTION'),
+            'guzzle' => [
+                'verify' => storage_path('certs/cacert.pem'), // اگر از فایل cacert.pem استفاده می‌کنید
+            ],
+        ],
+
+
 ];

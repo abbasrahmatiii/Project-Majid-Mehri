@@ -90,11 +90,11 @@
                   <h4 class="mb-3 secondary-font pb-1">نویسنده</h4>
                   <div class="img-thumbnail img-thumbnail-no-borders rounded-circle" style="width: 80px; height: 80px;">
                     <a href="#">
-                      <img src="{{ asset('storage/' . $post->author->profile->profile_picture) }}" alt="{{ $post->author->name }}" class="img-fluid rounded-circle" style="width: 100%; height: 100%; object-fit: cover;">
+                      <img src="{{ asset('storage/' . optional($post->author->profile)->profile_picture ?: 'default-profile-picture.png') }}" alt="{{ $post->author->name }}" class="img-fluid rounded-circle" style="width: 100%; height: 100%; object-fit: cover;">
                     </a>
                   </div>
                   <p><strong class="name">{{ $post->author->first_name }} {{ $post->author->last_name }}</strong></p>
-                  <p>{{ $post->author->profile->biography }}</p>
+                  <p>{{ optional($post->author->profile)->biography ?: '' }}</p>
                 </div>
 
                 <div id="comments" class="post-block mt-5 post-comments">

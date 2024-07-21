@@ -22,6 +22,7 @@
               <th>کاربر</th>
               <th>پرداخت شده</th>
               <th>مبلغ</th>
+              <th>نوع مشاوره</th>
               <th>عملیات</th>
             </tr>
           </thead>
@@ -40,13 +41,12 @@
               <td>{{ $reservation->user->first_name }} {{ $reservation->user->last_name }}</td>
               <td>{{ $reservation->is_paid ? 'بله' : 'خیر' }}</td>
               <td>{{ number_format($reservation->consultation->price) }} ریال</td>
+              <td>{{ $reservation->type ? 'حضوری' : 'غیر حضوری' }}</td>
               <td class="text-center">
-                <!-- دکمه برای باز کردن مودال تایید حذف -->
                 <button type="button" class="btn btn-link text-danger p-0 mx-1 action-icon" data-toggle="modal" data-target="#deleteModal{{ $reservation->id }}">
                   <i class="fas fa-trash-alt"></i>
                 </button>
-
-                <!-- مودال تایید حذف -->
+                
                 <div class="modal fade" id="deleteModal{{ $reservation->id }}" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel{{ $reservation->id }}" aria-hidden="true">
                   <div class="modal-dialog" role="document">
                     <div class="modal-content">
@@ -70,6 +70,35 @@
                     </div>
                   </div>
                 </div>
+
+                @if($reservation->type == 0 && $reservation->is_paid == 1)
+                <button type="button" class="btn btn-link text-primary p-0 mx-1 action-icon" data-toggle="modal" data-target="#sessionLinkModal{{ $reservation->id }}">
+                  <i class="fas fa-link"></i>
+                </button>
+                
+                <div class="modal fade" id="sessionLinkModal{{ $reservation->id }}" tabindex="-1" role="dialog" aria-labelledby="sessionLinkModalLabel{{ $reservation->id }}" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="sessionLinkModalLabel{{ $reservation->id }}">بروزرسانی لینک جلسه</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="بستن">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <form action="{{ route('admin.reservations.updateSessionLink', $reservation->id) }}" method="POST">
+                          @csrf
+                          <div class="form-group">
+                            <label for="session_link{{ $reservation->id }}">لینک جلسه</label>
+                            <input style="direction: ltr; text-align: left;" type="url" class="form-control" id="session_link{{ $reservation->id }}" name="session_link" value="{{ $reservation->session_link ?? '' }}">
+                          </div>
+                          <button type="submit" class="btn btn-primary">ذخیره</button>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                @endif
               </td>
             </tr>
             @endforeach
@@ -88,24 +117,22 @@
   .table td,
   .table th {
     padding: 0.5rem;
-    /* کاهش فاصله داخلی سلول‌ها */
     font-size: 0.875rem;
-    /* کاهش اندازه فونت */
   }
 
   .action-icon:hover i {
     color: #0056b3;
-    /* تغییر رنگ به آبی تیره هنگام حرکت موس */
   }
 
   .action-icon.text-danger:hover i {
     color: #dc3545;
-    /* تغییر رنگ به قرمز هنگام حرکت موس */
   }
 
   .bg-dark {
     background-color: #343a40 !important;
-    /* تغییر رنگ هدر جدول به تیره‌تر */
   }
 </style>
+@endsection
+@section('js')
+@include('admin.layouts.notifications')
 @endsection
