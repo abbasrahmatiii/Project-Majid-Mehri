@@ -181,10 +181,7 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-<<<<<<< HEAD
-=======
         App\Providers\ViewServiceProvider::class,
->>>>>>> d088776b (add session link)
 
         /*
          * Package Service Providers...
@@ -215,11 +212,8 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         // 'ExampleClass' => App\Example\ExampleClass::class,
-<<<<<<< HEAD
         'Image' => Intervention\Image\Facades\Image::class,
 
-=======
->>>>>>> d088776b (add session link)
     ])->toArray(),
 
 ];
