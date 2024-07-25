@@ -1,18 +1,10 @@
 @extends('admin.layouts.master')
 @section('content')
 <div class="mx-4 mt-4">
-  <!-- @if(session('success'))
-  <div class="alert alert-success alert-dismissible fade show" role="alert">
-    {{ session('success') }}
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-  @endif -->
 </div>
 <div class="card gutter-b mt-0 mx-4">
   <div class="card-header">
-    <h3 class="card-title">تنظیمات عمومی سایت</h3>
+    <h3 class="card-title">تنظیمات سئو</h3>
   </div>
   <!--begin::Form-->
   <form class="form" method="POST" action="/admin/settings/update">

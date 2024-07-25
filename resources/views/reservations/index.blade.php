@@ -9,7 +9,7 @@
       <div class="col-lg-9">
 
         <div class="container mt-4">
-          <h3>درخواست مشاوره</h3>
+          <h3>درخواست مشاوره {{ $type ? 'حضوری' : 'غیر حضوری' }} </h3>
           @if(session('success'))
           <div class="alert alert-success">
             {{ session('success') }}
@@ -27,6 +27,8 @@
           @endif
 
           <div class="table-responsive">
+            <!-- resources/views/user/consultations/index.blade.php -->
+
             <table class="table table-bordered table-hover">
               <thead>
                 <tr>
@@ -35,6 +37,7 @@
                   <th>ساعت شروع</th>
                   <th>ساعت پایان</th>
                   <th>مشاور</th>
+                  <th>قیمت</th>
                   <th>عملیات</th>
                 </tr>
               </thead>
@@ -51,11 +54,14 @@
                   <td>{{ $start_time }} {{ (int)explode(':', $start_time)[0] < 12 ? 'صبح' : 'عصر' }}</td>
                   <td>{{ $end_time }} {{ (int)explode(':', $end_time)[0] < 12 ? 'صبح' : 'عصر' }}</td>
                   <td>{{ $consultation->consultant->first_name }} {{ $consultation->consultant->last_name }}</td>
+                  <td>{{ number_format($consultation->price) }} ریال</td>
                   <td>
                     @if(!$consultation->reservation)
                     <form action="{{ route('reservations.store') }}" method="POST">
                       @csrf
                       <input type="hidden" name="consultation_id" value="{{ $consultation->id }}">
+                      <input type="hidden" name="type" value="{{ $type }}"> <!-- فیلد پنهان برای ارسال نوع -->
+
                       <button type="submit" class="btn btn-primary btn-sm">رزرو</button>
                     </form>
                     @else
@@ -66,6 +72,7 @@
                 @endforeach
               </tbody>
             </table>
+
           </div>
         </div>
 

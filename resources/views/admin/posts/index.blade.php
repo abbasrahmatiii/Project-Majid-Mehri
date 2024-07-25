@@ -1,27 +1,7 @@
-<!-- resources/views/admin/posts/index.blade.php -->
-
 @extends('admin.layouts.master')
 
 @section('content')
 <div class="container mt-4">
-  <!-- @if(session('success'))
-  <div class="alert alert-success alert-dismissible fade show" role="alert">
-    {{ session('success') }}
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-  @endif -->
-
-  <!-- @if(session('error'))
-<div class="alert alert-danger alert-dismissible fade show" role="alert">
-  {{ session('error') }}
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-  </button>
-</div>
-@endif -->
-
   <div class="card">
     <div class="card-header">
       <h3>لیست پست‌ها</h3>
@@ -63,13 +43,9 @@
                 <a href="{{ route('posts.edit', $post->id) }}" class="btn btn-sm btn-clean btn-icon" title="ویرایش">
                   <i class="fas fa-edit"></i>
                 </a>
-                <form action="{{ route('posts.destroy', $post->id) }}" method="POST" style="display:inline;">
-                  @csrf
-                  @method('DELETE')
-                  <button type="submit" class="btn btn-sm btn-clean btn-icon" title="حذف">
-                    <i class="fas fa-trash-alt"></i>
-                  </button>
-                </form>
+                <button class="btn btn-sm btn-clean btn-icon delete-btn" data-toggle="modal" data-target="#deleteModal" data-id="{{ $post->id }}" title="حذف">
+                  <i class="fas fa-trash-alt"></i>
+                </button>
                 <a href="{{ route('posts.show', $post->slug) }}" class="btn btn-sm btn-clean btn-icon" title="مشاهده">
                   <i class="fas fa-eye"></i>
                 </a>
@@ -86,4 +62,46 @@
     </div>
   </div>
 </div>
+
+<!-- Delete Confirmation Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="deleteModalLabel">تایید حذف</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        آیا مطمئن هستید که می‌خواهید این پست را حذف کنید؟
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">لغو</button>
+        <form id="deleteForm" method="POST" action="">
+          @csrf
+          @method('DELETE')
+          <button type="submit" class="btn btn-danger">حذف</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  $(document).ready(function() {
+    $('#deleteModal').on('show.bs.modal', function(event) {
+
+      var button = $(event.relatedTarget);
+      var postId = button.data('id');
+      var action = "{{ url('admin/posts') }}/" + postId;
+      var modal = $(this);
+      modal.find('#deleteForm').attr('action', action);
+    });
+
+    $('#deleteForm').on('submit', function() {
+
+      $('#deleteModal').modal('hide');
+    });
+  });
+</script>
 @endsection

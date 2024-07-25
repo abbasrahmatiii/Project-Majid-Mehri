@@ -17,8 +17,23 @@
                       اخبار
                     </a>
                   </li>
+                  <li class="dropdown dropdown-full-color dropdown-light">
+                    <a class="dropdown-item dropdown-toggle" href="{{ route('articles') }}">
+                      مقالات
+                    </a>
+                  </li>
+                  <li class="dropdown dropdown-full-color dropdown-light">
+                    <a class="dropdown-item dropdown-toggle" href="{{ route('reservations.index', ['type' => 1]) }}">
+                      درخواست مشاوره حضوری
+                    </a>
+                  </li>
+                  <li class="dropdown dropdown-full-color dropdown-light">
+                    <a class="dropdown-item dropdown-toggle" href="{{ route('reservations.index', ['type' => 0]) }}">
+                      درخواست مشاوره غیر حضوری
+                    </a>
+                  </li>
                   @if(auth()->check())
-                  @if(auth()->user()->hasRole('مدیر کل'))
+                  @if(auth()->user()->hasAnyRole(['مدیر کل', 'نویسنده', 'مشاور']))
                   <li class="dropdown dropdown-full-color dropdown-light">
                     <a class="dropdown-item dropdown-toggle" href="/admin/dashboard">
                       داشبورد {{ auth()->user()->first_name }} {{ auth()->user()->last_name }}
@@ -58,6 +73,11 @@
                       ثبت نام
                     </a>
                   </li>
+                  <li class="dropdown dropdown-full-color dropdown-light">
+                    <a class="dropdown-item dropdown-toggle" href="https://majidmehri.abbasrahmati.ir/pages/درباره ما">
+                      درباره ما
+                    </a>
+                  </li>
                   @endif
                 </ul>
               </nav>
@@ -71,3 +91,8 @@
     </div>
   </div>
 </div>
+<style>
+  ul {
+    margin-top: 16px;
+  }
+</style>

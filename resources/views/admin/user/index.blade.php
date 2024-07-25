@@ -1,16 +1,7 @@
 @extends('admin.layouts.master')
 
 @section('content')
-<!-- <div class="mx-4 mt-4">
-  @if(session('success'))
-  <div class="alert alert-success alert-dismissible fade show" role="alert">
-    {{ session('success') }}
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-  @endif 
-</div>-->
+
 <div class="card card-custom gutter-b mt-0 mx-4">
   <div class="card-header flex-wrap border-0 pt-6 pb-0">
     <div class="card-title">
@@ -36,9 +27,9 @@
             <th>عملیات</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody id="user-list">
           @foreach($users as $user)
-          <tr>
+          <tr id="user-{{ $user->id }}">
             <td>{{ $user->first_name }} {{ $user->last_name }}</td>
             <td>{{ $user->email }}</td>
             <td>{{ $user->roles->pluck('name')->join(', ') }}</td>
@@ -46,16 +37,10 @@
               <a href="{{ route('admin.users.edit', $user->id) }}" class="btn btn-sm btn-clean btn-icon mr-2" title="ویرایش">
                 <i class="fas fa-edit"></i>
               </a>
-              <a href="{{ route('admin.users.showAssignRolesForm', $user->id) }}" class="btn btn-sm btn-clean btn-icon mr-2" title="اختصاص نقش">
-                <i class="fas fa-user-tag"></i>
-              </a>
-              <form action="{{ route('admin.users.delete', $user->id) }}" method="POST" style="display:inline;">
-                @csrf
-                @method('DELETE')
-                <button type="submit" class="btn btn-sm btn-clean btn-icon" title="حذف">
-                  <i class="fas fa-trash-alt"></i>
-                </button>
-              </form>
+
+              <button class="btn btn-sm btn-clean btn-icon delete-button" data-id="{{ $user->id }}" title="حذف" data-toggle="modal" data-target="#deleteModal">
+                <i class="fas fa-trash-alt"></i>
+              </button>
             </td>
           </tr>
           @endforeach
@@ -68,4 +53,78 @@
     @endif
   </div>
 </div>
+
+<!-- Delete Confirmation Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="deleteModalLabel">تایید حذف</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        آیا مطمئن هستید که می‌خواهید این کاربر را حذف کنید؟
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">لغو</button>
+        <button type="button" class="btn btn-danger" id="confirmDelete">حذف</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    let userId;
+
+    $('.delete-button').on('click', function() {
+      userId = $(this).data('id');
+    });
+
+    $('#confirmDelete').on('click', function() {
+      $.ajax({
+        url: '/admin/users/delete/' + userId,
+        type: 'DELETE',
+        data: {
+          _token: '{{ csrf_token() }}'
+        },
+        success: function(response) {
+          if (response.success) {
+            $('#user-' + userId).remove();
+
+            document.getElementById('deleteModal').style.display = 'none';
+            var backdrops = document.getElementsByClassName('modal-backdrop');
+            for (var i = 0; i < backdrops.length; i++) {
+              backdrops[i].parentNode.removeChild(backdrops[i]);
+            }
+
+            Swal.fire({
+              icon: 'success',
+              title: 'حذف شد!',
+              text: response.message,
+              showConfirmButton: false,
+              timer: 1500
+            });
+          } else {
+            Swal.fire({
+              icon: 'error',
+              title: 'خطا',
+              text: response.message,
+            });
+          }
+        },
+        error: function(xhr) {
+          Swal.fire({
+            icon: 'error',
+            title: 'خطا',
+            text: 'خطایی رخ داده است. لطفا دوباره تلاش کنید.',
+          });
+        }
+      });
+    });
+  });
+</script>
+
 @endsection

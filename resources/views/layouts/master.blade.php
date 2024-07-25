@@ -15,6 +15,7 @@
   <meta name="description" content="{{ $settings->meta_description ?? 'توضیحات سایت' }}">
   <meta name="author" content="author">
 
+
   <!-- Favicon -->
   <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
   <link rel="apple-touch-icon" href="img/apple-touch-icon.png">

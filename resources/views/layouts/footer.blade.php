@@ -3,7 +3,7 @@
     <div class="row pt-5 py-lg-5">
       <div class="col-sm-6 col-lg-3 mb-5 mb-lg-0">
         <h5 class="text-6 font-weight-light text-color-light mb-4">مکان</h5>
-        <p class="text-4 mb-0">{{ $contact->address ?? 'فلکه دانشگاه' }}</p>
+        <p class="text-4 mb-0">{{ $settings->address ?? 'فلکه دانشگاه' }}</p>
       </div>
       <div class="col-sm-6 col-lg-3 mb-5 mb-lg-0">
         <h5 class="text-6 font-weight-light text-color-light mb-4">ساعات کاری</h5>

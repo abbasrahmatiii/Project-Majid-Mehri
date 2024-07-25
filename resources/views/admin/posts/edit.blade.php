@@ -22,19 +22,35 @@
         <div class="form-group">
           <label for="title">عنوان</label>
           <input type="text" name="title" class="form-control" value="{{ old('title', $post->title) }}" required>
+          @if($errors->has('title'))
+          <div class="text-danger">{{ $errors->first('title') }}</div>
+          @endif
         </div>
+
         <div class="form-group">
           <label for="slug">اسلاگ</label>
           <input type="text" name="slug" class="form-control" value="{{ old('slug', $post->slug) }}" required>
+          @if($errors->has('slug'))
+          <div class="text-danger">{{ $errors->first('slug') }}</div>
+          @endif
         </div>
+
         <div class="form-group">
           <label for="summary">خلاصه</label>
-          <textarea name="summary" class="form-control" required id="editor2">{{ old('summary', $post->summary) }}</textarea>
+          <textarea id="summernote1" name="summary" class="form-control" required>{{ old('summary', $post->summary) }}</textarea>
+          @if($errors->has('summary'))
+          <div class="text-danger">{{ $errors->first('summary') }}</div>
+          @endif
         </div>
+
         <div class="form-group">
           <label for="body">محتوا</label>
-          <textarea name="body" class="form-control" required id="editor1">{{ old('body', $post->body) }}</textarea>
+          <textarea id="summernote2" name="body" class="form-control" required>{{ old('body', $post->body) }}</textarea>
+          @if($errors->has('body'))
+          <div class="text-danger">{{ $errors->first('body') }}</div>
+          @endif
         </div>
+
         <div class="form-group">
           <label for="category_id">دسته‌بندی</label>
           <select name="category_id" class="form-control" required>
@@ -42,24 +58,106 @@
             <option value="{{ $category->id }}" {{ old('category_id', $post->category_id) == $category->id ? 'selected' : '' }}>{{ $category->name }}</option>
             @endforeach
           </select>
+          @if($errors->has('category_id'))
+          <div class="text-danger">{{ $errors->first('category_id') }}</div>
+          @endif
         </div>
+
         <div class="form-group">
-          <label for="status">وضعیت</label>
+          <label for="published">وضعیت</label>
           <select name="published" class="form-control" required>
-            <option value="0" {{ old('published', $post->status) == '0' ? 'selected' : '' }}>پیش‌نویس</option>
-            <option value="1" {{ old('published', $post->status) == '1' ? 'selected' : '' }}>منتشر شده</option>
+            <option value="0" {{ old('published', $post->published) == '0' ? 'selected' : '' }}>پیش‌نویس</option>
+            <option value="1" {{ old('published', $post->published) == '1' ? 'selected' : '' }}>منتشر شده</option>
           </select>
+          @if($errors->has('published'))
+          <div class="text-danger">{{ $errors->first('published') }}</div>
+          @endif
         </div>
+
         <div class="form-group">
           <label for="image">تصویر</label>
           <input type="file" name="image" class="form-control">
           @if($post->image)
           <img src="{{ asset('storage/' . $post->image) }}" alt="Current Image" class="mt-2" width="100">
           @endif
+          @if($errors->has('image'))
+          <div class="text-danger">{{ $errors->first('image') }}</div>
+          @endif
         </div>
+
         <button type="submit" class="btn btn-success">ذخیره</button>
       </form>
     </div>
   </div>
 </div>
+
+<!-- Summernote CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.18/summernote.min.css" rel="stylesheet">
+<!-- Laravel File Manager JS -->
+<script src="{{ asset('vendor/laravel-filemanager/js/stand-alone-button.js') }}"></script>
+<!-- jQuery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- Bootstrap JS -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!-- Summernote JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.18/summernote.min.js"></script>
+
+<script>
+  $(document).ready(function() {
+    var route_prefix = "/laravel-filemanager";
+
+    function lfm(type, options, cb) {
+      var route_prefix = (options && options.prefix) ? options.prefix : '/laravel-filemanager';
+      var target_input = $('#' + options.target);
+      var target_preview = $('#' + options.preview);
+
+      window.open(route_prefix + '?type=' + type, 'FileManager', 'width=900,height=600');
+
+      window.SetUrl = function(items) {
+        var file_path = items.map(function(item) {
+          return item.url;
+        }).join(',');
+
+        // set the value of the desired input to image url
+        cb(file_path);
+
+        // trigger change event
+        target_input.trigger('change');
+        target_preview.trigger('change');
+      };
+    }
+
+    $('#summernote1, #summernote2').summernote({
+      height: 300,
+      toolbar: [
+        ['style', ['style']],
+        ['font', ['bold', 'underline', 'clear']],
+        ['fontname', ['fontname']],
+        ['color', ['color']],
+        ['para', ['ul', 'ol', 'paragraph']],
+        ['table', ['table']],
+        ['insert', ['link', 'picture', 'video']],
+        ['view', ['fullscreen', 'codeview', 'help']],
+        ['mybutton', ['lfm']]
+      ],
+      buttons: {
+        lfm: function(context) {
+          var ui = $.summernote.ui;
+          var button = ui.button({
+            contents: '<span>مرکز آپلود</span>',
+            tooltip: 'مرکز آپلود',
+            click: function() {
+              lfm('image', {
+                prefix: route_prefix
+              }, function(url) {
+                context.invoke('editor.insertImage', url);
+              });
+            }
+          });
+          return button.render();
+        }
+      }
+    });
+  });
+</script>
 @endsection
