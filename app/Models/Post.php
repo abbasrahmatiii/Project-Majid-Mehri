@@ -31,6 +31,7 @@ class Post extends Model
         return $this->hasMany(Comment::class);
     }
 
+
     public function getViewsAttribute()
     {
         return Redis::get("post:{$this->id}:views") ?? $this->attributes['views'];

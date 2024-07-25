@@ -1,6 +1,5 @@
 <header id="header" data-plugin-options="{'stickyEnabled': true, 'stickyEnableOnBoxed': true, 'stickyEnableOnMobile': true, 'stickyStartAt': 148, 'stickySetTop': '-148px', 'stickyChangeLogo': true}">
   <div class="header-body border-color-primary border-top-0 box-shadow-none">
-
     <div class="header-container container z-index-2">
       <div class="header-row py-2">
         <div class="header-column">
@@ -8,8 +7,8 @@
             <div class="header-logo header-logo-sticky-change">
               <a href="/">
                 @if(isset($contact->logo))
-                <img class="header-logo-sticky opacity-0" alt="Logo" width="100" height="48" data-sticky-width="89" data-sticky-height="43" data-sticky-top="88" src="{{ asset('/storage/logos/'.$contact->logo) }}">
-                <img class="header-logo-non-sticky opacity-0" alt="Logo" width="100" height="48" src="{{ asset('/storage/logos/'. $contact->logo) }}">
+                <img style="position: absolute; top: -20px; right: 0;" class="header-logo-sticky opacity-0" alt="Logo" width="100" height="88" data-sticky-width="89" data-sticky-height="43" data-sticky-top="88" src="{{ asset('/storage/logos/'.$contact->logo) }}">
+                <img class="header-logo-non-sticky opacity-0" alt="Logo" width="100" height="88" src="{{ asset('/storage/logos/'. $contact->logo) }}">
                 @else
                 <img class="header-logo-sticky opacity-0" alt="Logo" width="100" height="48" data-sticky-width="89" data-sticky-height="43" data-sticky-top="88" src="img/logo-dark.png">
                 <img class="header-logo-non-sticky opacity-0" alt="Logo" width="100" height="48" src="img/logo-default.png">

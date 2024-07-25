@@ -49,7 +49,12 @@ class TimeSlotController extends Controller
 
     public function destroy(TimeSlot $timeSlot)
     {
+        // بررسی اینکه آیا بازه زمانی در جدول consultations استفاده شده است یا خیر
+        if ($timeSlot->consultations()->exists()) {
+            return redirect()->back()->with('error', 'این بازه زمانی در مشاوره‌ها استفاده شده است و نمی‌توان آن را حذف کرد.');
+        }
+
         $timeSlot->delete();
-        return redirect()->route('admin.time_slots.index')->with('success', 'بازه زمانی با موفقیت حذف شد.');
+        return redirect()->back()->with('success', 'بازه زمانی با موفقیت حذف شد.');
     }
 }

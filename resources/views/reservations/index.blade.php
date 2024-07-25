@@ -27,6 +27,8 @@
           @endif
 
           <div class="table-responsive">
+            <!-- resources/views/user/consultations/index.blade.php -->
+
             <table class="table table-bordered table-hover">
               <thead>
                 <tr>
@@ -35,6 +37,7 @@
                   <th>ساعت شروع</th>
                   <th>ساعت پایان</th>
                   <th>مشاور</th>
+                  <th>قیمت</th>
                   <th>عملیات</th>
                 </tr>
               </thead>
@@ -51,6 +54,7 @@
                   <td>{{ $start_time }} {{ (int)explode(':', $start_time)[0] < 12 ? 'صبح' : 'عصر' }}</td>
                   <td>{{ $end_time }} {{ (int)explode(':', $end_time)[0] < 12 ? 'صبح' : 'عصر' }}</td>
                   <td>{{ $consultation->consultant->first_name }} {{ $consultation->consultant->last_name }}</td>
+                  <td>{{ number_format($consultation->price) }} ریال</td>
                   <td>
                     @if(!$consultation->reservation)
                     <form action="{{ route('reservations.store') }}" method="POST">
@@ -68,6 +72,7 @@
                 @endforeach
               </tbody>
             </table>
+
           </div>
         </div>
 

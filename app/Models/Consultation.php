@@ -10,7 +10,7 @@ class Consultation extends Model
     use HasFactory;
 
     protected $fillable = [
-        'user_id', 'day_id', 'time_slot_id', 'consultant_id', 'date',
+        'user_id', 'day_id', 'time_slot_id', 'consultant_id', 'date', 'price',
     ];
 
     public function timeSlot()

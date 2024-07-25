@@ -3,16 +3,6 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-<<<<<<< HEAD
-
-class AppServiceProvider extends ServiceProvider
-{
-    /**
-     * Register any application services.
-     *
-     * @return void
-     */
-=======
 use App\Models\Setting;
 use Illuminate\Support\Facades\Schema;
 
@@ -78,18 +68,7 @@ class AppServiceProvider extends ServiceProvider
         }
     }
 
->>>>>>> d088776b (add session link)
     public function register()
-    {
-        //
-    }
-
-    /**
-     * Bootstrap any application services.
-     *
-     * @return void
-     */
-    public function boot()
     {
         //
     }

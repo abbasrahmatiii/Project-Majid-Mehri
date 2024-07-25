@@ -21,16 +21,10 @@
             @endforeach
           </select>
         </div>
+
         <div class="form-group">
-          <label for="day">انتخاب روز</label>
-          <select name="day_id" id="day" class="form-control" required>
-            <option value="">انتخاب روز</option>
-            @foreach($days as $day)
-            <option value="{{ $day->id }}" {{ $day->id == $consultation->day_id ? 'selected' : '' }}>
-              {{ $day->name }}
-            </option>
-            @endforeach
-          </select>
+          <label for="date">انتخاب تاریخ</label>
+          <input type="text" name="date" id="date" class="form-control" value="{{ \Verta::instance($consultation->date)->format('Y/m/d') }}" required>
         </div>
         <div class="form-group">
           <label for="time_slot">انتخاب بازه زمانی</label>
@@ -43,12 +37,25 @@
             @endforeach
           </select>
         </div>
+        <div class="form-group">
+          <label for="price">قیمت</label>
+          <input type="number" name="price" id="price" class="form-control" value="{{ $consultation->price }}" required>
+        </div>
         <button type="submit" class="btn btn-primary">ذخیره</button>
       </form>
     </div>
   </div>
 </div>
 @endsection
-<!-- @section('js')
-@include('admin.layouts.notifications')
-@endsection -->
+
+@section('scripts')
+<script>
+  $(document).ready(function() {
+    $('#date').persianDatepicker({
+      format: 'YYYY/MM/DD',
+      initialValue: false
+    }).val('{{ \Verta::instance($consultation->date)->format('
+      Y / m / d ') }}');
+  });
+</script>
+@endsection

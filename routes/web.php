@@ -1,10 +1,7 @@
 <?php
 
-<<<<<<< HEAD
-=======
 use App\Http\Controllers\TestimonialController;
 use App\Http\Controllers\ClientSectionController;
->>>>>>> d088776b (add session link)
 use App\Http\Controllers\AdminReservationController;
 use App\Http\Controllers\TimeSlotController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
@@ -52,110 +49,11 @@ Route::get('login', [LoginController::class, 'showLoginForm'])->middleware('gues
 Route::post('login', [LoginController::class, 'login'])->middleware('guest')->name('user.login');
 Route::post('logout', [LoginController::class, 'logout'])->name('user.logout');
 
-<<<<<<< HEAD
-
-// Front-Posts
-Route::get('/posts/{slug}', [PostController::class, 'show'])->middleware('count.views')->name('posts.show');
-
-Route::middleware('auth')->prefix('admin/posts')->name('admin.')->group(function () {
-    Route::post('/{post}/comments', [CommentController::class, 'store'])->name('comments.store');
-
-    Route::get('/comments', [CommentController::class, 'index'])->name('comments.index');
-    Route::get('/comments/pending', [CommentController::class, 'pending'])->name('comments.pending');
-    Route::patch('/comments/{comment}/approve', [CommentController::class, 'approve'])->name('comments.approve');
-    Route::patch('/comments/{comment}/disapprove', [CommentController::class, 'disapprove'])->name('comments.disapprove');
-    Route::delete('comments/{comment}', [CommentController::class, 'destroy'])->name('comments.delete');
-});
-Route::post('admin/posts/{post}/store', [CommentController::class, 'store'])->middleware('auth')->name('comments.store');
-// Management UI - Only accessible by admin users
-Route::middleware(['auth', 'check.role'])->group(function () {
-
-    Route::get('admin/dashboard', [BackendController::class, 'index'])->name('admin.dashboard');
-
-    // Settings
-    Route::get('admin/settings/edit', [SettingController::class, 'edit'])->name('admin.settings.edit');
-    Route::patch('admin/settings/update', [SettingController::class, 'update'])->name('admin.settings.update');
-
-    // Contact settings
-    Route::get('admin/contact/index', [ContactController::class, 'edit'])->name('admin.contact.index');
-    Route::patch('admin.contact.update', [ContactController::class, 'update'])->name('admin.contact.update');
-
-    // Slides
-    Route::get('admin/slide/create', [SlideController::class, 'create'])->middleware('permission:manage slideshows')->name('admin.slide.create');
-    Route::post('admin/slide/store', [SlideController::class, 'store'])->middleware('permission:manage slideshows')->name('admin.slide.store');
-    Route::get('admin/slide/index', [SlideController::class, 'index'])->middleware('permission:manage slideshows')->name('admin.slide.index');
-    Route::get('admin/slide/edit/{slide}', [SlideController::class, 'edit'])->middleware('permission:manage slideshows')->name('admin.slide.edit');
-    Route::patch('admin/slide/update/{slide}', [SlideController::class, 'update'])->name('admin.slide.update');
-    Route::delete('admin/slide/destroy/{slide}', [SlideController::class, 'destroy'])->middleware('permission:manage slideshows')->name('admin.slide.destroy');
-    Route::patch('admin/slide/toggleActive/{slide}', [SlideController::class, 'toggleActive'])->middleware('permission:manage slideshows')->name('admin.slide.toggleActive');
-
-    // CenterAds
-    Route::get('admin/centerads/create', [CenterAdController::class, 'create'])->name('admin.centerads.create');
-    Route::post('admin/centerads/store', [CenterAdController::class, 'store'])->name('admin.centerads.store');
-    Route::get('admin/centerads/index', [CenterAdController::class, 'index'])->name('admin.centerads.index');
-    Route::get('admin/centerads/edit/{centerad}', [CenterAdController::class, 'edit'])->name('admin.centerads.edit');
-    Route::patch('admin/centerads/toggleActive/{centerad}', [CenterAdController::class, 'toggleActive'])->name('admin.centerads.toggleActive');
-    Route::patch('admin/centerads/update/{centerad}', [CenterAdController::class, 'update'])->name('admin.centerads.update');
-    Route::delete('admin/centerads/delete/{centerad}', [CenterAdController::class, 'destroy'])->name('admin.centerads.delete');
-
-    // Users
-    Route::get('admin/users/index', [UserController::class, 'index'])->middleware('permission:manage users')->name('admin.user.index');
-    Route::get('admin/users/create', [UserController::class, 'create'])->middleware('permission:manage users')->name('admin.users.create');
-    Route::post('admin/users/store', [UserController::class, 'store'])->middleware('permission:manage users')->name('admin.users.store');
-    Route::get('admin/users/edit/{user}', [UserController::class, 'edit'])->middleware('permission:manage users')->name('admin.users.edit');
-    Route::patch('admin/users/update/{user}', [UserController::class, 'update'])->middleware('permission:manage users')->name('admin.users.update');
-    Route::delete('admin/users/delete/{user}', [UserController::class, 'destroy'])->middleware('permission:manage users')->name('admin.users.delete');
-
-    // Assign Roles to Users
-    Route::get('admin/users/{user}/assign-roles', [UserController::class, 'showAssignRolesForm'])->middleware('permission:manage users')->name('admin.users.showAssignRolesForm');
-    Route::patch('admin/users/{user}/assign-roles', [UserController::class, 'assignRoles'])->middleware('permission:manage users')->name('admin.users.assignRoles');
-
-    // Assign Permissions to Roles
-    Route::get('admin/roles/{role}/assign-permissions', [PermissionController::class, 'showAssignPermissionsForm'])->name('admin.roles.showAssignPermissionsForm');
-    Route::patch('admin/roles/{role}/assign-permissions', [PermissionController::class, 'assignPermissionsToRole'])->name('admin.roles.assignPermissions');
-
-
-    // Roles
-    Route::get('admin/roles/index', [RoleController::class, 'index'])->name('admin.roles.index');
-    Route::get('admin/roles/create', [RoleController::class, 'create'])->name('admin.roles.create');
-    Route::post('admin/roles/store', [RoleController::class, 'store'])->name('admin.roles.store');
-    Route::get('admin/roles/edit/{role}', [RoleController::class, 'edit'])->name('admin.roles.edit');
-    Route::patch('admin/roles/update/{role}', [RoleController::class, 'update'])->name('admin.roles.update');
-    Route::delete('admin/roles/delete/{role}', [RoleController::class, 'destroy'])->name('admin.roles.delete');
-
-    // Permissions
-    Route::get('admin/permissions/index', [PermissionController::class, 'index'])->name('admin.permissions.index');
-    Route::get('admin/permissions/create', [PermissionController::class, 'create'])->name('admin.permissions.create');
-    Route::post('admin/permissions/store', [PermissionController::class, 'store'])->name('admin.permissions.store');
-    Route::get('admin/permissions/edit/{permission}', [PermissionController::class, 'edit'])->name('admin.permissions.edit');
-    Route::patch('admin/permissions/update/{permission}', [PermissionController::class, 'update'])->name('admin.permissions.update');
-    Route::delete('admin/permissions/delete/{permission}', [PermissionController::class, 'destroy'])->name('admin.permissions.delete');
-
-
-
-    // Categories
-    Route::get('admin/categories/index', [CategoryController::class, 'index'])->name('categories.index');
-    Route::get('admin/categories/create', [CategoryController::class, 'create'])->name('categories.create');
-    Route::post('admin/categories/store', [CategoryController::class, 'store'])->name('categories.store');
-    Route::get('admin/categories/{category}/edit', [CategoryController::class, 'edit'])->name('categories.edit');
-    Route::patch('admin/categories/{category}', [CategoryController::class, 'update'])->name('categories.update');
-    Route::delete('admin/categories/{category}', [CategoryController::class, 'destroy'])->name('categories.destroy');
-
-    // Posts
-    Route::get('admin/posts/index', [PostController::class, 'index'])->name('posts.index');
-    Route::get('admin/posts/create', [PostController::class, 'create'])->name('posts.create');
-    Route::post('admin/posts/store', [PostController::class, 'store'])->name('posts.store');
-    Route::get('admin/posts/{post}/edit', [PostController::class, 'edit'])->name('posts.edit');
-    Route::put('admin/posts/{post}', [PostController::class, 'update'])->name('posts.update');
-    Route::delete('admin/posts/{post}', [PostController::class, 'destroy'])->name('posts.destroy');
-});
-=======
 // Posts And Articles
 Route::get('/posts/{slug}', [PostController::class, 'show'])->middleware('count.views')->name('posts.show');
 Route::get('/posts', [HomeController::class, 'list_posts'])->name('posts.index');
 Route::get('/articles', [HomeController::class, 'list_articles'])->name('articles');
 Route::get('/articles/{slug}', [ArticleController::class, 'show'])->name('articles.show');
->>>>>>> d088776b (add session link)
 
 // Authentication Routes...
 Route::get('login', [LoginController::class, 'showLoginForm'])->middleware('guest')->name('login');
@@ -192,12 +90,6 @@ Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']
 });
 
 
-<<<<<<< HEAD
-    Route::get('reservations', [AdminReservationController::class, 'index'])->name('admin.reservations.index');
-    Route::delete('reservations/{id}', [AdminReservationController::class, 'destroy'])->name('admin.reservations.destroy');
-});
-=======
->>>>>>> d088776b (add session link)
 
 Route::middleware(['auth'])->group(function () {
     Route::get('reservations', [ReservationController::class, 'index'])->name('reservations.index');
@@ -210,8 +102,6 @@ Route::middleware(['auth'])->group(function () {
 
 Route::prefix('user/')->middleware(['auth'])->group(function () {
     Route::get('reservations/reserved', [ReservationController::class, 'userReservations'])->name('user.reservations.reserved');
-<<<<<<< HEAD
-=======
     Route::get('/reservations/{id}/pay', [ReservationController::class, 'pay'])->name('reservations.pay');
     Route::get('/reservations/callback/{id}', [ReservationController::class, 'callback'])->name('reservations.callback');
 });
@@ -397,5 +287,4 @@ Route::middleware(['auth'])->group(function () {
         Route::put('testimonials/{testimonial}', [TestimonialController::class, 'update'])->name('testimonials.update')->middleware('permission:manage testimonials');
         Route::delete('testimonials/{testimonial}', [TestimonialController::class, 'destroy'])->name('testimonials.destroy')->middleware('permission:manage testimonials delete');
     });
->>>>>>> d088776b (add session link)
 });

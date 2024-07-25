@@ -17,8 +17,6 @@
                       اخبار
                     </a>
                   </li>
-<<<<<<< HEAD
-=======
                   <li class="dropdown dropdown-full-color dropdown-light">
                     <a class="dropdown-item dropdown-toggle" href="{{ route('articles') }}">
                       مقالات
@@ -34,7 +32,6 @@
                       درخواست مشاوره غیر حضوری
                     </a>
                   </li>
->>>>>>> d088776b (add session link)
                   @if(auth()->check())
                   @if(auth()->user()->hasAnyRole(['مدیر کل', 'نویسنده', 'مشاور']))
                   <li class="dropdown dropdown-full-color dropdown-light">
@@ -94,3 +91,8 @@
     </div>
   </div>
 </div>
+<style>
+  ul {
+    margin-top: 16px;
+  }
+</style>
