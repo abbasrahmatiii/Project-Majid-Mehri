@@ -18,15 +18,7 @@
             @endforeach
           </select>
         </div>
-        <!-- <div class="form-group">
-          <label for="day_id">روز</label>
-          <select name="day_id" id="day_id" class="form-control">
-            <option value="">لطفا روز را انتخاب کنید</option>
-            @foreach($days as $day)
-            <option value="{{ $day->id }}" data-day-name="{{ $day->name }}">{{ $day->name }}</option>
-            @endforeach
-          </select>
-        </div> -->
+
         <div class="form-group">
           <label for="date">تاریخ</label>
           <input type="text" name="date" id="date" class="form-control" placeholder="تاریخ مشاوره را انتخاب کنید">

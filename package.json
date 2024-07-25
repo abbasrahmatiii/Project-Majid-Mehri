@@ -19,6 +19,7 @@
     },
     "dependencies": {
         "ckeditor5": "^42.0.1",
+        "persian-datepicker": "^1.2.0",
         "summernote": "^0.8.20",
         "toastr": "^2.1.4"
     }
