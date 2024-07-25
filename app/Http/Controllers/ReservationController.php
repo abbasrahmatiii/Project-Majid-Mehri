@@ -17,8 +17,9 @@ class ReservationController extends Controller
         $consultations = Consultation::with(['timeSlot', 'consultant'])
             ->whereDoesntHave('reservation')
             ->get();
-            $type = $request->query('type'); // مقدار type را از URL دریافت کنید
-        return view('reservations.index', compact('consultations','type'));
+            $type = $request->query('type',0); // مقدار type را از URL دریافت کنید
+         return   view("reservations.index", compact('consultations','type'));
+        
     }
 
     public function store(Request $request)
@@ -48,7 +49,7 @@ class ReservationController extends Controller
     }
     $consultation->reservation()->create([
         'user_id' => auth()->id(),
-        'type' => $request->input('type'),
+        'type' => $request->input('type',0),
     ]);
 
     return redirect()->route('user.reservations.reserved')->with('success', 'زمان مشاوره با موفقیت رزرو شد. لطفا برای نهایی شدن بر روی دکمه پرداخت کلیک کنید.');

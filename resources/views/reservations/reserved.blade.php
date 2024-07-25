@@ -10,7 +10,7 @@
       <div class="col-lg-9">
 
         <div class="container mt-4">
-          <h3>جلسات مشاوره رزرو شده : </h3>
+          <h3>جلسات مشاوره رزرو شده :</h3>
           @if(session('success'))
           <div class="alert alert-success">
             {{ session('success') }}
@@ -27,8 +27,8 @@
           <div class="alert alert-warning">شما هیچ رزرو مشاوره‌ای ندارید. برای رزرو مشاوره، <a href="{{ route('reservations.index') }}">اینجا کلیک کنید</a>.</div>
           @else
           <div class="table-responsive">
-            <table class="table table-bordered table-hover">
-              <thead>
+            <table class="table table-bordered table-hover table-striped">
+              <thead class="thead-dark">
                 <tr>
                   <th>تاریخ</th>
                   <th>روز</th>
@@ -69,7 +69,6 @@
                     <a href="{{ $reservation->session_link }}" target="_blank" class="session-link">ورود</a>
                     @endif
                   </td>
-          
                 </tr>
                 @endforeach
               </tbody>
@@ -120,12 +119,37 @@
 @endif
 
 <style>
+  .table {
+    margin-bottom: 0;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+  }
+
+  .table th, .table td {
+    vertical-align: middle;
+    text-align: center;
+  }
+
+  .table thead th {
+    background-color: #343a40;
+    color: white;
+  }
+
+  .table tbody tr {
+    background-color: #ffffff;
+    transition: background-color 0.3s ease;
+  }
+
+  .table tbody tr:hover {
+    background-color: #f2f2f2;
+  }
+
   .session-link {
     display: inline-block;
     background-color: #007bff;
     color: #fff;
     padding: 2px 6px;
-    font-size: 0.52rem;
+    font-size: 0.75rem;
     border-radius: 4px;
     text-decoration: none;
   }
