@@ -13,25 +13,19 @@
   <!-- Summernote CSS -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.18/summernote.min.css" rel="stylesheet">
 
-
   <meta name="description" content="Updates and statistics" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <link rel="stylesheet" href="/css/all.min.css">
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-  <!--begin::Fonts-->
-  <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" /> end::Fonts -->
-  <!-- jQuery -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <!-- SweetAlert2 -->
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-  <link rel="stylesheet" href="https://cdn.ckeditor.com/ckeditor5/42.0.0/ckeditor5.css" />
+
+  <!-- Persian Datepicker CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/persian-datepicker@1.0.1/dist/css/persian-datepicker.min.css">
+
   <!--begin::Page Vendors Styles(used by this page)-->
   <link href="/admin/assets/plugins/custom/fullcalendar/fullcalendar.bundle.rtl.css?v=7.0.6" rel="stylesheet" type="text/css" />
   <!--end::Page Vendors Styles-->
-  <!-- persian-datepicker CSS -->
-  <link rel="stylesheet" href="/css/persian-datepicker.min.css">
   <link href="{{ asset('css/custom.css') }}" rel="stylesheet"> <!-- اضافه کردن فایل CSS -->
-  <script src="{{ asset('js/app.js') }}" defer></script>
+
   <!--begin::Global Theme Styles(used by all pages)-->
   <link href="/admin/assets/plugins/global/plugins.bundle.rtl.css?v=7.0.6" rel="stylesheet" type="text/css" />
   <link href="/admin/assets/plugins/custom/prismjs/prismjs.bundle.rtl.css?v=7.0.6" rel="stylesheet" type="text/css" />
@@ -46,7 +40,11 @@
   <!--end::Layout Themes-->
 
   <link rel="shortcut icon" href="/admin/assets/media/logos/favicon.ico" />
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
+
 <!--end::Head-->
 
 
@@ -774,7 +772,6 @@
     };
   </script>
   <!--end::Global Config-->
-
   <!--begin::Global Theme Bundle(used by all pages)-->
   <script src="/admin/assets/plugins/global/plugins.bundle.js?v=7.0.6"></script>
   <script src="/admin/assets/plugins/custom/prismjs/prismjs.bundle.js?v=7.0.6"></script>
@@ -789,6 +786,17 @@
   <script src="/admin/assets/js/pages/widgets.js?v=7.0.6"></script>
   <script src="/admin/assets/js/pages/crud/ktdatatable/base/data-local.js?v=7.0.6"></script>
   <!--end::Page Scripts-->
+
+  <!-- SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+  <!-- Persian Date -->
+  <script src="https://cdn.jsdelivr.net/npm/persian-date@1.0.1/dist/persian-date.min.js"></script>
+  <!-- Persian Datepicker JS -->
+  <script src="https://cdn.jsdelivr.net/npm/persian-datepicker@1.0.1/dist/js/persian-datepicker.min.js"></script>
+  <!-- Bootstrap JS -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <!-- Summernote JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.18/summernote.min.js"></script>
 
   <script type="importmap">
     {
@@ -841,17 +849,6 @@
         console.error(error);
       });
   </script>
-  <!-- jQuery -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <!-- SweetAlert2 -->
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-
-  <!-- jQuery -->
-  <script src="/js/jquery.min.js"></script>
-  <!-- persian-date JS -->
-  <script src="/js/persian-date.min.js"></script>
-  <!-- persian-datepicker JS -->
-  <script src="/js/persian-datepicker.min.js"></script>
 
   <script>
     $(document).ready(function() {
@@ -862,12 +859,11 @@
       });
     });
   </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.18/summernote.min.js"></script>
+
   @include('admin.layouts.notifications')
   <!-- @yield('js') -->
 </body>
+
 <!--end::Body-->
 
 

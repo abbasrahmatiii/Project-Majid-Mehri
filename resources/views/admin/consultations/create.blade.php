@@ -21,7 +21,7 @@
 
         <div class="form-group">
           <label for="date">تاریخ</label>
-          <input type="text" name="date" id="date" class="form-control" placeholder="تاریخ مشاوره را انتخاب کنید">
+          <input type="text" name="date" id="date" class="form-control datepicker" placeholder="تاریخ مشاوره را انتخاب کنید" readonly>
         </div>
         <div class="form-group">
           <label for="time_slot_id">بازه زمانی</label>
@@ -43,36 +43,12 @@
   </div>
 </div>
 
-<!-- Include Verta.js and jQuery -->
-<script src="{{ asset('path/to/jquery.min.js') }}"></script>
-<script src="{{ asset('path/to/persian-date.min.js') }}"></script>
-<script src="{{ asset('path/to/persian-datepicker.min.js') }}"></script>
-<script src="{{ asset('path/to/verta.js') }}"></script>
-
 <script>
   $(document).ready(function() {
     $("#date").persianDatepicker({
       format: 'YYYY/MM/DD',
-      altField: '#altDate',
-      observer: true,
+      autoClose: true,
       initialValue: false,
-      onSelect: function(unix) {
-        // Get the selected date and convert to Verta instance
-        var selectedDate = new persianDate(unix).toLocale('en').format('YYYY/MM/DD');
-        var vertaDate = Verta.parse(selectedDate);
-
-        // Get the day name from the selected date
-        var selectedDayName = vertaDate.format('dddd');
-
-        // Compare with the selected day from the dropdown
-        var selectedDayOption = $('#day_id option:selected');
-        var selectedDayNameFromDropdown = selectedDayOption.data('day-name');
-
-        if (selectedDayName !== selectedDayNameFromDropdown) {
-          alert('روز انتخاب شده با تاریخ مطابقت ندارد. لطفا یک تاریخ صحیح انتخاب کنید.');
-          $('#date').val(''); // Clear the date field
-        }
-      }
     });
 
     $('#consultationForm').on('submit', function(e) {
@@ -80,4 +56,12 @@
     });
   });
 </script>
+
+<style>
+  .datepicker {
+    width: 200px;
+    /* Adjust the width as needed */
+    display: inline-block;
+  }
+</style>
 @endsection
