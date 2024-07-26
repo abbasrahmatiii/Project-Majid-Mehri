@@ -1,0 +1,41 @@
+{
+  "node_modules/summernote/dist/font/summernote.eot": {
+    "file": "assets/summernote-05ce99db.eot",
+    "src": "node_modules/summernote/dist/font/summernote.eot"
+  },
+  "node_modules/summernote/dist/font/summernote.ttf": {
+    "file": "assets/summernote-2a5c8f9c.ttf",
+    "src": "node_modules/summernote/dist/font/summernote.ttf"
+  },
+  "node_modules/summernote/dist/font/summernote.woff": {
+    "file": "assets/summernote-9ea36fc9.woff",
+    "src": "node_modules/summernote/dist/font/summernote.woff"
+  },
+  "node_modules/summernote/dist/font/summernote.woff2": {
+    "file": "assets/summernote-17aff429.woff2",
+    "src": "node_modules/summernote/dist/font/summernote.woff2"
+  },
+  "resources/js/app.css": {
+    "file": "assets/app-43c98340.css",
+    "src": "resources/js/app.css"
+  },
+  "resources/js/app.js": {
+    "assets": [
+      "assets/summernote-05ce99db.eot",
+      "assets/summernote-17aff429.woff2",
+      "assets/summernote-9ea36fc9.woff",
+      "assets/summernote-2a5c8f9c.ttf"
+    ],
+    "css": [
+      "assets/app-43c98340.css"
+    ],
+    "file": "assets/app-a8328b07.js",
+    "isEntry": true,
+    "src": "resources/js/app.js"
+  },
+  "resources/sass/app.scss": {
+    "file": "assets/app-1bd03d06.css",
+    "isEntry": true,
+    "src": "resources/sass/app.scss"
+  }
+}

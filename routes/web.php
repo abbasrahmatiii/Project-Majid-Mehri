@@ -97,7 +97,6 @@ Route::middleware(['auth'])->group(function () {
     Route::delete('reservations/{reservation}', [ReservationController::class, 'cancel'])->name('reservations.cancel');
     Route::patch('/profile', [RegisterController::class, 'updateProfile'])->name('user.profile.update');
     Route::get('profile', [HomeController::class, 'profile'])->name('profile');
-
 });
 
 Route::prefix('user/')->middleware(['auth'])->group(function () {
@@ -235,7 +234,7 @@ Route::middleware(['auth'])->group(function () {
         Route::get('consultations/{consultation}/edit', [ConsultationController::class, 'edit'])->name('admin.consultations.edit')->middleware('permission:manage consultations aedit');
         Route::patch('consultations/{consultation}', [ConsultationController::class, 'update'])->name('admin.consultations.update')->middleware('permission:manage consultations');
         Route::delete('consultations/{consultation}', [ConsultationController::class, 'destroy'])->name('admin.consultations.destroy')->middleware('permission:manage consultations delete');
-       
+
         Route::post('reservations/{id}/update-session-link', [AdminReservationController::class, 'updateSessionLink'])->name('admin.reservations.updateSessionLink')->middleware('permission:manage reservations');
         Route::get('reservations', [AdminReservationController::class, 'index'])->name('admin.reservations.index')->middleware('permission:manage reservations list');
         Route::delete('reservations/{reservation}', [AdminReservationController::class, 'destroy'])->name('admin.reservations.destroy')->middleware('permission:manage reservations delete');

@@ -1,4 +1,5 @@
 @extends('layouts.master')
+
 @section('content')
 <div class="col-lg-7 order-1 order-lg-2 mt-4">
     <div class="row justify-content-md-center">
@@ -19,7 +20,7 @@
                         </div>
                         <div class="form-row">
                             <div class="form-group col">
-                                <a class="float-right" href="#">(فراموشی رمز عبور؟)</a>
+                                <a class="float-right" href="{{ route('password.request') }}">(فراموشی رمز عبور؟)</a>
                                 <label class="font-weight-bold text-dark text-2">رمز عبور</label>
                                 <input type="password" name="password" class="form-control form-control-sm text-left" dir="ltr" required>
                                 @if ($errors->has('password'))
