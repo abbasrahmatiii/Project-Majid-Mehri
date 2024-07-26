@@ -6,7 +6,7 @@
         <div class="col-md-9">
             <div class="featured-box featured-box-primary text-left mt-0">
                 <div class="box-content">
-                    <h4 class="color-primary font-weight-semibold text-4 text-uppercase mb-3">ورود کاربر</h4>
+                    <h4 class="color-primary font-weight-semibold text-4 text-uppercase mb-3">ورود کاربران</h4>
                     <form action="{{ route('login') }}" id="frmSignIn" method="post" class="needs-validation" novalidate="novalidate">
                         @csrf
                         <div class="form-row">
