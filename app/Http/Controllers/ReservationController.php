@@ -17,45 +17,44 @@ class ReservationController extends Controller
         $consultations = Consultation::with(['timeSlot', 'consultant'])
             ->whereDoesntHave('reservation')
             ->get();
-            $type = $request->query('type',0); // مقدار type را از URL دریافت کنید
-         return   view("reservations.index", compact('consultations','type'));
-        
+        $type = $request->query('type', 0); // مقدار type را از URL دریافت کنید
+        return   view("reservations.index", compact('consultations', 'type'));
     }
 
     public function store(Request $request)
-{
-
-   
-    $request->validate([
-        'consultation_id' => 'required|exists:consultations,id',
-        'type' => 'required|boolean', // اعتبارسنجی برای اطمینان از ارسال مقدار type
-    ]);
+    {
 
 
-    $consultation = Consultation::find($request->input('consultation_id'));
+        $request->validate([
+            'consultation_id' => 'required|exists:consultations,id',
+            'type' => 'required|boolean', // اعتبارسنجی برای اطمینان از ارسال مقدار type
+        ]);
 
-    if ($consultation->reservation) {
-        return redirect()->back()->withErrors('این زمان مشاوره قبلاً رزرو شده است.');
+
+        $consultation = Consultation::find($request->input('consultation_id'));
+
+        if ($consultation->reservation) {
+            return redirect()->back()->withErrors('این زمان مشاوره قبلاً رزرو شده است.');
+        }
+
+        $user = auth()->user();
+        $existingReservation = Reservation::whereHas('consultation', function ($query) use ($consultation) {
+            $query->where('date', $consultation->date)
+                ->where('time_slot_id', $consultation->time_slot_id);
+        })->where('user_id', $user->id)->exists();
+
+        if ($existingReservation) {
+            return redirect()->back()->withErrors('شما در این تاریخ و بازه زمانی مشاوره دیگری دارید.');
+        }
+        $consultation->reservation()->create([
+            'user_id' => auth()->id(),
+            'type' => $request->input('type', 0),
+        ]);
+
+        return redirect()->route('user.reservations.reserved')->with('success', 'زمان مشاوره با موفقیت رزرو شد. لطفا برای نهایی شدن بر روی دکمه پرداخت کلیک کنید.');
     }
 
-    $user = auth()->user();
-    $existingReservation = Reservation::whereHas('consultation', function ($query) use ($consultation) {
-        $query->where('date', $consultation->date)
-            ->where('time_slot_id', $consultation->time_slot_id);
-    })->where('user_id', $user->id)->exists();
 
-    if ($existingReservation) {
-        return redirect()->back()->withErrors('شما در این تاریخ و بازه زمانی مشاوره دیگری دارید.');
-    }
-    $consultation->reservation()->create([
-        'user_id' => auth()->id(),
-        'type' => $request->input('type',0),
-    ]);
-
-    return redirect()->route('user.reservations.reserved')->with('success', 'زمان مشاوره با موفقیت رزرو شد. لطفا برای نهایی شدن بر روی دکمه پرداخت کلیک کنید.');
-}
-
-    
     public function userReservations()
     {
         $reservations = auth()->user()->reservations()->with(['consultation.timeSlot', 'consultation.consultant'])->get();
@@ -100,8 +99,18 @@ class ReservationController extends Controller
     }
 
 
+    public function setStatus(Request $request, $id)
+    {
+        $reservation = Reservation::findOrFail($id);
 
+        // تغییر وضعیت بین 0 و 1
+        $reservation->status = $reservation->status == 1 ? 0 : 1;
+        $reservation->save();
 
+        $statusMessage = $reservation->status == 1 ? 'برگزار شده' : 'برگزار نشده';
+
+        return back()->with('success', "وضعیت رزرو با موفقیت به {$statusMessage} تغییر یافت.");
+    }
 
     public function callback(CallbackRequest $request, $id)
     {

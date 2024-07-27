@@ -685,6 +685,7 @@ class ComposerStaticInit0d52140ec7c90ee744c21819ec58c6f3
         'App\\Http\\Requests\\UpdateSettingsRequest' => __DIR__ . '/../..' . '/app/Http/Requests/UpdateSettingsRequest.php',
         'App\\Http\\Requests\\UpdateUserRequest' => __DIR__ . '/../..' . '/app/Http/Requests/UpdateUserRequest.php',
         'App\\Jobs\\StorePostViews' => __DIR__ . '/../..' . '/app/Jobs/StorePostViews.php',
+        'App\\Mail\\PasswordResetMail' => __DIR__ . '/../..' . '/app/Mail/PasswordResetMail.php',
         'App\\Models\\Article' => __DIR__ . '/../..' . '/app/Models/Article.php',
         'App\\Models\\Category' => __DIR__ . '/../..' . '/app/Models/Category.php',
         'App\\Models\\CenterAd' => __DIR__ . '/../..' . '/app/Models/CenterAd.php',

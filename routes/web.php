@@ -109,6 +109,9 @@ Route::prefix('user/')->middleware(['auth'])->group(function () {
 Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('/help/settings', [HelpController::class, 'settings'])->name('help.settings')->middleware('permission:manage help settings');
 });
+Route::middleware(['auth'])->group(function () {
+    Route::get('admin/reservations/{id}/set_status', [ReservationController::class, 'setStatus'])->name('admin.reservations.setStatus');
+});
 
 Route::middleware(['auth'])->group(function () {
     Route::prefix('admin/posts')->name('admin.')->group(function () {

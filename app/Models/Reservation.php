@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Reservation extends Model
 {
     use HasFactory;
-    protected $fillable = ['consultation_id', 'user_id','type','session_link'];
+    protected $fillable = ['status', 'consultation_id', 'user_id', 'type', 'session_link'];
     public function consultation()
     {
         return $this->belongsTo(Consultation::class);

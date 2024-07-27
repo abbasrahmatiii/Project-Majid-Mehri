@@ -65,6 +65,7 @@ return array(
     'App\\Http\\Requests\\UpdateSettingsRequest' => $baseDir . '/app/Http/Requests/UpdateSettingsRequest.php',
     'App\\Http\\Requests\\UpdateUserRequest' => $baseDir . '/app/Http/Requests/UpdateUserRequest.php',
     'App\\Jobs\\StorePostViews' => $baseDir . '/app/Jobs/StorePostViews.php',
+    'App\\Mail\\PasswordResetMail' => $baseDir . '/app/Mail/PasswordResetMail.php',
     'App\\Models\\Article' => $baseDir . '/app/Models/Article.php',
     'App\\Models\\Category' => $baseDir . '/app/Models/Category.php',
     'App\\Models\\CenterAd' => $baseDir . '/app/Models/CenterAd.php',
