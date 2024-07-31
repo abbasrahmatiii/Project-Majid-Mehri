@@ -16,7 +16,7 @@ $profile = Auth::user()->profile ?: new \App\Models\UserProfile();
 
   <aside class="sidebar mt-2" id="sidebar">
     <ul class="nav nav-list flex-column mb-5">
-      <li class="nav-item"><a class="nav-link text-dark active" href="profile">پروفایل من</a></li>
+      <li class="nav-item"><a class="nav-link text-dark active" href="/profile">پروفایل من</a></li>
       <li class="nav-item"><a class="nav-link" href="#">صورتحساب</a></li>
       <li class="nav-item"><a class="nav-link" href="{{ route('reservations.index', ['type' => 1]) }}">درخواست مشاوره حضوری</a></li>
       <li class="nav-item"><a class="nav-link" href="{{ route('reservations.index', ['type' => 0]) }}">درخواست مشاوره غیر حضوری</a></li>

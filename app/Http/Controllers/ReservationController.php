@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Evryn\LaravelToman\CallbackRequest;
 use Illuminate\Http\Request;
 use App\Models\Consultation;
+use App\Models\Feedback;
 use App\Models\Reservation;
 use Evryn\LaravelToman\Facades\Toman;
 
@@ -57,8 +58,10 @@ class ReservationController extends Controller
 
     public function userReservations()
     {
+        $feedbacks = Feedback::all();
+
         $reservations = auth()->user()->reservations()->with(['consultation.timeSlot', 'consultation.consultant'])->get();
-        return view('reservations/reserved', compact('reservations'));
+        return view('reservations/reserved', compact('reservations', 'feedbacks'));
     }
 
     public function cancel(Reservation $reservation)

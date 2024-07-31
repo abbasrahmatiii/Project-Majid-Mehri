@@ -22,6 +22,7 @@
               <th>پرداخت شده</th>
               <th>مبلغ</th>
               <th>نوع مشاوره</th>
+              <th>لینک جلسه</th>
               <th>وضعیت</th>
               <th>عملیات</th>
             </tr>
@@ -42,6 +43,13 @@
               <td>{{ $reservation->is_paid ? 'بله' : 'خیر' }}</td>
               <td>{{ number_format($reservation->consultation->price) }} ریال</td>
               <td>{{ $reservation->type ? 'حضوری' : 'غیر حضوری' }}</td>
+              <td>
+                @if($reservation->type == 0)
+                <a href="#" data-toggle="modal" data-target="#linkModal{{ $reservation->id }}">
+                  {{ $reservation->session_link ? 'ویرایش' : 'افزودن' }}
+                </a>
+                @endif
+              </td>
               <td class="text-center">
                 @if($reservation->status == 1)
                 برگزار شده
@@ -106,6 +114,33 @@
         </div>
       </div>
       @endif
+      <!-- Link Modal -->
+      <div class="modal fade" id="linkModal{{ $reservation->id }}" tabindex="-1" role="dialog" aria-labelledby="linkModalLabel{{ $reservation->id }}" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="linkModalLabel{{ $reservation->id }}">افزودن/ویرایش لینک جلسه</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="بستن">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form action="{{ route('admin.reservations.updateSessionLink', $reservation->id) }}" method="POST">
+                @csrf
+                <div class="form-group">
+                  <label for="session_link">لینک جلسه:</label>
+                  <input type="text" name="session_link" id="session_link" class="form-control" value="{{ old('session_link', $reservation->session_link) }}">
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">بستن</button>
+                  <button type="submit" class="btn btn-primary">ذخیره</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div class="modal fade" id="deleteModal{{ $reservation->id }}" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel{{ $reservation->id }}" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
@@ -137,6 +172,7 @@
     </div>
   </div>
 </div>
+
 <script>
   function saveSummary(id) {
     var summary = document.getElementById('summary' + id).value;
@@ -177,8 +213,19 @@
     background-color: #343a40 !important;
   }
 
+  /* استایل برای اینپوت متن در مودال */
+  .modal-body input[type="text"] {
+    text-align: left;
+    direction: ltr;
+  }
+
   .modal-body {
     font-family: inherit;
+  }
+
+  .session_link {
+    direction: ltr;
+    text-align: left;
   }
 </style>
 @endsection

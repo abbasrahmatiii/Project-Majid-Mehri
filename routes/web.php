@@ -26,6 +26,7 @@ use App\Http\Controllers\ConsultationController;
 use App\Http\Controllers\DayController;
 use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\HelpController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\WhoWeAreController;
@@ -103,6 +104,14 @@ Route::prefix('user/')->middleware(['auth'])->group(function () {
     Route::get('reservations/reserved', [ReservationController::class, 'userReservations'])->name('user.reservations.reserved');
     Route::get('/reservations/{id}/pay', [ReservationController::class, 'pay'])->name('reservations.pay');
     Route::get('/reservations/callback/{id}', [ReservationController::class, 'callback'])->name('reservations.callback');
+});
+
+//feedback
+Route::middleware(['auth'])->group(function () {
+    // Route::get('/feedback/{Consultation_id}', function ($session_id) {
+    //     return view('feedback', ['Consultation_id' => $session_id]);
+    // })->name('feedback.form');
+    Route::post('/feedback', [FeedbackController::class, 'store'])->name('feedback.store');
 });
 
 //Help

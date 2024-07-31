@@ -31,4 +31,9 @@ class Consultation extends Model
     {
         return $this->hasOne(Reservation::class);
     }
+
+    public function feedback()
+    {
+        return $this->hasMany(Feedback::class, 'Consultation_id');
+    }
 }
