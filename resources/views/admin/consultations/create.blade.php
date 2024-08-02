@@ -59,9 +59,8 @@
 
 <style>
   .datepicker {
-    width: 200px;
+    width: 100% !important;
     /* Adjust the width as needed */
-    display: inline-block;
   }
 </style>
 @endsection

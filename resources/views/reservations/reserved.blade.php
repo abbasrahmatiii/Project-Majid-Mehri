@@ -63,17 +63,19 @@
                     @endif
                   </td>
                   <td>
-                    @if($reservation->session_link && !$reservation->is_paid)
+                    @if($reservation->session_link && $reservation->is_paid && !($reservation->status))
                     <a href="{{ $reservation->session_link }}" target="_blank" class="session-link">ورود</a>
-                    @else
+                    @elseif($reservation->status)
                     برگزار شد
+                    @else
+                    برگزار نشده
                     @endif
                   </td>
                   <td>
-                    @if($reservation->is_paid)
+                    @if($reservation->status)
                     <button type="button" class="btn btn-feedback btn-sm" data-toggle="modal" data-target="#feedbackModal{{ $reservation->id }}" data-reservation="{{ $reservation }}">نظر</button>
                     @else
-                    <span class="badge badge-secondary">قابل ثبت نظر نیست</span>
+                    <span class="badge badge-secondary">ثبت نظر غیرفعال است</span>
                     @endif
                   </td>
                 </tr>
@@ -90,8 +92,9 @@
                       </div>
                       <div class="modal-body">
                         @php
-                        $feedback = $feedbacks->get($reservation->consultation->id);
+                        $feedback = App\Models\Feedback::where('consultation_id', $reservation->consultation->id)->first();
                         @endphp
+
                         <form action="{{ route('feedback.store') }}" method="POST">
                           @csrf
                           <input type="hidden" name="Consultation_id" value="{{$reservation->consultation->id}}">
